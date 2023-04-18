@@ -4,3 +4,22 @@
     justify-content: center;
     align-items: center;
 }
+/* .tableCont{
+    width: 30em;
+    height: 30em;
+} */
+.XO{
+    border: 1px solid black;
+    width: 30em;
+    height: 30em;
+}
+.tableRow{
+    border: 1px solid black;
+    width: auto;
+    height: auto;
+}
+.tableData{
+    border: 1px solid black;
+    width: auto;
+    height: auto;
+}
