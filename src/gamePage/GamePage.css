@@ -17,9 +17,14 @@
     border: 1px solid black;
     width: auto;
     height: auto;
+    transition: 400ms;
 }
 .tableData{
     border: 1px solid black;
     width: auto;
     height: auto;
+    transition: 400ms;
+}
+.changeNode{
+    background: black;
 }
