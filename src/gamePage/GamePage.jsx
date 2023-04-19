@@ -1,6 +1,5 @@
 import React from 'react'
 import './GamePage.css'
-import { useState } from 'react'
 
 function GamePage() {
   // for (let i = 0; i < 8; i++) {
@@ -29,13 +28,14 @@ function GamePage() {
 //   }
 //   )
 // }
-// square[0].addEventListener('click',()=>{
-//   square[0].classList.toggle('changeNode')
-// })
+
 //  var writings = ['X','O']
- const [touch, setTouch] = useState(1)
+var clicked = (e)=>{
+  const id = e.target.className = 'changeNode'
+  console.log(id)
+}
   return (
-    <div className='table' onClick={setTouch(touch +1)}>
+    <div className='table'>
         <div className='tableCont' >
             <table className='XO'>
               <tr className='tableRow'>
@@ -43,7 +43,7 @@ function GamePage() {
                 //  onClick={changeClick}
                  ></td>
 
-                <td className='tableData' >{touch}</td>
+                <td className='tableData' onClick={clicked}></td>
                 <td className='tableData'></td>
               </tr>
               <tr className='tableRow'>
