@@ -13,10 +13,7 @@
     width: 30em;
     height: 30em;
 }
-.tableRow{
-    border: 1px solid black;
-    transition: 400ms;
-}
+
 .tableData{
     background-color: white;
     border: 1px solid black;
@@ -27,6 +24,7 @@
 }
 .changeNode{
     background-color: black;
+    border: 1px solid black;
     width: 30px;
     height: 30px;
     /* transition: 400ms; */
