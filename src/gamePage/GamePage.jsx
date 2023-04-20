@@ -64,10 +64,8 @@ function GamePage() {
            >
             <tbody>
               <tr className='tableRow'>
-                <td className='tableData'
-                //  onClick={changeClick}
-                 ></td>
-
+                <td className='tableData'></td>
+                {/* //  onClick={changeClick} */}
                 <td className='tableData'></td>
                 <td className='tableData'></td>
               </tr>
