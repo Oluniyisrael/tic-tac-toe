@@ -52,7 +52,7 @@ function GamePage() {
       
     }
     for (let i = 0; i < 9; i++) {
-      document.querySelectorAll('td')[i].addEventListener('click', clicked)
+      document.getElementsByClassName('writeHere')[i].addEventListener('click', clicked)
     }
   }, [count])
   
@@ -64,20 +64,38 @@ function GamePage() {
            >
             <tbody>
               <tr className='tableRow'>
-                <td className='tableData'></td>
+                <td className='tableData'>
+                  <span className='writeHere'></span>
+                </td>
                 {/* //  onClick={changeClick} */}
-                <td className='tableData'></td>
-                <td className='tableData'></td>
+                <td className='tableData'>
+                  <span className='writeHere'></span>
+                </td>
+                <td className='tableData'>
+                  <span className='writeHere'></span>
+                </td>
               </tr>
               <tr className='tableRow'>
-                <td className='tableData'></td>
-                <td className='tableData'></td>
-                <td className='tableData'></td>
+                <td className='tableData'>
+                  <span className='writeHere'></span>
+                </td>
+                <td className='tableData'>
+                  <span className='writeHere'></span>
+                </td>
+                <td className='tableData'>
+                  <span className='writeHere'></span>
+                </td>
               </tr>
               <tr className='tableRow'>
-                <td className='tableData'></td>
-                <td className='tableData'></td>
-                <td className='tableData'></td>
+                <td className='tableData'>
+                  <span className='writeHere'></span>
+                </td>
+                <td className='tableData'>
+                  <span className='writeHere'></span>
+                </td>
+                <td className='tableData'>
+                  <span className='writeHere'></span>
+                </td>
               </tr>
             </tbody>
             </table>
