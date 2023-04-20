@@ -25,30 +25,37 @@ function GamePage() {
 // var square =  document.getElementsByClassName('tableData')
 // for( var i= 0; i < 8; i++){
 //   square[i].addEventListener("click",()=>{
-//       square[i].classlist.toggle('changeNode')
-//   }
-//   )
-// }
-
-//  var writings = ['X','O']
-useEffect(() => {
-  for (let i = 0; i < 9; i++) {
-    document.querySelectorAll('td')[i].addEventListener('click', clicked)
+  //       square[i].classlist.toggle('changeNode')
+  //   }
+  //   )
+  // }
+  
+  const [count,setCount] = useState(0)
+  function add(){
+    setCount(count + 1);
+    if(count === 8){
+      setCount(count - 8)
+    }
+    console.log(count)
   }
-}, [])
-
-const [count,setCount] = useState(0)
-function add(){
-  setCount(count + 1);
-  if(count === 8){
-    setCount(count - 8)
-  }
-  console.log(count)
-}
-var clicked = (e)=>{
-  const id = e.target.innerText
-    console.log(id)
-}
+  useEffect(() => {
+    var writings = 
+    [
+      ['X','O','X','O','X','O','X','O','X'],
+      ['O','X','O','X','O','X','O','X','O']
+    ]             
+    var clicked = (e)=>{
+      // for (let i = 0; i < writings.length; i++) {
+        const id = e.target.innerText = writings[0][count]
+        // console.log(id)
+      // }
+      
+    }
+    for (let i = 0; i < 9; i++) {
+      document.querySelectorAll('td')[i].addEventListener('click', clicked)
+    }
+  }, [count])
+  
   return (
     <div className='table'>
         <div className='tableCont' onClick={add}>

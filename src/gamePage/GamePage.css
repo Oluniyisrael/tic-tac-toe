@@ -19,7 +19,9 @@
     border: 1px solid black;
     width: 30px;
     height: 30px;
-    /* transition: 400ms; */
+    text-align: center;
+    /* font-size: 40px;*/
+    transition: 400ms; 
     border: 1px solid black;
 }
 .changeNode{
