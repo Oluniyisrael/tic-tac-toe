@@ -7,9 +7,20 @@ function GamePage() {
   [
     ['X','O','X','O','X','O','X','O','X'],
     ['O','X','O','X','O','X','O','X','O']
-  ]             
+  ]  
+
   const [count,setCount] = useState(0)
   const [choice,setChoice]= useState(0)
+  function declearWin() {
+    var squares = document.getElementsByClassName('tableData');
+    if(squares[0].innerHTML === squares[1].innerHTML && squares[1].innerHTML === squares[2].innerHTML && squares[2].innerHTML !== null){
+      console.log(' we have a winner')
+    }
+    else{console.log('No one won')}
+  } 
+  if (count >= 5 ){
+    declearWin()
+  }      
   function add(e){
         setCount(count + 1);
         if(count === 8){
