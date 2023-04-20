@@ -1,64 +1,37 @@
-import React,{useState} from 'react'
+import React from 'react'
 import './GamePage.css'
-import { useEffect } from 'react';
+import {useState } from 'react';
 
 function GamePage() {
-  // for (let i = 0; i < 8; i++) {
-  //   document.getElementByClassName('tableData')[i].addEventListener('click',()=>{
-  //     document.getElementsByClassName('tableData')[i].classList.toggle('changeNode')
-  //  })    
-  // }
-  // function changeClick(e){
-  //   e.target.classlist.toggle("changeNode")
-  // .classList.toggle('changeNode')
-  // }
-//  var target = document.getElementsByClassName('tableData')[i]
-// function something (){
-//   if( document.getElementsByClassName('tableData')[0].classList.value==='tableData'){
-//       return 1;
-//   }    
-//       else{return 0;}
-// }
-//
-// document.getElementsByClassName('tableData')[0].classList.toggle('changeNode')
-
-// var square =  document.getElementsByClassName('tableData')
-// for( var i= 0; i < 8; i++){
-//   square[i].addEventListener("click",()=>{
-  //       square[i].classlist.toggle('changeNode')
-  //   }
-  //   )
-  // }
-  
+  var writings = 
+  [
+    ['X','O','X','O','X','O','X','O','X'],
+    ['O','X','O','X','O','X','O','X','O']
+  ]             
   const [count,setCount] = useState(0)
-  function add(){
-    setCount(count + 1);
-    if(count === 8){
-      setCount(count - 8)
-    }
-    console.log(count)
-  }
-  useEffect(() => {
-    var writings = 
-    [
-      ['X','O','X','O','X','O','X','O','X'],
-      ['O','X','O','X','O','X','O','X','O']
-    ]             
-    var clicked = (e)=>{
-      // for (let i = 0; i < writings.length; i++) {
-        const id = e.target.innerText = writings[0][count]
-        // console.log(id)
-      // }
-      
-    }
-    for (let i = 0; i < 9; i++) {
-      document.getElementsByClassName('writeHere')[i].addEventListener('click', clicked)
-    }
-  }, [count])
+  const [choice,setChoice]= useState(0)
+  function add(e){
+        setCount(count + 1);
+        if(count === 8){
+          // for (let i = 0; i < 8; i++) {
+          //   document.querySelectorAll('td')[i].innerText = '';
+          //   document.querySelectorAll('span')[i].classList= 'writeHere'
+          // }
+          setCount(count - 8)
+          setChoice(choice + 1)
+          if(choice === 2){
+            setChoice(choice - 2)
+          }
+        }
+        e.target.className='changeNode'
+        e.target.parentNode.innerText = writings[choice][count]
+
+        console.log(count)
+      }
   
   return (
     <div className='table'>
-        <div className='tableCont' onClick={add}>
+        <div className='tableCont'>
             <table className='XO'
            // onClick={add}
            >
@@ -66,36 +39,36 @@ function GamePage() {
             <tbody>
               <tr className='tableRow'>
                 <td className='tableData'>
-                  <span className='writeHere'></span>
+                  <span className='writeHere' onClick={add}></span>
                 </td>
                 {/* //  onClick={changeClick} */}
                 <td className='tableData'>
-                  <span className='writeHere'></span>
+                  <span className='writeHere' onClick={add}></span>
                 </td>
                 <td className='tableData'>
-                  <span className='writeHere'></span>
-                </td>
-              </tr>
-              <tr className='tableRow'>
-                <td className='tableData'>
-                  <span className='writeHere'></span>
-                </td>
-                <td className='tableData'>
-                  <span className='writeHere'></span>
-                </td>
-                <td className='tableData'>
-                  <span className='writeHere'></span>
+                  <span className='writeHere' onClick={add}></span>
                 </td>
               </tr>
               <tr className='tableRow'>
                 <td className='tableData'>
-                  <span className='writeHere'></span>
+                  <span className='writeHere' onClick={add}></span>
                 </td>
                 <td className='tableData'>
-                  <span className='writeHere'></span>
+                  <span className='writeHere' onClick={add}></span>
                 </td>
                 <td className='tableData'>
-                  <span className='writeHere'></span>
+                  <span className='writeHere' onClick={add}></span>
+                </td>
+              </tr>
+              <tr className='tableRow'>
+                <td className='tableData'>
+                  <span className='writeHere' onClick={add}></span>
+                </td>
+                <td className='tableData'>
+                  <span className='writeHere' onClick={add}></span>
+                </td>
+                <td className='tableData'>
+                  <span className='writeHere' onClick={add}></span>
                 </td>
               </tr>
             </tbody>
