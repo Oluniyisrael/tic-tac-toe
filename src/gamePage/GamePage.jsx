@@ -1,6 +1,4 @@
-import React
-// ,{useState}
- from 'react'
+import React,{useState} from 'react'
 import './GamePage.css'
 import { useEffect } from 'react';
 
@@ -39,14 +37,14 @@ useEffect(() => {
   }
 }, [])
 
-// const [count,setCount] = useState(0)
-// function add(){
-//   setCount(count + 1);
-//   console.log(count)
-// }
+const [count,setCount] = useState(0)
+function add(){
+  setCount(count + 1);
+  console.log(count)
+}
 var clicked = (e)=>{
-  const id = e.target.className = 'changeNode'
-  console.log(id)
+  const id = e.target.innerText
+    console.log(id)
 }
   return (
     <div className='table'>
@@ -54,6 +52,7 @@ var clicked = (e)=>{
             <table className='XO'
            // onClick={add}
            >
+            <tbody>
               <tr className='tableRow'>
                 <td className='tableData'
                 //  onClick={changeClick}
@@ -72,6 +71,7 @@ var clicked = (e)=>{
                 <td className='tableData'></td>
                 <td className='tableData'></td>
               </tr>
+            </tbody>
             </table>
         </div>
     </div>
