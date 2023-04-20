@@ -13,7 +13,10 @@ function GamePage() {
   const [choice,setChoice]= useState(0)
   function declearWin() {
     var squares = document.getElementsByClassName('tableData');
-    if(squares[0].innerHTML === squares[1].innerHTML && squares[1].innerHTML === squares[2].innerHTML && squares[2].innerHTML !== null){
+    if(squares[0].innerHTML === squares[1].innerHTML && squares[1].innerHTML === squares[2].innerHTML && squares[2].innerHTML !== null 
+        ||
+        squares[0].innerHTML === squares[3].innerHTML && squares[3].innerHTML === squares[6].innerHTML && squares[2].innerHTML !== null
+        ){
       console.log(' we have a winner')
     }
     else{console.log('No one won')}
