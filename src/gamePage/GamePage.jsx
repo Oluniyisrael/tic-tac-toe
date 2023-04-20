@@ -40,6 +40,9 @@ useEffect(() => {
 const [count,setCount] = useState(0)
 function add(){
   setCount(count + 1);
+  if(count === 8){
+    setCount(count - 8)
+  }
   console.log(count)
 }
 var clicked = (e)=>{
@@ -48,7 +51,7 @@ var clicked = (e)=>{
 }
   return (
     <div className='table'>
-        <div className='tableCont' >
+        <div className='tableCont' onClick={add}>
             <table className='XO'
            // onClick={add}
            >
