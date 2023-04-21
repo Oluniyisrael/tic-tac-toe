@@ -21,8 +21,8 @@ function GamePage() {
         ||
         squares[3].innerHTML === squares[4].innerHTML && squares[4].innerHTML === squares[5].innerHTML && squares[5].innerHTML !== null
         ||
-        squares[6].innerHTML === squares[7].innerHTML && squares[7].innerHTML === squares[8].innerHTML && squares[8].innerHTML !== null
-
+        squares[1].innerHTML === squares[4].innerHTML && squares[4].innerHTML === squares[7].innerHTML && squares[7].innerHTML !== ''
+// 
         ){
       console.log(' we have a winner')
     }
@@ -38,7 +38,7 @@ function GamePage() {
           //   document.querySelectorAll('td')[i].innerText = '';
           //   document.querySelectorAll('span')[i].classList= 'writeHere'
           // }
-          setCount(count - 8)
+          // setCount(count - 8)
           setChoice(choice + 1)
           if(choice === 2){
             setChoice(choice - 2)
