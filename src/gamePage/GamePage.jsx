@@ -11,25 +11,30 @@ function GamePage() {
 
   const [count,setCount] = useState(0)
   const [choice,setChoice]= useState(0)
-  function declearWin() {
-    var squares = document.getElementsByClassName('tableData');
-    if(squares[0].innerHTML === squares[1].innerHTML && squares[1].innerHTML === squares[2].innerHTML && squares[2].innerHTML !== null 
-        ||
-        squares[0].innerHTML === squares[3].innerHTML && squares[3].innerHTML === squares[6].innerHTML && squares[6].innerHTML !== null
-        ||
-        squares[0].innerHTML === squares[4].innerHTML && squares[4].innerHTML === squares[8].innerHTML && squares[8].innerHTML !== null
-        ||
-        squares[3].innerHTML === squares[4].innerHTML && squares[4].innerHTML === squares[5].innerHTML && squares[5].innerHTML !== null
-        ||
-        squares[1].innerHTML === squares[4].innerHTML && squares[4].innerHTML === squares[7].innerHTML && squares[7].innerHTML !== ''
-// 
-        ){
-      console.log(' we have a winner')
-    }
-    else{console.log('No one won')}
-  } 
+  // function declearWin() {
+  //   var squares = document.getElementsByClassName('tableData');
+  //   if(squares[0].innerHTML === squares[1].innerHTML && squares[1].innerHTML === squares[2].innerHTML && squares[2].innerHTML !== '' 
+  //       ||
+  //       squares[0].innerHTML === squares[3].innerHTML && squares[3].innerHTML === squares[6].innerHTML && squares[6].innerHTML !== ''
+  //       ||
+  //       squares[0].innerHTML === squares[4].innerHTML && squares[4].innerHTML === squares[8].innerHTML && squares[8].innerHTML !== ''
+  //       ||
+  //       squares[1].innerHTML === squares[4].innerHTML && squares[4].innerHTML === squares[7].innerHTML && squares[7].innerHTML !== ''
+  //       ||
+  //       squares[2].innerHTML === squares[5].innerHTML && squares[5].innerHTML === squares[8].innerHTML && squares[8].innerHTML !== ''
+  //       ||
+  //       squares[3].innerHTML === squares[4].innerHTML && squares[4].innerHTML === squares[5].innerHTML && squares[5].innerHTML !== ''
+  //       ||
+  //       squares[6].innerHTML === squares[7].innerHTML && squares[7].innerHTML === squares[8].innerHTML && squares[6].innerHTML !== ''
+  //       // ||
+
+  //       ){
+  //     console.log(' we have a winner')
+  //   }
+  //   else{console.log('No one won')}
+  // } 
   if (count >= 5 ){
-    declearWin()
+    // declearWin()
   }      
   function add(e){
         setCount(count + 1);
