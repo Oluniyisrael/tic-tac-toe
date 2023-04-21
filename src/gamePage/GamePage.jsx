@@ -20,6 +20,9 @@ function GamePage() {
         squares[0].innerHTML === squares[4].innerHTML && squares[4].innerHTML === squares[8].innerHTML && squares[8].innerHTML !== null
         ||
         squares[3].innerHTML === squares[4].innerHTML && squares[4].innerHTML === squares[5].innerHTML && squares[5].innerHTML !== null
+        ||
+        squares[6].innerHTML === squares[7].innerHTML && squares[7].innerHTML === squares[8].innerHTML && squares[8].innerHTML !== null
+
         ){
       console.log(' we have a winner')
     }
