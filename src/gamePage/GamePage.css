@@ -50,21 +50,45 @@
     border-radius: 10px;
     position: absolute;
     background-color: rebeccapurple;
-    animation: growSlowly1 2s;
+    animation: growSlowly1 1s;
     display: none;
 }
 #line2 {
     /* margin-top: 5em; */
-    margin-left: 85px;
+    margin-left: 75px;
     width:20px ;
     height: 516px;
     border-radius: 10px;
     position: absolute;
     background-color: rebeccapurple;
-    animation: growSlowly2 2s;
+    animation: growSlowly2 1s;
     /* transform: rotate(90deg); */
     display: none;
 
+}
+#line3 {
+    margin-top: 5em;
+    /* margin-left: 75px; */
+    width: 516px;
+    height: 20px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: rebeccapurple;
+    animation: growSlowly1 1s;
+    /* transform: rotate(45deg); */
+    display: none;
+}
+#line4{
+        /* margin-top: 5em; */
+        margin-left: 245px;
+        width:20px ;
+        height: 516px;
+        border-radius: 10px;
+        position: absolute;
+        background-color: rebeccapurple;
+        animation: growSlowly2 1s;
+        /* transform: rotate(90deg); */
+        /* display: none; */
 }
 @keyframes growSlowly1 {
     from{width: 0px;}

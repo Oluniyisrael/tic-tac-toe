@@ -39,6 +39,7 @@ function GamePage() {
     }
     else if(squares[0].innerText === squares[3].innerText && squares[3].innerText === squares[6].innerText && squares[6].innerText !== ''){
       console.log(' Case2 win')
+      document.getElementById('line2').style.display = 'block'
     }
     else if(squares[0].innerText === squares[4].innerText && squares[4].innerText === squares[8].innerText && squares[8].innerText !== ''){
       console.log(' Case3 win')
@@ -51,6 +52,7 @@ function GamePage() {
     }
     else if(squares[3].innerText === squares[4].innerText && squares[4].innerText === squares[5].innerText && squares[5].innerText !== ''){
       console.log(' Case6 win')
+      document.getElementById('line3').style.display = 'block'
     }
     else if(squares[6].innerText === squares[7].innerText && squares[7].innerText === squares[8].innerText && squares[8].innerText !== ''){
       console.log(' Case7 win')
@@ -98,6 +100,7 @@ function GamePage() {
             {/* To be continued, Counter divs will be in front of tiles and will dissapear after been clicked to avoid random value bugs */}
             <hr id='line' />
             <hr id='line2' />
+            <hr id='line4' />
             <tbody>
               <tr className='tableRow'>
                 <td className='tableData'>
@@ -111,6 +114,7 @@ function GamePage() {
                   <span className='writeHere' onClick={add}></span>
                 </td>
               </tr>
+            <hr id='line3' />
             {/* <hr id='line2' /> */}
               <tr className='tableRow'>
                 <td className='tableData'>
