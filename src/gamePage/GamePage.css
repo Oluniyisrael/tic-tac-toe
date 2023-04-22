@@ -50,10 +50,27 @@
     border-radius: 10px;
     position: absolute;
     background-color: rebeccapurple;
-    animation: growSlowly 2s;
+    animation: growSlowly1 2s;
     display: none;
 }
-@keyframes growSlowly {
+#line2 {
+    /* margin-top: 5em; */
+    margin-left: 85px;
+    width:20px ;
+    height: 516px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: rebeccapurple;
+    animation: growSlowly2 2s;
+    /* transform: rotate(90deg); */
+    display: none;
+
+}
+@keyframes growSlowly1 {
     from{width: 0px;}
-    to{width: 516;}
+    to{width: 516px;}
+}
+@keyframes growSlowly2 {
+    from{height: 0px;}
+    to{height: 516px;}
 }

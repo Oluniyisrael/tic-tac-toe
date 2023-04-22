@@ -96,7 +96,8 @@ function GamePage() {
            // onClick={add}
            >
             {/* To be continued, Counter divs will be in front of tiles and will dissapear after been clicked to avoid random value bugs */}
-                <hr id='line' />
+            <hr id='line' />
+            <hr id='line2' />
             <tbody>
               <tr className='tableRow'>
                 <td className='tableData'>
@@ -110,6 +111,7 @@ function GamePage() {
                   <span className='writeHere' onClick={add}></span>
                 </td>
               </tr>
+            {/* <hr id='line2' /> */}
               <tr className='tableRow'>
                 <td className='tableData'>
                   <span className='writeHere' onClick={add}></span>
