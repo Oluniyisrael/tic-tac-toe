@@ -3,7 +3,7 @@ import './GamePage.css'
 import {useState } from 'react';
 
 
-var Case1 = document.getElementById('line');
+// var Case1 = document.getElementById('line');
 function GamePage() {
   var writings = 
   [
@@ -46,9 +46,12 @@ function GamePage() {
     }
     else if(squares[1].innerText === squares[4].innerText && squares[4].innerText === squares[7].innerText && squares[7].innerText !== ''){
       console.log(' Case4 win')
+      document.getElementById('line4').style.display = 'block'
     }
     else if(squares[2].innerText === squares[5].innerText && squares[5].innerText === squares[8].innerText && squares[8].innerText !== ''){
       console.log(' Case5 win')
+      document.getElementById('line5').style.display = 'block'
+
     }
     else if(squares[3].innerText === squares[4].innerText && squares[4].innerText === squares[5].innerText && squares[5].innerText !== ''){
       console.log(' Case6 win')
@@ -56,6 +59,8 @@ function GamePage() {
     }
     else if(squares[6].innerText === squares[7].innerText && squares[7].innerText === squares[8].innerText && squares[8].innerText !== ''){
       console.log(' Case7 win')
+      document.getElementById('line6').style.display = 'block'
+
     }
     else if(squares[2].innerText === squares[4].innerText && squares[4].innerText === squares[6].innerText && squares[6].innerText !== ''){
       console.log(' Case8 win')
@@ -101,6 +106,7 @@ function GamePage() {
             <hr id='line' />
             <hr id='line2' />
             <hr id='line4' />
+            <hr id='line5' />
             <tbody>
               <tr className='tableRow'>
                 <td className='tableData'>
@@ -127,6 +133,7 @@ function GamePage() {
                   <span className='writeHere' onClick={add}></span>
                 </td>
               </tr>
+              <hr id='line6' />
               <tr className='tableRow'>
                 <td className='tableData'>
                   <span className='writeHere' onClick={add}></span>

@@ -88,7 +88,31 @@
         background-color: rebeccapurple;
         animation: growSlowly2 1s;
         /* transform: rotate(90deg); */
-        /* display: none; */
+        display: none;
+}
+#line5{
+    /* margin-top: 5em; */
+    margin-left: 415px;
+    width:20px ;
+    height: 516px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: rebeccapurple;
+    animation: growSlowly2 1s;
+    /* transform: rotate(90deg); */
+    display: none;
+}
+#line6 {
+    margin-top: 5em;
+    /* margin-left: 75px; */
+    width: 516px;
+    height: 20px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: rebeccapurple;
+    animation: growSlowly1 1s;
+    /* transform: rotate(45deg); */
+    display: none;
 }
 @keyframes growSlowly1 {
     from{width: 0px;}
