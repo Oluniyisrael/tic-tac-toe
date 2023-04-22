@@ -2,6 +2,8 @@ import React from 'react'
 import './GamePage.css'
 import {useState } from 'react';
 
+
+var Case1 = document.getElementById('line');
 function GamePage() {
   var writings = 
   [
@@ -12,26 +14,49 @@ function GamePage() {
   const [count,setCount] = useState(0)
   const [choice,setChoice]= useState(0)
   function declearWin() {
+
     var squares = document.getElementsByClassName('tableData');
     if(squares[0].innerText === squares[1].innerText && squares[1].innerText === squares[2].innerText && squares[2].innerText !== '' 
-        ||
-        squares[0].innerText === squares[3].innerText && squares[3].innerText === squares[6].innerText && squares[6].innerText !== ''
-        ||
-        squares[0].innerText === squares[4].innerText && squares[4].innerText === squares[8].innerText && squares[8].innerText !== ''
-        ||
-        squares[1].innerText === squares[4].innerText && squares[4].innerText === squares[7].innerText && squares[7].innerText !== ''
-        ||
-        squares[2].innerText === squares[5].innerText && squares[5].innerText === squares[8].innerText && squares[8].innerText !== ''
-        ||
-        squares[3].innerText === squares[4].innerText && squares[4].innerText === squares[5].innerText && squares[5].innerText !== ''
-        ||
-        squares[6].innerText === squares[7].innerText && squares[7].innerText === squares[8].innerText && squares[8].innerText !== ''
-        ||
-        squares[2].innerText === squares[4].innerText && squares[4].innerText === squares[6].innerText && squares[6].innerText !== ''
-
-
+        // ||
+        // squares[0].innerText === squares[3].innerText && squares[3].innerText === squares[6].innerText && squares[6].innerText !== ''
+        // ||
+        // squares[0].innerText === squares[4].innerText && squares[4].innerText === squares[8].innerText && squares[8].innerText !== ''
+        // ||
+        // squares[1].innerText === squares[4].innerText && squares[4].innerText === squares[7].innerText && squares[7].innerText !== ''
+        // ||
+        // squares[2].innerText === squares[5].innerText && squares[5].innerText === squares[8].innerText && squares[8].innerText !== ''
+        // ||
+        // squares[3].innerText === squares[4].innerText && squares[4].innerText === squares[5].innerText && squares[5].innerText !== ''
+        // ||
+        // squares[6].innerText === squares[7].innerText && squares[7].innerText === squares[8].innerText && squares[8].innerText !== ''
+        // ||
+        // squares[2].innerText === squares[4].innerText && squares[4].innerText === squares[6].innerText && squares[6].innerText !== ''
         ){
-      console.log(' we have a winner')
+      // console.log(' we have a winner')
+      console.log(' Case1 win');
+      document.getElementById('line').style.display = 'block'
+      
+    }
+    else if(squares[0].innerText === squares[3].innerText && squares[3].innerText === squares[6].innerText && squares[6].innerText !== ''){
+      console.log(' Case2 win')
+    }
+    else if(squares[0].innerText === squares[4].innerText && squares[4].innerText === squares[8].innerText && squares[8].innerText !== ''){
+      console.log(' Case3 win')
+    }
+    else if(squares[1].innerText === squares[4].innerText && squares[4].innerText === squares[7].innerText && squares[7].innerText !== ''){
+      console.log(' Case4 win')
+    }
+    else if(squares[2].innerText === squares[5].innerText && squares[5].innerText === squares[8].innerText && squares[8].innerText !== ''){
+      console.log(' Case5 win')
+    }
+    else if(squares[3].innerText === squares[4].innerText && squares[4].innerText === squares[5].innerText && squares[5].innerText !== ''){
+      console.log(' Case6 win')
+    }
+    else if(squares[6].innerText === squares[7].innerText && squares[7].innerText === squares[8].innerText && squares[8].innerText !== ''){
+      console.log(' Case7 win')
+    }
+    else if(squares[2].innerText === squares[4].innerText && squares[4].innerText === squares[6].innerText && squares[6].innerText !== ''){
+      console.log(' Case8 win')
     }
     else{console.log('No one won')}
   } 
