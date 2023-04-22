@@ -71,6 +71,7 @@ function GamePage() {
            // onClick={add}
            >
             {/* To be continued, Counter divs will be in front of tiles and will dissapear after been clicked to avoid random value bugs */}
+                <hr id='line' />
             <tbody>
               <tr className='tableRow'>
                 <td className='tableData'>

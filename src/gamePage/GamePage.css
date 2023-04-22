@@ -42,3 +42,18 @@
     /* transition: 400ms; */
     display: none;
 }
+
+#line {
+    margin-top: 5em;
+    width: 516px;
+    height: 20px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: rebeccapurple;
+    animation: growSlowly 2s;
+    display: none;
+}
+@keyframes growSlowly {
+    from{width: 0px;}
+    to{width: 516;}
+}
