@@ -43,6 +43,7 @@ function GamePage() {
     }
     else if(squares[0].innerText === squares[4].innerText && squares[4].innerText === squares[8].innerText && squares[8].innerText !== ''){
       console.log(' Case3 win')
+      // put a div inside gth eexpected div and say from width to 100%
     }
     else if(squares[1].innerText === squares[4].innerText && squares[4].innerText === squares[7].innerText && squares[7].innerText !== ''){
       console.log(' Case4 win')
@@ -108,6 +109,7 @@ function GamePage() {
             <hr id='line4' />
             <hr id='line5' />
             <tbody>
+                  <hr id='line7' />
               <tr className='tableRow'>
                 <td className='tableData'>
                   <span className='writeHere' onClick={add}></span>
@@ -128,6 +130,8 @@ function GamePage() {
                 </td>
                 <td className='tableData'>
                   <span className='writeHere' onClick={add}></span>
+                  {/* <hr id='line6' /> */}
+
                 </td>
                 <td className='tableData'>
                   <span className='writeHere' onClick={add}></span>
