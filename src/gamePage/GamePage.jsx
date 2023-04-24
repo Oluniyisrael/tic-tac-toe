@@ -44,6 +44,7 @@ function GamePage() {
     else if(squares[0].innerText === squares[4].innerText && squares[4].innerText === squares[8].innerText && squares[8].innerText !== ''){
       console.log(' Case3 win')
       // put a div inside gth eexpected div and say from width to 100%
+      document.getElementById('line7Dec').style.display = 'block'
     }
     else if(squares[1].innerText === squares[4].innerText && squares[4].innerText === squares[7].innerText && squares[7].innerText !== ''){
       console.log(' Case4 win')
@@ -65,6 +66,8 @@ function GamePage() {
     }
     else if(squares[2].innerText === squares[4].innerText && squares[4].innerText === squares[6].innerText && squares[6].innerText !== ''){
       console.log(' Case8 win')
+      document.getElementById('line8Dec').style.display = 'block'
+
     }
     else{console.log('No one won')}
   } 
@@ -109,7 +112,10 @@ function GamePage() {
             <hr id='line4' />
             <hr id='line5' />
             <tbody>
-                  <hr id='line7' />
+              <span id='line7Dec'><hr id='line7' /></span>
+              <span id='line8Dec'><hr id='line8' /></span>
+
+                  
               <tr className='tableRow'>
                 <td className='tableData'>
                   <span className='writeHere' onClick={add}></span>
