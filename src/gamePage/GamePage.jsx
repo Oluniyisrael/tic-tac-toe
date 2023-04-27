@@ -13,6 +13,9 @@ function GamePage() {
 
   const [count,setCount] = useState(0)
   const [choice,setChoice]= useState(0)
+  function callWinner(squareNumber) {
+      console.log(document.getElementsByClassName('tableData')[squareNumber].innerText)    
+  }
   function declearWin() {
 
     var squares = document.getElementsByClassName('tableData');
@@ -34,8 +37,9 @@ function GamePage() {
         ){
       // console.log(' we have a winner')
       console.log(' Case1 win');
-      document.getElementById('line').style.display = 'block'
-      
+      document.getElementById('line').style.display = 'block';
+      callWinner(0)
+      // so what i am to do now is to create a score board, find which winning cases bring out the possible variables and set scores coressponing to the variable outcome
     }
     else if(squares[0].innerText === squares[3].innerText && squares[3].innerText === squares[6].innerText && squares[6].innerText !== ''){
       console.log(' Case2 win')
