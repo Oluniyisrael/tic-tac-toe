@@ -1,28 +1,36 @@
 import React from 'react'
-import './GamePage.css'
+import './XandO.css'
 import {useState } from 'react';
 
 
-function GamePage() {
+function XandO(props) {
   var writings = 
   [
     ['X','O','X','O','X','O','X','O','X'],
     ['O','X','O','X','O','X','O','X','O']
   ]  
 
-  const [count,setCount] = useState(0)
   const [choice,setChoice]= useState(0)
-  function callWinner(squareNumber) {
-      console.log(document.getElementsByClassName('tableData')[squareNumber].innerText)    
-  }
+  const [count,setCount] = useState(0)
   function declearWin() {
 
     var squares = document.getElementsByClassName('tableData');
+
+    function awardScrore(n){
+      if(squares[n].innerText === 'X'){
+        props.setXScore(props.xScore + 1)
+      }
+      else if (squares[n].innerText === ''){
+        props.setOScore(props.OScore + 1)
+      }
+    }
+
+
     if(squares[0].innerText === squares[1].innerText && squares[1].innerText === squares[2].innerText && squares[2].innerText !== '' 
         ){
       console.log(' Case1 win');
       document.getElementById('line').style.display = 'block';
-      callWinner(0)
+      awardScrore(0)
       // so what i am to do now is to create a score board, find which winning cases bring out the possible variables and set scores coressponing to the variable outcome
     }
     else if(squares[0].innerText === squares[3].innerText && squares[3].innerText === squares[6].innerText && squares[6].innerText !== ''){
@@ -142,4 +150,4 @@ function GamePage() {
   )
 }
 
-export default GamePage
+export default XandO

@@ -1,19 +1,28 @@
 import React,{useState} from 'react'
-import './NavBar.css'
+import './GamePage.css'
 import logo from '../../assets/Israel Tic Tac Toe.png'
+import XandO from '../../gamePage/XandO'
 
-function NavBar() {
+function GamePage() {
     var showScore = true
     const [xScore, setXScore]= useState([0])
     const [oScore, setOScore]= useState([0])
   return (
-    <nav id='gameNav'>
+    <div>
+       <nav id='gameNav'>
         <div>
             <img src={logo} alt="logo" id='logo'/>
         </div>
         {showScore && <div id='scoreBoard'> <span id='x'>X</span> : {xScore}   <span id='o'>O</span>: {oScore}</div>}
     </nav>
-    )
+        <XandO 
+        setOScore ={setOScore}
+        oScore ={oScore}
+        setXScore = {setXScore}
+        xScore ={xScore}/>
+    </div>
+    )  
+   
 }
 
-export default NavBar
+export default GamePage
