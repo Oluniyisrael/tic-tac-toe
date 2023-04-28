@@ -1,0 +1,27 @@
+#gameNav{
+    width: 100%;
+    position: absolute;
+    height: 40px;
+    background-color: purple;
+    display: flex;
+    justify-content: center;
+    color: rgb(137, 122, 122);
+    /* background: url(/src/assets/Israel\ Tic\ Tac\ Toe.png) no-repeat ; */
+    background-size: 100% 100% ;
+}
+#logo{
+    height: 40px;
+}
+
+#scoreBoard {
+    position: absolute;
+    right: 0;
+    padding: 3px 20px;
+    font-size: 23px;
+}
+#x{
+    color: red;
+}
+#o{
+    color: blue;
+}
