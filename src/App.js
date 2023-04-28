@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/navBar/GamePage';
+import GamePage from './components/gamePage/GamePage';
+// import NavBar from './components/navBar/GamePage';
 // import GamePage from './gamePage/GamePage';
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
         </a>
       </header> */}
       <div>
-        <NavBar/>
+        {/* <NavBar/> */}
+        <GamePage/>
         {/* <GamePage/> */}
       </div>
     </div>

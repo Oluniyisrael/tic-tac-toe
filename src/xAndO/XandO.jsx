@@ -1,102 +1,106 @@
 import React from 'react'
 import './XandO.css'
-import {useState } from 'react';
+import {useState,useEffect } from 'react';
 
 
 function XandO(props) {
-  var writings = 
-  [
-    ['X','O','X','O','X','O','X','O','X'],
-    ['O','X','O','X','O','X','O','X','O']
-  ]  
-
   const [choice,setChoice]= useState(0)
   const [count,setCount] = useState(0)
+  var writings = 
+[
+['X','O','X','O','X','O','X','O','X'],
+['O','X','O','X','O','X','O','X','O']
+
+] 
+function addX() {
+  props.addX()
+} 
+       useEffect(() => {
+
   function declearWin() {
 
     var squares = document.getElementsByClassName('tableData');
-
-    function awardScrore(n){
-      if(squares[n].innerText === 'X'){
-        props.setXScore(props.xScore + 1)
-      }
-      else if (squares[n].innerText === ''){
-        props.setOScore(props.OScore + 1)
-      }
-    }
-
 
     if(squares[0].innerText === squares[1].innerText && squares[1].innerText === squares[2].innerText && squares[2].innerText !== '' 
         ){
       console.log(' Case1 win');
       document.getElementById('line').style.display = 'block';
-      awardScrore(0)
+      if (squares[2].innerText === 'X') {
+        console.log('Xwins')
+        addX()
+      }
+      else{console.log('O wins')}
+
       // so what i am to do now is to create a score board, find which winning cases bring out the possible variables and set scores coressponing to the variable outcome
     }
     else if(squares[0].innerText === squares[3].innerText && squares[3].innerText === squares[6].innerText && squares[6].innerText !== ''){
       console.log(' Case2 win')
       document.getElementById('line2').style.display = 'block'
-        return true
+
     }
     else if(squares[0].innerText === squares[4].innerText && squares[4].innerText === squares[8].innerText && squares[8].innerText !== ''){
       console.log(' Case3 win')
       document.getElementById('line7Dec').style.display = 'block'
-      return true
+
     }
     else if(squares[1].innerText === squares[4].innerText && squares[4].innerText === squares[7].innerText && squares[7].innerText !== ''){
       console.log(' Case4 win')
       document.getElementById('line4').style.display = 'block'
-      return true
+      
     }
     else if(squares[2].innerText === squares[5].innerText && squares[5].innerText === squares[8].innerText && squares[8].innerText !== ''){
       console.log(' Case5 win')
       document.getElementById('line5').style.display = 'block'
-      return true
+      
     }
     else if(squares[3].innerText === squares[4].innerText && squares[4].innerText === squares[5].innerText && squares[5].innerText !== ''){
       console.log(' Case6 win')
       document.getElementById('line3').style.display = 'block'
-      return true
+      
     }
     else if(squares[6].innerText === squares[7].innerText && squares[7].innerText === squares[8].innerText && squares[8].innerText !== ''){
       console.log(' Case7 win')
       document.getElementById('line6').style.display = 'block'
-      return true
+      
     }
     else if(squares[2].innerText === squares[4].innerText && squares[4].innerText === squares[6].innerText && squares[6].innerText !== ''){
       console.log(' Case8 win')
       document.getElementById('line8Dec').style.display = 'block'
-      return true
+      
     }
     else{console.log('No one won')
-  return false}
+  }
   } 
   if (count >= 5 ){
     declearWin()
-  }      
-  function add(e){
-        setCount(count + 1);
-        if(count === 8){
-          setChoice(choice + 1)
-          if(choice === 2){
-            setChoice(choice - 2)
-          }
+  } 
+
+})
+function add(e){
+      setCount(count + 1);
+      if(count === 8){
+        setChoice(choice + 1)
+        if(choice === 2){
+          setChoice(choice - 2)
         }
- 
-        e.target.className='changeNode'
-        e.target.parentNode.innerText = writings[choice][count]
-        for (let i = 0; i < 9; i++) {
-          var squares =document.getElementsByClassName('tableData')[i]
-                if (squares.innerText === 'X'){
-                    squares.style.color= "red"
-                }
-                else{squares.style.color="blue"}
-        }
-        console.log(count)
       }
+
+      e.target.className='changeNode'
+      e.target.parentNode.innerText = writings[choice][count]
+      for (let i = 0; i < 9; i++) {
+        var squares =document.getElementsByClassName('tableData')[i]
+              if (squares.innerText === 'X'){
+                  squares.style.color= "red"
+              }
+              else{squares.style.color="blue"}
+      }
+      console.log(count)
+    }
+       
   
   return (
     <div className='table'>
+      <button onClick={props.addX}>dswewew</button>
         <div className='tableCont'>
             <table className='XO'>
             <hr id='line' />
