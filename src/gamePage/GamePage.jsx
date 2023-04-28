@@ -100,7 +100,13 @@ function GamePage() {
         // }
         e.target.className='changeNode'
         e.target.parentNode.innerText = writings[choice][count]
-
+        for (let i = 0; i < 9; i++) {
+          var squares =document.getElementsByClassName('tableData')[i]
+                if (squares.innerText === 'X'){
+                    squares.style.color= "red"
+                }
+                else{squares.style.color="blue"}
+        }
         console.log(count)
       }
   
