@@ -1,5 +1,5 @@
 import React
-// ,{useState}
+,{useState}
  from 'react'
 import './GamePage.css'
 import logo from '../../assets/Israel Tic Tac Toe.png'
@@ -7,11 +7,11 @@ import XandO from '../../xAndO/XandO.jsx'
 
 function GamePage() {
     // var showScore = false
-    // const [xScore, setXScore]= useState(0)
+    const [xScore, setXScore]= useState(0)
     // const [oScore, setOScore]= useState(0)
-    // function addXScore(){
-    //     setXScore(xScore + 1)
-    // }
+    function addXScore(){
+        setXScore(xScore + 1)
+    }
 //     function addOScore(){
 //         setOScore(oScore + 1)
 //     }
@@ -24,7 +24,7 @@ function GamePage() {
         {/* {showScore && <div id='scoreBoard'> <span id='x'>X</span> : {xScore}   <span id='o'>O</span>: {oScore} </div>} */}
     </nav>
         <XandO 
-        // addX = {addXScore} 
+        addX = {addXScore} 
         // addO ={addOScore}
         />
         
