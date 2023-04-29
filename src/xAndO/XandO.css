@@ -50,7 +50,7 @@
     border-radius: 10px;
     position: absolute;
     background-color: rebeccapurple;
-    animation: growSlowly1 1s;
+    animation: growSlowly 1s;
     display: none;
 }
 #line2 {
@@ -74,7 +74,7 @@
     border-radius: 10px;
     position: absolute;
     background-color: rebeccapurple;
-    animation: growSlowly1 1s;
+    animation: growSlowly 1s;
     /* transform: rotate(45deg); */
     display: none;
 }
@@ -110,7 +110,7 @@
     border-radius: 10px;
     position: absolute;
     background-color: rebeccapurple;
-    animation: growSlowly1 1s;
+    animation: growSlowly 1s;
     /* transform: rotate(45deg); */
     display: none;
 }
@@ -153,4 +153,7 @@
 @keyframes growSlowly2 {
     from{height: 0px;}
     to{height: 516px;}
+}@keyframes growSlowly {
+    from{width: 0px;}
+    to{width:516px;}
 }

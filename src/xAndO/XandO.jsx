@@ -1,22 +1,35 @@
 import React from 'react'
 import './XandO.css'
-import {useState,useEffect } from 'react';
+import {useState,
+  // useEffect
+ } from 'react';
 
 
-function XandO(props) {
+function XandO() {
+  var writings = 
+  [
+    ['X','O','X','O','X','O','X','O','X'],
+    ['O','X','O','X','O','X','O','X','O']
+  ]  
   const [choice,setChoice]= useState(0)
   const [count,setCount] = useState(0)
-  var writings = 
-[
-['X','O','X','O','X','O','X','O','X'],
-['O','X','O','X','O','X','O','X','O']
-
-] 
-function addX() {
-  props.addX()
-} 
-       useEffect(() => {
-
+  // var letXadd = false
+  // var letOadd = false
+  // useEffect(() => {
+  
+  function gameReset(){
+    // var squares = document.getElementsByClassName('tableData');
+    // var lines = document.querySelectorAll('hr');
+    // var writeHere = document.getElementsByClassName('changeNode');
+    setTimeout(() => {
+      //   for (let i = 0; i < 9; i++) {
+      //   squares[i].innerText = '';
+      //   lines[i].style.display = 'none';
+      //   writeHere[i].classList = 'writeHere'
+      // }
+      window.document.location.reload()
+      }, 1500);
+  }
   function declearWin() {
 
     var squares = document.getElementsByClassName('tableData');
@@ -25,82 +38,83 @@ function addX() {
         ){
       console.log(' Case1 win');
       document.getElementById('line').style.display = 'block';
-      if (squares[2].innerText === 'X') {
-        console.log('Xwins')
-        addX()
-      }
-      else{console.log('O wins')}
+      gameReset()
+      // if (squares[0].innerText === 'X') {
+      //   // console.log('Xwins')
+      //   // letXadd = true;
+      //   console.log(letXadd)
+      //   return;
+      // }
+      // else{console.log('O wins')}
 
       // so what i am to do now is to create a score board, find which winning cases bring out the possible variables and set scores coressponing to the variable outcome
     }
     else if(squares[0].innerText === squares[3].innerText && squares[3].innerText === squares[6].innerText && squares[6].innerText !== ''){
       console.log(' Case2 win')
       document.getElementById('line2').style.display = 'block'
-
+      gameReset()
     }
     else if(squares[0].innerText === squares[4].innerText && squares[4].innerText === squares[8].innerText && squares[8].innerText !== ''){
       console.log(' Case3 win')
       document.getElementById('line7Dec').style.display = 'block'
-
+      gameReset()
     }
     else if(squares[1].innerText === squares[4].innerText && squares[4].innerText === squares[7].innerText && squares[7].innerText !== ''){
       console.log(' Case4 win')
       document.getElementById('line4').style.display = 'block'
-      
+      gameReset()
     }
     else if(squares[2].innerText === squares[5].innerText && squares[5].innerText === squares[8].innerText && squares[8].innerText !== ''){
       console.log(' Case5 win')
       document.getElementById('line5').style.display = 'block'
-      
+      gameReset()
     }
     else if(squares[3].innerText === squares[4].innerText && squares[4].innerText === squares[5].innerText && squares[5].innerText !== ''){
       console.log(' Case6 win')
       document.getElementById('line3').style.display = 'block'
-      
+      gameReset()
     }
     else if(squares[6].innerText === squares[7].innerText && squares[7].innerText === squares[8].innerText && squares[8].innerText !== ''){
       console.log(' Case7 win')
       document.getElementById('line6').style.display = 'block'
-      
+      gameReset()
     }
     else if(squares[2].innerText === squares[4].innerText && squares[4].innerText === squares[6].innerText && squares[6].innerText !== ''){
       console.log(' Case8 win')
       document.getElementById('line8Dec').style.display = 'block'
-      
+      gameReset()
     }
     else{console.log('No one won')
+    gameReset()
   }
   } 
   if (count >= 5 ){
     declearWin()
-  } 
-
-})
-function add(e){
-      setCount(count + 1);
-      if(count === 8){
-        setChoice(choice + 1)
-        if(choice === 2){
-          setChoice(choice - 2)
+  }  
+// }, [count])    
+  function add(e){
+        setCount(count + 1);
+        if(count === 8){
+          setChoice(choice + 1)
+          if(choice === 2){
+            setChoice(choice - 2)
+          }
         }
-      }
+ 
+        e.target.className='changeNode'
+        e.target.parentNode.innerText = writings[choice][count]
+        for (let i = 0; i < 9; i++) {
+          var squares = document.getElementsByClassName('tableData')[i]
+                if (squares.innerText === 'X'){
+                    squares.style.color= "red"
+                }
+                else{squares.style.color="blue"}
+        }
+        console.log(count)      }
 
-      e.target.className='changeNode'
-      e.target.parentNode.innerText = writings[choice][count]
-      for (let i = 0; i < 9; i++) {
-        var squares =document.getElementsByClassName('tableData')[i]
-              if (squares.innerText === 'X'){
-                  squares.style.color= "red"
-              }
-              else{squares.style.color="blue"}
-      }
-      console.log(count)
-    }
-       
-  
   return (
     <div className='table'>
-      <button onClick={props.addX}>dswewew</button>
+      {/* <button onClick={props.addX}>dswewew</button> */}
         <div className='tableCont'>
             <table className='XO'>
             <hr id='line' />
