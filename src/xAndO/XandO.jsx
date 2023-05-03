@@ -35,9 +35,8 @@ function XandO(props) {
  
         e.target.className='changeNode'
         //writing code
-          e.target.parentNode.append(writings[choice][count]) 
-  
-        
+          e.target.parentNode.append(writings[choice][count])
+          // console.log(document.getElementsByClassName('tableData')[0])
         for (let i = 0; i < 9; i++) {
           var squares = document.getElementsByClassName('tableData')[i]
                 if (squares.innerText === 'X'){
@@ -66,7 +65,6 @@ function XandO(props) {
                   
               <tr className='tableRow'>
                 <td className='tableData'>
-                  
                   <span className='writeHere' onClick={add}></span>
                 </td>
                 <td className='tableData'>
