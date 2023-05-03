@@ -1,9 +1,6 @@
-import GameReset from "../gameReset/GameReset";
-
 function DeclearWin(props) {
-
         var squares = document.getElementsByClassName('tableData');
-    
+        var refresh = ()=>{props.refresh()}
         if(squares[0].innerText === squares[1].innerText && squares[1].innerText === squares[2].innerText && squares[2].innerText !== '' 
             ){
           console.log(' Case1 win');
@@ -11,15 +8,16 @@ function DeclearWin(props) {
           if (squares[2].innerText === 'X') {
             props.addX()          }
           else{props.addO()}
-          GameReset()
+          refresh()
           // so what i am to do now is to create a score board, find which winning cases bring out the possible variables and set scores coressponing to the variable outcome
         }
         else if(squares[0].innerText === squares[3].innerText && squares[3].innerText === squares[6].innerText && squares[6].innerText !== ''){
           console.log(' Case2 win')
           document.getElementById('line2').style.display = 'block'
           if (squares[6].innerText === 'X') {
-            props.addX()          }
+            props.addX()   }
           else{props.addO()}
+          refresh()
         }
         else if(squares[0].innerText === squares[4].innerText && squares[4].innerText === squares[8].innerText && squares[8].innerText !== ''){
           console.log(' Case3 win')
@@ -27,6 +25,7 @@ function DeclearWin(props) {
           if (squares[8].innerText === 'X') {
             props.addX()          }
           else{props.addO()}
+          refresh()
         }
         else if(squares[1].innerText === squares[4].innerText && squares[4].innerText === squares[7].innerText && squares[7].innerText !== ''){
           console.log(' Case4 win')
@@ -34,6 +33,7 @@ function DeclearWin(props) {
           if (squares[7].innerText === 'X') {
             props.addX()          }
           else{props.addO()}
+          refresh()
         }
         else if(squares[2].innerText === squares[5].innerText && squares[5].innerText === squares[8].innerText && squares[8].innerText !== ''){
           console.log(' Case5 win')
@@ -41,6 +41,7 @@ function DeclearWin(props) {
           if (squares[8].innerText === 'X') {
             props.addX()          }
           else{props.addO()}
+          refresh()
         }
         else if(squares[3].innerText === squares[4].innerText && squares[4].innerText === squares[5].innerText && squares[5].innerText !== ''){
           console.log(' Case6 win')
@@ -48,6 +49,7 @@ function DeclearWin(props) {
           if (squares[5].innerText === 'X') {
             props.addX()          }
           else{props.addO()}
+          refresh()
         }
         else if(squares[6].innerText === squares[7].innerText && squares[7].innerText === squares[8].innerText && squares[8].innerText !== ''){
           console.log(' Case7 win')
@@ -55,6 +57,7 @@ function DeclearWin(props) {
           if (squares[8].innerText === 'X') {
             props.addX()          }
           else{props.addO()}
+          refresh()
         }
         else if(squares[2].innerText === squares[4].innerText && squares[4].innerText === squares[6].innerText && squares[6].innerText !== ''){
           console.log(' Case8 win')
@@ -62,9 +65,11 @@ function DeclearWin(props) {
           if (squares[6].innerText === 'X') {
             props.addX()          }
           else{props.addO()}
+          refresh()
         }
         else{console.log('No one won')
         return true
+        refresh()
     }
     // GameReset()
       }   
