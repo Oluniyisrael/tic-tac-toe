@@ -24,6 +24,7 @@ function GamePage() {
             setGameStatus(true)
         }, 2050);
     }
+
   return (
     <div>
        <nav id='gameNav'>
@@ -42,5 +43,4 @@ function GamePage() {
     ) 
    
 }
-
 export default GamePage

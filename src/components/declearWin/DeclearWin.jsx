@@ -68,8 +68,8 @@ function DeclearWin(props) {
           refresh()
         }
         else{console.log('No one won')
-        return true
         refresh()
+        return true
     }
     // GameReset()
       }   
