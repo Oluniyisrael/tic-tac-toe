@@ -35,9 +35,8 @@ function XandO(props) {
  
         e.target.className='changeNode'
         //writing code
-          e.target.parentNode.childNodes[0].nodeValue = writings[choice][count]
-        // console.log(e.target.childNodes[0].nodeValue)
-        // e.target.parentNode.innerText = writings[choice][count]
+          e.target.parentNode.append(writings[choice][count]) 
+  
         
         for (let i = 0; i < 9; i++) {
           var squares = document.getElementsByClassName('tableData')[i]
@@ -67,36 +66,45 @@ function XandO(props) {
                   
               <tr className='tableRow'>
                 <td className='tableData'>
+                  
                   <span className='writeHere' onClick={add}></span>
                 </td>
                 <td className='tableData'>
+                  
                   <span className='writeHere' onClick={add}></span>
                 </td>
                 <td className='tableData'>
+                  
                   <span className='writeHere' onClick={add}></span>
                 </td>
               </tr>
             <hr id='line3' />
               <tr className='tableRow'>
                 <td className='tableData'>
+                  
                   <span className='writeHere' onClick={add}></span>
                 </td>
                 <td className='tableData'>
+                  
                   <span className='writeHere' onClick={add}></span>
                 </td>
                 <td className='tableData'>
+                  
                   <span className='writeHere' onClick={add}></span>
                 </td>
               </tr>
               <hr id='line6' />
               <tr className='tableRow'>
                 <td className='tableData'>
+                  
                   <span className='writeHere' onClick={add}></span>
                 </td>
                 <td className='tableData'>
+                  
                   <span className='writeHere' onClick={add}></span>
                 </td>
                 <td className='tableData'>
+                  
                   <span className='writeHere' onClick={add}></span>
                 </td>
               </tr>
