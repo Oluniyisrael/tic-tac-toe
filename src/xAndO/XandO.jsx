@@ -2,7 +2,7 @@ import React from 'react'
 import DeclearWin from '../components/declearWin/DeclearWin';
 import './XandO.css'
 import {useState,  useEffect} from 'react';
-import GameReset from '../components/gameReset/GameReset';
+// import GameReset from '../components/gameReset/GameReset';
 
 function XandO(props) {
   var writings = 
@@ -14,8 +14,10 @@ function XandO(props) {
   const [count,setCount] = useState(0) 
    
   useEffect(() => {
-    
-  }, [])  
+    if (count >= 5 ){
+      DeclearWin(props)
+    } 
+  }, [count])  
   function add(e){
         setCount(count + 1);
         if(count === 8){
@@ -34,11 +36,9 @@ function XandO(props) {
                 }
                 else{squares.style.color="blue"}
         }
-        console.log(DeclearWin === true)
+        // console.log(DeclearWin === true)
         console.log(count) }
-        if (count >= 5 ){
-          DeclearWin()
-        }  
+        
        
 
   return (

@@ -1,4 +1,4 @@
-function DeclearWin() {
+function DeclearWin(props) {
 
         var squares = document.getElementsByClassName('tableData');
     
@@ -6,12 +6,12 @@ function DeclearWin() {
             ){
           console.log(' Case1 win');
           document.getElementById('line').style.display = 'block';
-          return true;
+          props.addX()
           // props.addX()
         //   if (squares[0].innerText === 'X') {
           //   // console.log('Xwins')
-          //   // letXadd = true;
-          //return true   console.log(letXadd)
+          //   // letXadd = false;
+          //return false   console.log(letXadd)
           //   return;
         //   }
           // else{console.log('O wins')}
@@ -21,41 +21,35 @@ function DeclearWin() {
         else if(squares[0].innerText === squares[3].innerText && squares[3].innerText === squares[6].innerText && squares[6].innerText !== ''){
           console.log(' Case2 win')
           document.getElementById('line2').style.display = 'block'
-          return true
         }
         else if(squares[0].innerText === squares[4].innerText && squares[4].innerText === squares[8].innerText && squares[8].innerText !== ''){
           console.log(' Case3 win')
           document.getElementById('line7Dec').style.display = 'block'
-          return true
         }
         else if(squares[1].innerText === squares[4].innerText && squares[4].innerText === squares[7].innerText && squares[7].innerText !== ''){
           console.log(' Case4 win')
           document.getElementById('line4').style.display = 'block'
+          // console.log(DeclearWin === false)
           return true
         }
         else if(squares[2].innerText === squares[5].innerText && squares[5].innerText === squares[8].innerText && squares[8].innerText !== ''){
           console.log(' Case5 win')
           document.getElementById('line5').style.display = 'block'
-          return true
         }
         else if(squares[3].innerText === squares[4].innerText && squares[4].innerText === squares[5].innerText && squares[5].innerText !== ''){
           console.log(' Case6 win')
           document.getElementById('line3').style.display = 'block'
-          return true
         }
         else if(squares[6].innerText === squares[7].innerText && squares[7].innerText === squares[8].innerText && squares[8].innerText !== ''){
           console.log(' Case7 win')
           document.getElementById('line6').style.display = 'block'
-          return true
         }
         else if(squares[2].innerText === squares[4].innerText && squares[4].innerText === squares[6].innerText && squares[6].innerText !== ''){
           console.log(' Case8 win')
           document.getElementById('line8Dec').style.display = 'block'
-          return true
         }
         else{console.log('No one won')
-        return false
-        
+        return true
     }
     // GameReset()
       }   
