@@ -10,6 +10,7 @@ function DeclearWin(props) {
           else{props.addO()}
           refresh()
           // so what i am to do now is to create a score board, find which winning cases bring out the possible variables and set scores coressponing to the variable outcome
+          //done 
         }
         else if(squares[0].innerText === squares[3].innerText && squares[3].innerText === squares[6].innerText && squares[6].innerText !== ''){
           console.log(' Case2 win')
@@ -68,10 +69,8 @@ function DeclearWin(props) {
           refresh()
         }
         else{console.log('No one won')
-        // refresh()
         return true
     }
-    // GameReset()
       }   
 
 export default DeclearWin

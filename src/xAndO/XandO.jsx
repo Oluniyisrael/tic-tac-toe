@@ -11,8 +11,11 @@ function XandO(props) {
   ]  
   const [choice,setChoice]= useState(0)
   const [count,setCount] = useState(0) 
+  // const addChoice
   if(count === 8){
-    props.refresh()
+    setTimeout(() => {
+      props.refresh()
+    }, 300);
   }
   useEffect(() => {
     if (count >= 5 ){
@@ -21,17 +24,11 @@ function XandO(props) {
   }, [count])  
   function add(e){
         setCount(count + 1);
-        if(count === 8){
-          setChoice(choice + 1)
-          if(choice === 2){
-            setChoice(choice - 2)
-          }
-        }
+        
  
         e.target.className='changeNode'
         //writing code
           e.target.parentNode.append(writings[choice][count])
-          // console.log(document.getElementsByClassName('tableData')[0])
         for (let i = 0; i < 9; i++) {
           var squares = document.getElementsByClassName('tableData')[i]
                 if (squares.innerText === 'X'){
@@ -39,14 +36,12 @@ function XandO(props) {
                 }
                 else{squares.style.color="blue"}
         }
-        // console.log(DeclearWin === true)
         console.log(count) }
         
        
 
   return (
     <div className='table'>
-      {/* <button onClick={props.addX}>dswewew</button> */}
         <div className='tableCont'>
             <table className='XO'>
             <hr id='line' />

@@ -1,5 +1,4 @@
-import React
-,{useState}
+import React,{useState}
  from 'react'
 import './GamePage.css'
 import logo from '../../assets/Israel Tic Tac Toe.png'
@@ -19,7 +18,7 @@ function GamePage() {
     function refreshGame (){
         setTimeout(()=>{
             setGameStatus(false)
-        }, 2030)
+        }, 2045)
         setTimeout(() => {
             setGameStatus(true)
         }, 2050);
