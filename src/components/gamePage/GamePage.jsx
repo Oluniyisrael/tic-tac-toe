@@ -25,7 +25,7 @@ function GamePage() {
     </nav>
         <XandO 
         addX = {addXScore} 
-        // addO ={addOScore}
+        addO ={addOScore}
         /> 
         
     </div>
