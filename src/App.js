@@ -1,23 +1,26 @@
 // import logo from './logo.svg';
 import { useState } from 'react';
 import './App.css';
-// import GamePage from './components/gamePage/GamePage';
+import GamePage from './components/gamePage/GamePage';
 // import NavBar from './components/navBar/GamePage';
 // import GamePage from './gamePage/GamePage';
 
 function App() {
-  const [array, setArray] =
-   useState([['X','O','X'],
-              ['O','X','O'],
-              ['X','O','X']
-            ])
+//   const [array, setArray] =
+//    useState([['X','O','X'],
+//               ['O','X','O'],
+//               ['X','O','X']
+//             ])
 // var gameReset = ()=>{
-//   setArray(prevValues => prevValues = '')
+//   setArray(prevValues => prevValues =
+//   ['','',''],
+//   ['','',''],
+//   ['','',''] )
 // }
   return (
     <div className="App">
       <div>
-        <table>
+        {/* <table>
         <tr>
             <td>{array[0][0]}</td>
             <td>{array[0][1]}</td>
@@ -31,8 +34,9 @@ function App() {
             <td>{array[2][1]}</td>
             <td>{array[2][2]}</td>
           </tr>
-        </table>
-        {/* <button onClick={gameReset()}></button> */}
+        </table> */}
+        <GamePage/>
+        {/* <button onClick={gameReset}> indajsndeojew</button> */}
       </div>
     </div>
   );

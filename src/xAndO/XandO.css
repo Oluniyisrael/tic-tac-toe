@@ -36,12 +36,8 @@
     border: 1px solid black;
 }
 .changeNode{
-    /* background-color: black;
-    border: 1px solid black;
-    width: 30px;
-    height: 30px; */
-    /* transition: 400ms; */
-    display: none;
+    /* z-index: -999; */
+    display: block;
 }
 
 #line {

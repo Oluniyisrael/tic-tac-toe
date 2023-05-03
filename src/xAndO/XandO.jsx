@@ -12,7 +12,12 @@ function XandO(props) {
   ]  
   const [choice,setChoice]= useState(0)
   const [count,setCount] = useState(0) 
-  
+  // const [cell, setCell] =
+  //  useState([
+  //   ['','',''],
+  //   ['','',''],
+  //   ['','',''] 
+  //   ]) 
    
   useEffect(() => {
     if (count >= 5 ){
@@ -29,7 +34,11 @@ function XandO(props) {
         }
  
         e.target.className='changeNode'
-        e.target.parentNode.innerText = writings[choice][count]
+        //writing code
+          e.target.parentNode.childNodes[0].nodeValue = writings[choice][count]
+        // console.log(e.target.childNodes[0].nodeValue)
+        // e.target.parentNode.innerText = writings[choice][count]
+        
         for (let i = 0; i < 9; i++) {
           var squares = document.getElementsByClassName('tableData')[i]
                 if (squares.innerText === 'X'){

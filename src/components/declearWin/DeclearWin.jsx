@@ -1,3 +1,5 @@
+import GameReset from "../gameReset/GameReset";
+
 function DeclearWin(props) {
 
         var squares = document.getElementsByClassName('tableData');
@@ -9,6 +11,7 @@ function DeclearWin(props) {
           if (squares[2].innerText === 'X') {
             props.addX()          }
           else{props.addO()}
+          // GameReset()
           // so what i am to do now is to create a score board, find which winning cases bring out the possible variables and set scores coressponing to the variable outcome
         }
         else if(squares[0].innerText === squares[3].innerText && squares[3].innerText === squares[6].innerText && squares[6].innerText !== ''){
