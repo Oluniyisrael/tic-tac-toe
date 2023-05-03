@@ -24,14 +24,20 @@ function GamePage() {
             setGameStatus(true)
         }, 2050);
     }
-
+    if(xScore > 0 ){
+        document.getElementById('xScore').style.color = 'white'
+    }
+    if(oScore > 0 ){
+        document.getElementById('oScore').style.color = 'white'
+    }
   return (
     <div>
        <nav id='gameNav'>
         <div>
             <img src={logo} alt="logo" id='logo'/>
         </div>
-        {showScore && <div id='scoreBoard'> <span id='x'>X</span> : {xScore}   <span id='o'>O</span>: {oScore} </div>}
+        {showScore && <div id='scoreBoard'> <span id='x'>X</span> : <span id='xScore'>{xScore}</span>   <span id='o'>O</span> <span id='oScore'>{oScore}</span>   </div>}
+
     </nav>
     {gameStatus && <XandO 
         addX = {addXScore} 
