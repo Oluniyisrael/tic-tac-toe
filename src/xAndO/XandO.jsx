@@ -22,7 +22,7 @@ function XandO(props) {
     if (count > 4 ){
       DeclearWin(props)
     } 
-  }, [count,props])  
+  }, [count])  
   
   function add(e){
         setCount(count + 1);
