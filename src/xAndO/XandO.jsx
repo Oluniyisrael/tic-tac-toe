@@ -9,7 +9,7 @@ function XandO(props) {
     ['X','O','X','O','X','O','X','O','X'],
     ['O','X','O','X','O','X','O','X','O']
   ]  
-  const [choice,setChoice]= useState(0)
+  const [choice]= useState(0)
   const [count,setCount] = useState(0) 
   // const addChoice
   if(count === 8){
