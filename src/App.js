@@ -1,9 +1,5 @@
-// import logo from './logo.svg';
-import { useState } from 'react';
 import './App.css';
 import GamePage from './components/gamePage/GamePage';
-// import NavBar from './components/navBar/GamePage';
-// import GamePage from './gamePage/GamePage';
 
 function App() {
 

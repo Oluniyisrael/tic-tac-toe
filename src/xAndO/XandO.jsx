@@ -18,10 +18,11 @@ function XandO(props) {
     }, 300);
   }
   useEffect(() => {
-    if (count >= 5 ){
+    if (count > 4 ){
       DeclearWin(props)
     } 
   }, [count])  
+  
   function add(e){
         setCount(count + 1);
         

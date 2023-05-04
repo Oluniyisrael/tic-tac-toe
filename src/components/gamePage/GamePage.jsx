@@ -10,7 +10,7 @@ function GamePage() {
     const [xScore, setXScore]= useState(0)
     const [oScore, setOScore]= useState(0)
     function addXScore(){
-        setXScore(xScore + 1)
+        setXScore(xScore => xScore + 1)
     }
     function addOScore(){
         setOScore(oScore + 1)
