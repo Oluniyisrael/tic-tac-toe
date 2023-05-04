@@ -1,7 +1,7 @@
 import React from 'react'
 import DeclearWin from '../components/declearWin/DeclearWin';
 import './XandO.css'
-import {useState,  useEffect} from 'react';
+import {useState,  useEffect, useRef} from 'react';
 
 function XandO(props) {
   var writings = 
@@ -9,6 +9,7 @@ function XandO(props) {
     ['X','O','X','O','X','O','X','O','X'],
     ['O','X','O','X','O','X','O','X','O']
   ]  
+  const {current: Props} =  useRef(props)
   const [choice]= useState(0)
   const [count,setCount] = useState(0) 
   // const addChoice
@@ -18,11 +19,10 @@ function XandO(props) {
     }, 300);
   }
   useEffect(() => {
-    
     if (count > 4 ){
-      DeclearWin(props)
+      DeclearWin(Props)
     } 
-  }, [count])  
+  },[count,Props])  
   
   function add(e){
         setCount(count + 1);
