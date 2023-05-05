@@ -15,13 +15,17 @@ function GamePage() {
     function addOScore(){
         setOScore(oScore + 1)
     }
+    function resetGame() {
+        setGameStatus(false)
+        setGameStatus(true)
+    }
     function refreshGame (){
         setTimeout(()=>{
             setGameStatus(false)
-        }, 2045)
+        }, 2000)
         setTimeout(() => {
             setGameStatus(true)
-        }, 2050);
+        }, 2100);
     }
     if(xScore > 0 ){
         document.getElementById('xScore').style.color = 'white'
@@ -43,6 +47,7 @@ function GamePage() {
         addX = {addXScore} 
         addO ={addOScore}
         refresh = {refreshGame}
+        reset = {resetGame}
         /> }
         
     </div>
