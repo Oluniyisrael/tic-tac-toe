@@ -19,7 +19,7 @@ function XandO(props) {
     }, 300);
   }
   useEffect(() => {
-    if (count > 4 ){
+    if (count >= 4 ){
       DeclearWin(Props)
     } 
   },[count,Props])  
