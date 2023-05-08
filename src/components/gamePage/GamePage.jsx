@@ -1,6 +1,7 @@
 import React,{useState}
  from 'react'
 import './GamePage.css'
+// import Footer from 'https://github.com/Oluniyisrael/reactportfolio/tree/master/src/assets/components/portfolioFooter/Footer.jsx'
 import logo from '../../assets/Israel Tic Tac Toe.png'
 import XandO from '../../xAndO/XandO.jsx'
 
@@ -49,7 +50,7 @@ function GamePage() {
         refresh = {refreshGame}
         reset = {resetGame}
         /> }
-        
+        {/* <Footer/> */}
     </div>
     ) 
    

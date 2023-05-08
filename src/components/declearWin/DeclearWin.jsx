@@ -1,16 +1,14 @@
+import AwardWin from "../awardWin/AwardWin";
+
 function DeclearWin(props) {
-        var squares = document.getElementsByClassName('tableData');
-        var refresh = ()=>{props.refresh()}
+        const squares = document.getElementsByClassName('tableData');
         if(squares[0].innerText === squares[1].innerText && squares[1].innerText === squares[2].innerText && squares[2].innerText !== '' 
             ){
           console.log(' Case1 win');
-          document.getElementById('line').style.display = 'block';
-          if (squares[2].innerText === 'X') {
-            props.addX()          }
-          else{props.addO()}
-          refresh()
+          AwardWin(2,props)
           // so what i am to do now is to create a score board, find which winning cases bring out the possible variables and set scores coressponing to the variable outcome
           //done 
+          //Recomponet-sizing function
         }
         else if(squares[0].innerText === squares[3].innerText && squares[3].innerText === squares[6].innerText && squares[6].innerText !== ''){
           console.log(' Case2 win')
@@ -18,7 +16,7 @@ function DeclearWin(props) {
           if (squares[6].innerText === 'X') {
             props.addX()   }
           else{props.addO()}
-          refresh()
+          // refresh()
         }
         else if(squares[0].innerText === squares[4].innerText && squares[4].innerText === squares[8].innerText && squares[8].innerText !== ''){
           console.log(' Case3 win')
@@ -26,7 +24,7 @@ function DeclearWin(props) {
           if (squares[8].innerText === 'X') {
             props.addX()          }
           else{props.addO()}
-          refresh()
+          // refresh()
         }
         else if(squares[1].innerText === squares[4].innerText && squares[4].innerText === squares[7].innerText && squares[7].innerText !== ''){
           console.log(' Case4 win')
@@ -34,7 +32,7 @@ function DeclearWin(props) {
           if (squares[7].innerText === 'X') {
             props.addX()          }
           else{props.addO()}
-          refresh()
+          // refresh()
         }
         else if(squares[2].innerText === squares[5].innerText && squares[5].innerText === squares[8].innerText && squares[8].innerText !== ''){
           console.log(' Case5 win')
@@ -42,7 +40,7 @@ function DeclearWin(props) {
           if (squares[8].innerText === 'X') {
             props.addX()          }
           else{props.addO()}
-          refresh()
+          // refresh()
         }
         else if(squares[3].innerText === squares[4].innerText && squares[4].innerText === squares[5].innerText && squares[5].innerText !== ''){
           console.log(' Case6 win')
@@ -50,7 +48,7 @@ function DeclearWin(props) {
           if (squares[5].innerText === 'X') {
             props.addX()          }
           else{props.addO()}
-          refresh()
+          // refresh()
         }
         else if(squares[6].innerText === squares[7].innerText && squares[7].innerText === squares[8].innerText && squares[8].innerText !== ''){
           console.log(' Case7 win')
@@ -58,7 +56,7 @@ function DeclearWin(props) {
           if (squares[8].innerText === 'X') {
             props.addX()          }
           else{props.addO()}
-          refresh()
+          // refresh()
         }
         else if(squares[2].innerText === squares[4].innerText && squares[4].innerText === squares[6].innerText && squares[6].innerText !== ''){
           console.log(' Case8 win')
@@ -66,7 +64,7 @@ function DeclearWin(props) {
           if (squares[6].innerText === 'X') {
             props.addX()          }
           else{props.addO()}
-          refresh()
+          // refresh()
         }
         else{console.log('No one won')
         return true
