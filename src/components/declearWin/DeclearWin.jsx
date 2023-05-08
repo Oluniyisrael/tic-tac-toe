@@ -7,6 +7,7 @@ function DeclearWin(props) {
           console.log(' Case1 win');
           document.getElementById('line').style.display = 'block'
           AwardWin(2,props)
+          props.addChoice()
         }
         else if(squares[0].innerText === squares[3].innerText && squares[3].innerText === squares[6].innerText && squares[6].innerText !== ''){
           console.log(' Case2 win')

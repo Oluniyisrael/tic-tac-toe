@@ -6,10 +6,12 @@ import logo from '../../assets/Israel Tic Tac Toe.png'
 import XandO from '../../xAndO/XandO.jsx'
 
 function GamePage() {
+    
     var showScore = true
     const [gameStatus, setGameStatus]= useState(true)
     const [xScore, setXScore]= useState(0)
     const [oScore, setOScore]= useState(0)
+    const [choice,setChoice]= useState(0)
     function addXScore(){
         setXScore(xScore + 1)
     }
@@ -34,7 +36,13 @@ function GamePage() {
     if(oScore > 0 ){
         document.getElementById('oScore').style.color = 'white'
     }
-
+    function addChoice(){
+        setChoice(choice => choice + 1)
+        
+    }
+    if (choice === 2) {
+        setChoice(0)
+    }
   return (
     <div>
        <nav id='gameNav'>
@@ -49,6 +57,8 @@ function GamePage() {
         addO ={addOScore}
         refresh = {refreshGame}
         reset = {resetGame}
+        choice = {choice}
+        addChoice ={addChoice} 
         /> }
         {/* <Footer/> */}
     </div>

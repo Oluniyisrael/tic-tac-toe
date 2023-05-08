@@ -10,9 +10,9 @@ function XandO(props) {
     ['O','X','O','X','O','X','O','X','O']
   ]  
   const {current: Props} =  useRef(props)
-  const [choice]= useState(0)
   const [count,setCount] = useState(0) 
-  // const addChoice
+  const choice = props.choice
+  // const addChoice = props.addChoice
   if(count === 9){
     setTimeout(() => {
       props.refresh()
@@ -101,7 +101,7 @@ function XandO(props) {
             </tbody>
             </table>
             <div>
-              {/* <button onClick={props.reset}> Reset board</button> */}
+              {/* <button onClick={console.log('Choice :' + choice + ' \n Count: ' + count)}> Do something</button> */}
             </div>
         </div>
     </div>
