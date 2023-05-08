@@ -4,15 +4,9 @@
     justify-content: center;
     align-items: center;
 }
-/* .tableCont{
-    width: 30em;
-    height: 30em;
-} */
 .XO{
     border: 1px solid black;
     background: black;
-    /* width: 30em;
-    height: 30em; */
 }
 .tableRow{
     width: 100%;
@@ -36,7 +30,6 @@
     border: 1px solid black;
 }
 .changeNode{
-    /* z-index: -999; */
     display: block;
 }
 
@@ -51,7 +44,6 @@
     display: none;
 }
 #line2 {
-    /* margin-top: 5em; */
     margin-left: 75px;
     width:20px ;
     height: 516px;
@@ -59,24 +51,20 @@
     position: absolute;
     background-color: rebeccapurple;
     animation: growSlowly2 1s;
-    /* transform: rotate(90deg); */
     display: none;
 
 }
 #line3 {
     margin-top: 5em;
-    /* margin-left: 75px; */
     width: 516px;
     height: 20px;
     border-radius: 10px;
     position: absolute;
     background-color: rebeccapurple;
     animation: growSlowly 1s;
-    /* transform: rotate(45deg); */
     display: none;
 }
 #line4{
-        /* margin-top: 5em; */
         margin-left:248px;
         width:20px ;
         height: 516px;
@@ -84,11 +72,9 @@
         position: absolute;
         background-color: rebeccapurple;
         animation: growSlowly2 1s;
-        /* transform: rotate(90deg); */
         display: none;
 }
 #line5{
-    /* margin-top: 5em; */
     margin-left: 415px;
     width:20px ;
     height: 516px;
@@ -96,19 +82,16 @@
     position: absolute;
     background-color: rebeccapurple;
     animation: growSlowly2 1s;
-    /* transform: rotate(90deg); */
     display: none;
 }
 #line6 {
     margin-top: 5em;
-    /* margin-left: 75px; */
     width: 516px;
     height: 20px;
     border-radius: 10px;
     position: absolute;
     background-color: rebeccapurple;
     animation: growSlowly 1s;
-    /* transform: rotate(45deg); */
     display: none;
 }
 #line7Dec {
