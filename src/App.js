@@ -1,5 +1,5 @@
 import './App.css';
-import GamePage from './components/gamePage/GamePage';
+import GamePage from './pages/gamePage/GamePage';
 
 function App() {
 

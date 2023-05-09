@@ -37,7 +37,14 @@ function GamePage() {
         document.getElementById('oScore').style.color = 'white'
     }
     function addChoice(){
-        setChoice(choice => choice + 1)
+        setChoice(choice + 1)
+    }
+    function subChoice(){
+        // if(choice === 1) {
+            setChoice(choice=> choice -1)
+        // }
+        // else(setChoice(0)
+        // )
     }
     if (choice === 2) {
         setChoice(0)
@@ -58,6 +65,7 @@ function GamePage() {
         reset = {resetGame}
         choice = {choice}
         addChoice ={addChoice} 
+        subChoice ={subChoice}
         /> }
         {/* <Footer/> */}
     </div>
