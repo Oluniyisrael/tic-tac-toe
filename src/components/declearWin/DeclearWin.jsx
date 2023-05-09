@@ -64,7 +64,7 @@ function DeclearWin(props,setState) {
         }
         else{console.log('No one won')
     }
-    setState(false)
+          // setState(false)
       }   
 
 export default DeclearWin

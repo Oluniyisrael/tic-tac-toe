@@ -4,7 +4,7 @@ import './XandO.css'
 import {useState,  useEffect, useRef} from 'react';
 
 function XandO(props) {
-  const [tstate,setTState] = useState(true)
+  const [tstate,setTState] = useState(false)
   var writings = 
   [
     ['X','O','X','O','X','O','X','O','X',''],
@@ -14,9 +14,9 @@ function XandO(props) {
   const [count,setCount] = useState(0) 
   const choice = props.choice
   const addChoice = Props.addChoice
-  if(count === 9){
+  if(count === 9 && tstate === false){
     setTimeout(() => {
-      props.refresh()
+      Props.refresh()
     }, 300);
   }
   useEffect(() => {
@@ -48,7 +48,7 @@ function XandO(props) {
   return (
     <div className='table'>
         <div className='tableCont'>
-        <div><span>{writings[choice][count]}</span> turn count: {count} choice:{choice} declearWin Value:{tstate}</div>
+        <div><span>{writings[choice][count]}</span>'s turn</div>
             <table className='XO'>
             <hr id='line' />
             <hr id='line2' />
