@@ -26,6 +26,11 @@ function XandO(props) {
     if (count === 9 && tstate === false) {
       addChoice()
     }
+    const turn = document.getElementById('turn')
+    if(turn.innerText === 'X'){
+      turn.style.color = 'Red'
+    } 
+    else{turn.style.color ="Blue"}
   },[count,Props,addChoice,tstate])  
   
   function add(e){
@@ -43,12 +48,10 @@ function XandO(props) {
                 else{squares.style.color="blue"}
         }
         console.log(count) }
-        
-      
   return (
     <div className='table'>
         <div className='tableCont'>
-        <div><span>{writings[choice][count]}</span>'s turn</div>
+        <div><span id='turn' >{writings[choice][count]}</span>'s turn</div>
             <table className='XO'>
             <hr id='line' />
             <hr id='line2' />

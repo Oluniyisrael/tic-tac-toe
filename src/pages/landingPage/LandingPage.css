@@ -1,0 +1,21 @@
+.LandingPage{
+    height: 100vh;
+    width: 100vw;
+    background: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 100ms;
+    animation: fadeIn 4s;
+}
+#rel{
+    margin-top:-20%;
+}
+#imageLogo{
+    width: 800px;
+    height: 200px;
+}
+@keyframes fadeIn {
+    0% { opacity: 0;}
+    100% {opacity: 1;}
+}

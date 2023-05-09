@@ -32,7 +32,9 @@
 .changeNode{
     display: block;
 }
-
+#turn{
+    font-size: 20px;
+}
 #line {
     margin-top: 5em;
     width: 516px;
