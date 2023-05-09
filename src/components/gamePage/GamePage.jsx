@@ -38,7 +38,6 @@ function GamePage() {
     }
     function addChoice(){
         setChoice(choice => choice + 1)
-        
     }
     if (choice === 2) {
         setChoice(0)
@@ -49,8 +48,8 @@ function GamePage() {
         <div>
             <img src={logo} alt="logo" id='logo'/>
         </div>
-        {showScore && <div id='scoreBoard'> <span id='x'>X</span> : <span id='xScore'>{xScore}</span>   <span id='o'>O</span> <span id='oScore'>{oScore}</span>   </div>}
-
+        {showScore && <div id='scoreBoard'> <span id='x'>X</span> : <span id='xScore'>{xScore}</span>   <span id='o'>O</span>: <span id='oScore'>{oScore}</span>   </div>}
+        
     </nav>
     {gameStatus && <XandO 
         addX = {addXScore} 

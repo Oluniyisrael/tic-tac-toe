@@ -4,15 +4,16 @@ import './XandO.css'
 import {useState,  useEffect, useRef} from 'react';
 
 function XandO(props) {
+  const [tstate,setTState] = useState(true)
   var writings = 
   [
-    ['X','O','X','O','X','O','X','O','X'],
-    ['O','X','O','X','O','X','O','X','O']
+    ['X','O','X','O','X','O','X','O','X',''],
+    ['O','X','O','X','O','X','O','X','O','']
   ]  
   const {current: Props} =  useRef(props)
   const [count,setCount] = useState(0) 
   const choice = props.choice
-  // const addChoice = props.addChoice
+  const addChoice = Props.addChoice
   if(count === 9){
     setTimeout(() => {
       props.refresh()
@@ -20,9 +21,12 @@ function XandO(props) {
   }
   useEffect(() => {
     if (count >= 4 ){
-      DeclearWin(Props)
+      DeclearWin(Props,setTState)
     } 
-  },[count,Props])  
+    if (count === 9 && tstate === false) {
+      addChoice()
+    }
+  },[count,Props,addChoice,tstate])  
   
   function add(e){
         setCount(count + 1);
@@ -40,11 +44,11 @@ function XandO(props) {
         }
         console.log(count) }
         
-       
-
+      
   return (
     <div className='table'>
         <div className='tableCont'>
+        <div><span>{writings[choice][count]}</span> turn count: {count} choice:{choice} declearWin Value:{tstate}</div>
             <table className='XO'>
             <hr id='line' />
             <hr id='line2' />
