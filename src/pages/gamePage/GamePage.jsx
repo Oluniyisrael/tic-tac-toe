@@ -37,7 +37,7 @@ function GamePage() {
         document.getElementById('oScore').style.color = 'white'
     }
     function addChoice(){
-        setChoice(choice + 1)
+        setChoice(choice + 1) 
     }
     function subChoice(){
         // if(choice === 1) {
