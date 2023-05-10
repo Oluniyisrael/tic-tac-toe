@@ -46,6 +46,7 @@ function GamePage() {
     if (choice === 2) {
         setChoice(0)
     }
+    console.log(choice)
   return (
     <div>
        <nav id='gameNav'>
