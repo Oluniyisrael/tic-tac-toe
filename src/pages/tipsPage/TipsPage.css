@@ -16,6 +16,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    border-radius: 20px;
     height: 80%;
     background-color: rgb(195, 26, 195);
     width: 60em;
@@ -42,7 +43,8 @@
     width: 200px;
 }
 .ImgText p {
-    text-align: justify;
+    text-align: center;
+    color: white;
 }
 #buttonCont{
     height: 20%;
@@ -51,6 +53,13 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
+}
+#tallyInd{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: tahoma;
+    color: white;
+    
 }
 .button{
     width: 200px;
@@ -65,6 +74,14 @@
 .button:hover {
     transform: scale(1.07);
     animation: none;
+}
+#buttX:hover{
+    color: white;
+    background: red;
+}
+#buttO:hover{
+    color: white;
+    background: blue;
 }
 @keyframes floating {
     0%{transform: scale(1.00);}

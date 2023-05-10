@@ -33,7 +33,11 @@ function TipsPage(props) {
                     <p>It is a two-player game, so you'll need another person to take turns with. </p>
                 </div>
             </div>
-            <div id='buttonCont'><button className='button' onClick={buttonX}>X</button> <button className='button' onClick={buttonO}>O</button></div>
+                <p id='tallyInd'>Choose First Player Tally </p>
+            <div id='buttonCont'>
+                <button className='button' id='buttX' onClick={buttonX}>X</button> 
+                <button className='button' id='buttO' onClick={buttonO}>O</button>
+                </div>
         </div>
     </div>
   )
