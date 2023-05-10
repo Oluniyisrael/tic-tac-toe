@@ -4,11 +4,13 @@ import './GamePage.css'
 // import Footer from 'https://github.com/Oluniyisrael/reactportfolio/tree/master/src/assets/components/portfolioFooter/Footer.jsx'
 import logo from '../../assets/Israel Tic Tac Toe.png'
 import XandO from '../../xAndO/XandO.jsx'
+import TipsPage from '../tipsPage/TipsPage'
 
 function GamePage() {
     
     var showScore = true
     const [gameStatus, setGameStatus]= useState(true)
+    const [tipsStatus, setTipsStatus]= useState(true)
     const [xScore, setXScore]= useState(0)
     const [oScore, setOScore]= useState(0)
     const [choice,setChoice]= useState(0)
@@ -46,6 +48,9 @@ function GamePage() {
         // else(setChoice(0)
         // )
     }
+    function closeTipsPage() {
+        setTipsStatus(false)
+    }
     if (choice === 2) {
         setChoice(0)
     }
@@ -67,6 +72,11 @@ function GamePage() {
         addChoice ={addChoice} 
         subChoice ={subChoice}
         /> }
+        {tipsStatus && <TipsPage
+            addChoice = {addChoice}
+            close ={closeTipsPage}
+            />
+        }
         {/* <Footer/> */}
     </div>
     ) 

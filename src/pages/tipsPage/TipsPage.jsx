@@ -3,7 +3,17 @@ import EmptyBoard from '../../assets/Images/EmptyBoard.png'
 import TipsGif from '../../assets/Gifs/TipsGif.gif'
 import './TipsPage.css'
 
-function TipsPage() {
+function TipsPage(props) {
+    function buttonO(){
+        props.addChoice()
+        props.close()
+    }
+    function buttonX() {
+        //...
+        props.close()
+    }
+    
+
   return (
     <div id='page'>
         <div>
@@ -23,7 +33,7 @@ function TipsPage() {
                     <p>It is a two-player game, so you'll need another person to take turns with. </p>
                 </div>
             </div>
-            <div id='buttonCont'><button className='button'>X</button> <button className='button'>O</button></div>
+            <div id='buttonCont'><button className='button' onClick={buttonX}>X</button> <button className='button' onClick={buttonO}>O</button></div>
         </div>
     </div>
   )

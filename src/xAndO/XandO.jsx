@@ -31,7 +31,7 @@ function XandO(props) {
       turn.style.color = 'Red'
     } 
     else{turn.style.color ="Blue"}
-  },[count,Props,addChoice,tstate])  
+  },[count,Props,addChoice,tstate,choice])  
   
   function add(e){
         setCount(count + 1);
