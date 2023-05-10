@@ -6,6 +6,8 @@ import './TipsPage.css'
 function TipsPage() {
   return (
     <div id='page'>
+        <div>
+        </div>
         <div id='tipsCont'> 
             <div id='imageCont'>
                 <div className='ImgText'>
@@ -21,7 +23,7 @@ function TipsPage() {
                     <p>It is a two-player game, so you'll need another person to take turns with. </p>
                 </div>
             </div>
-            <div><button>X</button> <button>O</button></div>
+            <div id='buttonCont'><button className='button'>X</button> <button className='button'>O</button></div>
         </div>
     </div>
   )
