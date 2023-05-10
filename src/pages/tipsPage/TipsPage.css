@@ -1,0 +1,44 @@
+#page{
+    display: block;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: purple;
+
+}
+#tipsCont{
+    display: flex;
+    justify-content: center;
+    height: 80%;
+    background-color: rgb(195, 26, 195);
+    width: 80%;
+}
+#imageCont{
+    gap: 50px;
+    padding: 40px 100px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    height: 70%;
+    flex-wrap: wrap;
+    background-color: blue;
+}
+.img{
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+}
+.ImgText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+.ImgText p {
+    text-align: justify;
+}

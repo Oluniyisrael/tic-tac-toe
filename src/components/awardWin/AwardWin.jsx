@@ -5,7 +5,6 @@ function AwardWin(Number,props){
             props.addX()          }
           else{props.addO()}
           refresh()
-          // props.subChoice()
 
 }
 
