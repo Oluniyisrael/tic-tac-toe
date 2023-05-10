@@ -1,5 +1,4 @@
-import React,{useState}
- from 'react'
+import React,{useState}from 'react'
 import './GamePage.css'
 // import Footer from 'https://github.com/Oluniyisrael/reactportfolio/tree/master/src/assets/components/portfolioFooter/Footer.jsx'
 import logo from '../../assets/Israel Tic Tac Toe.png'
