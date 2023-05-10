@@ -22,7 +22,7 @@
     width: 60em;
 }
 #imageCont{
-    gap: 10px;
+    gap: 20px;
     padding: 5% 50px;
     display: flex;
     justify-content: space-evenly;

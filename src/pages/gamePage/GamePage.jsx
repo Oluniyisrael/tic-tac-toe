@@ -40,13 +40,6 @@ function GamePage() {
     function addChoice(){
         setChoice(choice + 1) 
     }
-    function subChoice(){
-        // if(choice === 1) {
-            setChoice(choice=> choice -1)
-        // }
-        // else(setChoice(0)
-        // )
-    }
     function closeTipsPage() {
         setTipsStatus(false)
     }
@@ -69,7 +62,6 @@ function GamePage() {
         reset = {resetGame}
         choice = {choice}
         addChoice ={addChoice} 
-        subChoice ={subChoice}
         /> }
         {tipsStatus && <TipsPage
             addChoice = {addChoice}
