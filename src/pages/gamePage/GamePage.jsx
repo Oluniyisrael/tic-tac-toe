@@ -78,6 +78,7 @@ function GamePage() {
             refresh = {refreshGameForTips}
             />
         }
+        {/*Note to self: Create a dark mode toggle button*/}
         {/* <Footer/> */}
     </div>
     ) 
