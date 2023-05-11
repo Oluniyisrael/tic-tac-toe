@@ -79,6 +79,7 @@ function GamePage() {
             />
         }
         {/*Note to self: Create a dark mode toggle button*/}
+        {/* Another note to self : Create a reset board button */}
         {/* <Footer/> */}
     </div>
     ) 
