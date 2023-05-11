@@ -31,6 +31,14 @@ function GamePage() {
             setGameStatus(true)
         }, 2100);
     }
+    function refreshGameForTips (){
+        setTimeout(()=>{
+            setGameStatus(false)
+        }, 50)
+        setTimeout(() => {
+            setGameStatus(true)
+        }, 200);
+    }
     if(xScore > 0 ){
         document.getElementById('xScore').style.color = 'white'
     }
@@ -67,6 +75,7 @@ function GamePage() {
         {tipsStatus && <TipsPage
             addChoice = {addChoice}
             close ={closeTipsPage}
+            refresh = {refreshGameForTips}
             />
         }
         {/* <Footer/> */}

@@ -7,10 +7,12 @@ function TipsPage(props) {
     function buttonO(){
         props.addChoice()
         props.close()
+        props.refresh();
     }
     function buttonX() {
         //...
         props.close()
+        props.refresh();
     }
     
 
