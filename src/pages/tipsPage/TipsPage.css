@@ -95,7 +95,7 @@
     }
     #tipsCont{
         width: 90%;
-        height:90%
+        height:90%;
     }
     .img {
         width: 130px;
@@ -106,9 +106,9 @@
         display: flex;
         flex-wrap:wrap;
         justify-content: center;
-        padding: none;
+        padding: 0;
         width: 80%;
-        height: 60%;
+        height: 70%;
     }
     #buttonCont {
         height: 10%;
@@ -116,8 +116,13 @@
     }
 }
 @media screen and (max-width: 600px){
+    .img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
     #imageCont{
-        flex-wrap:nowrap ;
-        width: 75%;
+        /* flex-wrap:nowrap ; */
+        width: 100%;
     }
 }
