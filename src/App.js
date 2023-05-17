@@ -7,12 +7,13 @@ function App() {
   
   return (
     <div className="App">
-      <Router>
+      {/* <Router>
         <Routes>
           <Route path='/' element= {<LandingPage/>}/>
           <Route path='/game' element={<GamePage/>}/>
         </Routes>
-      </Router>
+      </Router> */}
+      {/* <LandingPage/> responsive done */}
     </div>
   );
 }
