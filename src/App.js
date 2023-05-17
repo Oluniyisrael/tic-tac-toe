@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/landingPage/LandingPage';
 import GamePage from './pages/gamePage/GamePage';
+import TipsPage from './pages/tipsPage/TipsPage';
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
         </Routes>
       </Router> */}
       {/* <LandingPage/> responsive done */}
+      <TipsPage/>
     </div>
   );
 }

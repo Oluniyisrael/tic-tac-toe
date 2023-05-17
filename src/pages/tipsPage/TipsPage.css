@@ -88,3 +88,35 @@
     50%{transform: scale(1.07);}
     100%{transform: scale(1.00);}
 }
+@media screen and (max-width: 800px ),
+    screen and (max-height: 700px)  {
+    .ImgText p{
+        font-size: 12px;
+    }
+    #tipsCont{
+        width: 90%;
+    }
+    .img {
+        width: 130px;
+        height: 130px;
+        object-fit: cover;
+    }
+    #imageCont {
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: center;
+        padding: none;
+        width: 80%;
+        height: 60%;
+    }
+    #buttonCont {
+        height: 10%;
+        width: 80%;
+    }
+}
+@media screen and (max-width: 600px){
+    #imageCont{
+        flex-wrap:nowrap ;
+        width: 75%;
+    }
+}
