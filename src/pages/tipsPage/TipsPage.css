@@ -125,4 +125,7 @@
         /* flex-wrap:nowrap ; */
         width: 100%;
     }
+    #nye{
+        display:flex;
+    }
 }
