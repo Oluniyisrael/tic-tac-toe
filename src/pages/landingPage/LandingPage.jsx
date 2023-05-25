@@ -9,7 +9,7 @@ function LandingPage() {
   return (
     <div className='LandingPage'>
         <div id='rel'>
-            <img src={logo} alt="..." id='imageLogo' />
+            <img src={logo} alt="..." id='imageLogo' /> {/* nyaganya */}
         </div>
     </div>
   )
