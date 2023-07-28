@@ -183,9 +183,9 @@
         background-color: white;
         border: 1px solid black;
         width: 100px;
-        height: 150px;
+        height: 120px;
         text-align: center;
-        font-size: 100px;
+        font-size: 80px !important;
         transition: 400ms;
         border: 1px solid black;
     }
