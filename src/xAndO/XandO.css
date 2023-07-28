@@ -179,7 +179,16 @@
 /* !!!!!!!I am changing things here at 28/07/2023 !!!!!!!!*/
 
  @media screen and (max-width: 800px) {
-    
+    .tableData {
+        background-color: white;
+        border: 1px solid black;
+        width: 100px;
+        height: 150px;
+        text-align: center;
+        font-size: 100px;
+        transition: 400ms;
+        border: 1px solid black;
+    }
  }
 @keyframes growSlowly1 {
     from{width: 0px;}
