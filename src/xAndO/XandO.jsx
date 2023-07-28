@@ -47,7 +47,8 @@ function XandO(props) {
                 }
                 else{squares.style.color="blue"}
         }
-        console.log(count) }
+        console.log(count)
+       }
   return (
     <div className='table'>
         <div className='tableCont'>

@@ -13,12 +13,26 @@
     height: 30px;
     min-height: 30px;
 }
-.writeHere{
+
+
+/* !!!!!!!I am changing things here at 28/07/2023 !!!!!!!!*/
+/* .writeHere{
     width: 170px;
     height: 170px;
     display: block;
     background-color: white;
+} */
+.writeHere {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    display: block;
+    background-color: white;
 }
+
+/* !!!!!!!I am changing things here at 28/07/2023 !!!!!!!!*/
+
+
+
 .tableData {
     background-color: white;
     border: 1px solid black;
