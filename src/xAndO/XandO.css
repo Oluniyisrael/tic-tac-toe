@@ -13,26 +13,12 @@
     height: 30px;
     min-height: 30px;
 }
-
-
-/* !!!!!!!I am changing things here at 28/07/2023 !!!!!!!!*/
-/* .writeHere{
-    width: 170px;
-    height: 170px;
-    display: block;
-    background-color: white;
-} */
-.writeHere {
+.writeHere{
     width: -webkit-fill-available;
     height: -webkit-fill-available;
     display: block;
     background-color: white;
 }
-
-/* !!!!!!!I am changing things here at 28/07/2023 !!!!!!!!*/
-
-
-
 .tableData {
     background-color: white;
     border: 1px solid black;
@@ -142,6 +128,59 @@
     height: 20px;
     background-color:  rebeccapurple;;
 }
+
+/* 
+/* !!!!!!!I am changing things here at 28/07/2023 !!!!!!!!*/
+/* .XO{
+    border: 1px solid black;
+    background: black;
+} */
+/* .XO{
+    width: 510px;
+    height: 510px;
+    border: 1px solid black;
+    background: black;
+} */
+/* .writeHere{
+    width: 170px;
+    height: 170px;
+    display: block;
+    background-color: white;
+} */
+/* .writeHere {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    display: block;
+    background-color: white;
+} */
+/* .tableData {
+    background-color: white;
+    border: 1px solid black;
+    width: 170px;
+    height: 170px;
+    text-align: center;
+    font-size: 100px;
+    transition: 400ms;
+    border: 1px solid black;
+} */
+/* .tableData {
+    background-color: white;
+    border: 1px solid black;
+    width: auto;
+    max-width: 170px !important;
+    max-height: 170px !important;
+    height: auto;
+    text-align: center;
+    font-size: 100px;
+    transition: 400ms;
+    border: 1px solid black;
+} */
+
+/* !!!!!!!I am changing things here at 28/07/2023 !!!!!!!!*/
+
+ @media screen and (max-width: 800px) {
+    
+ }
 @keyframes growSlowly1 {
     from{width: 0px;}
     to{width: 600px;}
