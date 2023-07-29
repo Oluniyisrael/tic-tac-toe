@@ -2,6 +2,7 @@ import React from 'react'
 import DeclearWin from '../components/declearWin/DeclearWin';
 import './XandO.css'
 import {useState,  useEffect, useRef} from 'react';
+import AIPlayer from '../components/aiPlayer/AIPlayer';
 
 function XandO(props) {
 
@@ -50,7 +51,11 @@ function XandO(props) {
                 else{squares.style.color="blue"}
         }
        }
-      
+    //       for( let i=0;i < document.getElementsByClassName('writeHere').length -1 ;i++){
+    //     document.getElementsByClassName('writeHere')[i].addEventListener('mousedown',AIPlayer)
+    
+    // }// almost correct
+    
   return (
     <div className='table'>
         <div className='tableCont'>
@@ -67,45 +72,45 @@ function XandO(props) {
                   
               <tr className='tableRow'>
                 <td className='tableData'>
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={add} onMouseDown={AIPlayer}></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={add} onMouseDown={AIPlayer}></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={add} onMouseDown={AIPlayer}></section>
                 </td>
               </tr>
             <hr id='line3' />
               <tr className='tableRow'>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={add} onMouseDown={AIPlayer}></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={add} onMouseDown={AIPlayer}></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={add} onMouseDown={AIPlayer}></section>
                 </td>
               </tr>
               <hr id='line6' />
               <tr className='tableRow'>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={add} onMouseDown={AIPlayer}></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={add} onMouseDown={AIPlayer}></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={add} onMouseDown={AIPlayer}></section>
                 </td>
               </tr>
             </tbody>
