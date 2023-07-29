@@ -65,45 +65,45 @@ function XandO(props) {
                   
               <tr className='tableRow'>
                 <td className='tableData'>
-                  <span className='writeHere' onClick={add}></span>
+                  <section className='writeHere' onClick={add}></section>
                 </td>
                 <td className='tableData'>
                   
-                  <span className='writeHere' onClick={add}></span>
+                  <section className='writeHere' onClick={add}></section>
                 </td>
                 <td className='tableData'>
                   
-                  <span className='writeHere' onClick={add}></span>
+                  <section className='writeHere' onClick={add}></section>
                 </td>
               </tr>
             <hr id='line3' />
               <tr className='tableRow'>
                 <td className='tableData'>
                   
-                  <span className='writeHere' onClick={add}></span>
+                  <section className='writeHere' onClick={add}></section>
                 </td>
                 <td className='tableData'>
                   
-                  <span className='writeHere' onClick={add}></span>
+                  <section className='writeHere' onClick={add}></section>
                 </td>
                 <td className='tableData'>
                   
-                  <span className='writeHere' onClick={add}></span>
+                  <section className='writeHere' onClick={add}></section>
                 </td>
               </tr>
               <hr id='line6' />
               <tr className='tableRow'>
                 <td className='tableData'>
                   
-                  <span className='writeHere' onClick={add}></span>
+                  <section className='writeHere' onClick={add}></section>
                 </td>
                 <td className='tableData'>
                   
-                  <span className='writeHere' onClick={add}></span>
+                  <section className='writeHere' onClick={add}></section>
                 </td>
                 <td className='tableData'>
                   
-                  <span className='writeHere' onClick={add}></span>
+                  <section className='writeHere' onClick={add}></section>
                 </td>
               </tr>
             </tbody>
