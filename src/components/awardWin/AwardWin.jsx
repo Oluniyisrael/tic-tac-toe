@@ -5,11 +5,6 @@ function AwardWin(Number,props){
             props.addX()          }
           else{props.addO()}
           refresh()
-          //
-          // for(let i = 0; i < (document.getElementsByClassName('writeHere').length) ; i++){
-          //   document.getElementsByClassName('writeHere')[i].className = 'changeNode'
-            
-          // }
           for(let i = 0; i < document.querySelectorAll('section').length; i++){
             document.querySelectorAll('section')[i].className ='changeNode'
             }

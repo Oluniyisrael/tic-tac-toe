@@ -26,10 +26,10 @@ function GamePage() {
     function refreshGame (){
         setTimeout(()=>{
             setGameStatus(false)
-        }, 2000)
+        }, 1500)
         setTimeout(() => {
             setGameStatus(true)
-        }, 2100);
+        }, 1600);
     }
     function refreshGameForTips (){
         setTimeout(()=>{
@@ -54,7 +54,6 @@ function GamePage() {
     if (choice === 2) {
         setChoice(0)
     }
-    console.log(choice)
   return (
     <div>
        <nav id='gameNav'>
