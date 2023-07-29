@@ -18,4 +18,16 @@ function  test () {
                 square[randomSquareNo].click()     
                 // buggy  
 }
-    
+function testing (){
+    var square = document.querySelectorAll('section')
+    var amount = square.length
+            var randomSquareNo = Math.round(( amount * Math.random()))
+                square[randomSquareNo].click()   
+}
+  function test2(){
+    var square = document.getElementsByClassName('writeHere')
+    var amount = square.length
+            var randomSquareNo = (Math.round(( amount* Math.random())) -1)
+            square[randomSquareNo].click()
+            // correct!!
+  }  
