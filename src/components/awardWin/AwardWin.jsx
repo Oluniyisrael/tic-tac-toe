@@ -4,7 +4,7 @@ function AwardWin(Number,props){
           if (squares[Number].innerText === 'X') {
             props.addX()          }
           else{props.addO()}
-          // refresh()
+          refresh()
           //
           // for(let i = 0; i < (document.getElementsByClassName('writeHere').length) ; i++){
           //   document.getElementsByClassName('writeHere')[i].className = 'changeNode'
