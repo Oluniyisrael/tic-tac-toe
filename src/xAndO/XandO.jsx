@@ -32,6 +32,7 @@ function XandO(props) {
     } 
     else{turn.style.color ="Blue"}
   },[count,Props,addChoice,tstate,choice])  
+
   
   function add(e){
         setCount(count + 1);
