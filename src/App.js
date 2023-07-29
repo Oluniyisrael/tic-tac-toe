@@ -5,7 +5,7 @@ import GamePage from './pages/gamePage/GamePage';
 // import TipsPage from './pages/tipsPage/TipsPage';
 
 function App() {
-  
+
   return (
     <div className="App">
       <Router>
