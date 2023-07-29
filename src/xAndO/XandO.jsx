@@ -4,6 +4,7 @@ import './XandO.css'
 import {useState,  useEffect, useRef} from 'react';
 
 function XandO(props) {
+
   const [tstate,setTState] = useState(false)
   var writings = 
   [
@@ -49,6 +50,7 @@ function XandO(props) {
                 else{squares.style.color="blue"}
         }
        }
+      
   return (
     <div className='table'>
         <div className='tableCont'>

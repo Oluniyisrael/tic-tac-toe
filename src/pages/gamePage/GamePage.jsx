@@ -55,22 +55,22 @@ function GamePage() {
         setChoice(0)
     }
     // edit here
-    function test2(){
-        var square = document.getElementsByClassName('writeHere')
-        var amount = (square.length - 1)
-                var randomSquareNo = (Math.round(( amount* Math.random())))
-          setTimeout(() => {
-                console.log(randomSquareNo)
-              console.log(amount)
-                square[randomSquareNo].click()
+    // function test2(){
+    //     var square = document.getElementsByClassName('writeHere')
+    //     var amount = (square.length - 1)
+    //             var randomSquareNo = (Math.round(( amount* Math.random())))
+    //       setTimeout(() => {
+    //             console.log(randomSquareNo)
+    //           console.log(amount)
+    //             square[randomSquareNo].click()
             
-            }, 2000)
+    //         }, 2000)
                
-      } 
-    for( let i=0;i < document.getElementsByClassName('writeHere').length;i++){
-        document.getElementsByClassName('writeHere')[i].addEventListener('mousedown',test2)
+    //   } 
+    // for( let i=0;i < document.getElementsByClassName('writeHere').length;i++){
+    //     document.getElementsByClassName('writeHere')[i].addEventListener('mousedown',test2)
     
-    }
+    // }
     //stop edit here
   return (
     <div>
