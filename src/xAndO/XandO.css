@@ -128,6 +128,17 @@
     height: 20px;
     background-color:  rebeccapurple;;
 }
+@keyframes growSlowly1 {
+    from{width: 0px;}
+    to{width: 600px;}
+}
+@keyframes growSlowly2 {
+    from{height: 0px;}
+    to{height: 516px;}
+}@keyframes growSlowly {
+    from{width: 0px;}
+    to{width:516px;}
+}
 
 /* 
 /* !!!!!!!I am changing things here at 28/07/2023 !!!!!!!!*/
@@ -186,18 +197,84 @@
         height: 120px;
         text-align: center;
         font-size: 80px !important;
-        transition: 400ms;
-        border: 1px solid black;
+    }
+    #line {
+        margin-top: 3.7em;
+        width: 306px;
+        height: 15px;
+        border-radius: 10px;
+    } 
+    #line3 {
+        margin-top: 3.7em;
+        width: 306px;
+        height: 15px;
+    }
+    #line2 {
+        margin-left: 43px;
+        width: 15px;
+        height: 369px;
+    }
+    #line6 {
+        margin-top: 3.7em;
+        width: 306px;
+        height: 15px;
+    }
+    #line4 {
+        margin-left: 146px;
+        width: 15px;
+        height: 369px;
+    }
+    #line5 {
+        margin-left: 250px;
+        width: 15px;
+        height: 369px;
+    }
+    #line7Dec {
+        margin-top: 174px;
+        width: 380px;
+        height: 20px;
+        border-radius: 10px;
+        position: absolute;
+        transform: rotate(50deg);
+        display: none;
+    }
+    #line7 {
+        border-radius: 10px;
+        animation: growSlowly1 1s;
+        width: 435px;
+        margin-left: -50px;
+        margin-top: 31px;
+        height: 15px;
+        background-color: rebeccapurple;
+    }
+    #line8Dec {
+        margin-top: 172px;
+        width: 311px;
+        height: 20px;
+        border-radius: 10px;
+        position: absolute;
+        transform: rotate(130deg);
+        display: none;
+    }
+    #line8 {
+        border-radius: 10px;
+        animation: growSlowly1 1s;
+        width: 435px;
+        margin-left: -58px;
+        margin-top: 0;
+        height: 15px;
+        background-color: rebeccapurple;
+    }
+    @keyframes growSlowly {
+        from{width: 0px;}
+        to{width:306px !important;}
+    }
+    @keyframes growSlowly1 {
+        from{width: 0px;}
+        to{width: 435px;}
+    }
+    @keyframes growSlowly2 {
+        from{height: 0px;}
+        to{height: 369px;}
     }
  }
-@keyframes growSlowly1 {
-    from{width: 0px;}
-    to{width: 600px;}
-}
-@keyframes growSlowly2 {
-    from{height: 0px;}
-    to{height: 516px;}
-}@keyframes growSlowly {
-    from{width: 0px;}
-    to{width:516px;}
-}
