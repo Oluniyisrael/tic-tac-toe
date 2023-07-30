@@ -5,7 +5,7 @@ function AIPlayer(){
      function test2(){
         var square = document.getElementsByClassName('writeHere')
         var amount = (square.length)
-        var randomSquareNo = (Math.round( Math.random() *  (amount - 1)))
+        var randomSquareNo = (Math.round( Math.random() *  amount))
         if(randomSquareNo < 0 || randomSquareNo === -0 ){randomSquareNo = 0}
           setTimeout(() => {
                 console.log(randomSquareNo)
