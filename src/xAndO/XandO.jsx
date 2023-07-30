@@ -2,7 +2,7 @@ import React from 'react'
 import DeclearWin from '../components/declearWin/DeclearWin';
 import './XandO.css'
 import {useState,  useEffect, useRef} from 'react';
-// import AIPlayer from '../components/aiPlayer/AIPlayer';
+import AIPlayer from '../components/aiPlayer/AIPlayer';
 
 function XandO(props) {
 
@@ -33,9 +33,9 @@ function XandO(props) {
       turn.style.color = 'Red'
     } 
     else{turn.style.color ="Blue"}
+
   },[count,Props,addChoice,tstate,choice])  
 
-  
   function add(e){
         setCount(count + 1);
         
@@ -51,11 +51,15 @@ function XandO(props) {
                 else{squares.style.color="blue"}
         }
        }
-    //       for( let i=0;i < document.getElementsByClassName('writeHere').length -1 ;i++){
-    //     document.getElementsByClassName('writeHere')[i].addEventListener('mousedown',AIPlayer)
-    
-    // }// almost correct
-    
+  //   for(let i=0;i < document.getElementsByClassName('writeHere').length;i++){
+  //     document.getElementsByClassName('writeHere')[i].addEventListener('click',AIPlayer)
+  // }
+   function simulateClick(divElement) {
+        // Create a custom event that is not recognizable as a regular click event
+        const customEvent = new Event('simulatedClick', {
+          bubbles: true,
+          cancelable: true,
+        }) }
   return (
     <div className='table'>
         <div className='tableCont'>
