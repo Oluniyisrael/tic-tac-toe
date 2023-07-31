@@ -2,7 +2,7 @@ import React from 'react'
 import DeclearWin from '../components/declearWin/DeclearWin';
 import './XandO.css'
 import {useState,  useEffect, useRef} from 'react';
-import AIPlayer from '../components/aiPlayer/AIPlayer';
+// import AIPlayer from '../components/aiPlayer/AIPlayer';
 
 function XandO(props) {
 
@@ -54,12 +54,12 @@ function XandO(props) {
   //   for(let i=0;i < document.getElementsByClassName('writeHere').length;i++){
   //     document.getElementsByClassName('writeHere')[i].addEventListener('click',AIPlayer)
   // }
-   function simulateClick(divElement) {
-        // Create a custom event that is not recognizable as a regular click event
-        const customEvent = new Event('simulatedClick', {
-          bubbles: true,
-          cancelable: true,
-        }) }
+  //  function simulateClick(divElement) {
+  //       // Create a custom event that is not recognizable as a regular click event
+  //       const customEvent = new Event('simulatedClick', {
+  //         bubbles: true,
+  //         cancelable: true,
+  //       }) }
   return (
     <div className='table'>
         <div className='tableCont'>
