@@ -2,7 +2,7 @@ import React from 'react'
 import DeclearWin from '../components/declearWin/DeclearWin';
 import './XandO.css'
 import {useState,  useEffect, useRef} from 'react';
-// import AIPlayer from '../components/aiPlayer/AIPlayer';
+import AIPlayer from '../components/aiPlayer/AIPlayer';
 
 function XandO(props) {
 
@@ -34,8 +34,23 @@ function XandO(props) {
     } 
     else{turn.style.color ="Blue"}
 
-  },[count,Props,addChoice,tstate,choice])  
+},[count,Props,addChoice,tstate,choice])  
+  useEffect(() => {
+    for(let i=0;i < document.getElementsByClassName('writeHere').length;i++){
+      document.getElementsByClassName('writeHere')[i].addEventListener('click',(e)=>{
+          if (e.isTrusted === true) {
+              AIPlayer()
+          }
+          else{e.preventDefault()}
+      })
 
+  }
+  
+    // return () => {
+    //   second
+    // }
+  }, [])
+  
   function add(e){
         setCount(count + 1);
         

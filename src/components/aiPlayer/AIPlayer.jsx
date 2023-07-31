@@ -23,5 +23,16 @@ function AIPlayer(){
       //     bubbles: true,
       //     cancelable: true,
       //   });
+    //   document.getElementsByClassName('writeHere')[0].addEventListener('click',(e)=>{
+    //     console.log(e.isTrusted)
+    // })
+  //   for(let i=0;i < document.getElementsByClassName('writeHere').length;i++){
+  //     document.getElementsByClassName('writeHere')[i].addEventListener('click',(e)=>{
+  //         if (e.isTrusted === true) {
+  //             AIPlayer()
+  //         }
+  //         else{e.preventDefault()}
+  //     })
+  // }
   }  
   export default AIPlayer
