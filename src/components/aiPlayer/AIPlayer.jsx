@@ -1,4 +1,4 @@
-function AIPlayer(){
+function AIPlayer(count,tstate){
     // for(let i=0;i < document.getElementsByClassName('writeHere').length;i++){
     //     document.getElementsByClassName('writeHere')[i].addEventListener('click',test2)
     // }
@@ -12,25 +12,13 @@ function AIPlayer(){
           setTimeout(() => {
                 console.log(randomIndex)
               console.log(amount)
+              if(count !== 9 || tstate !== true){
                 square[randomIndex].click()
+              }
               }, 1000)
                
       // } 
-      //experiment
-      // function simulateClick(divElement) {
-      //   // Create a custom event that is not recognizable as a regular click event
-      //   const customEvent = new Event('simulatedClick', {
-      //     bubbles: true,
-      //     cancelable: true,
-      //   });
-    //   document.getElementsByClassName('writeHere')[0].addEventListener('click',(e)=>{
-    //     console.log(e.isTrusted)
-    // })
-  //   for(let i=0;i < document.getElementsByClassName('writeHere').length;i++){
-  //     document.getElementsByClassName('writeHere')[i].addEventListener('click',(e)=>{
-  //         if (e.isTrusted === true) {
-  //             AIPlayer()
-  //         }
+      
   //         else{e.preventDefault()}
   //     })
   // }
