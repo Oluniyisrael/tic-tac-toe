@@ -24,6 +24,7 @@ function XandO(props) {
   useEffect(() => {
     if (count >= 4 ){
       DeclearWin(Props,setTState)
+      console.log(tstate)
     } 
     if (count === 9 && tstate === false) {
       addChoice()
@@ -33,28 +34,28 @@ function XandO(props) {
       turn.style.color = 'Red'
     } 
     else{turn.style.color ="Blue"}
-
 },[count,Props,addChoice,tstate,choice])  
-  useEffect(() => {
+
+
+useEffect(() => {
     for(let i=0;i < document.getElementsByClassName('writeHere').length;i++){
       document.getElementsByClassName('writeHere')[i].addEventListener('click',(e)=>{
           if (e.isTrusted === true) {
-              AIPlayer()
+              AIPlayer(tstate)
+              // problem
+              // console.log(count)
           }
           else{e.preventDefault()}
       })
 
   }
   
-    // return () => {
-    //   second
-    // }
-  }, [])
+  },[])
+
+
   
   function add(e){
-        setCount(count + 1);
-        
- 
+        setCount(count + 1); 
         e.target.className='changeNode'
         //writing code
           e.target.parentNode.append(writings[choice][count])
