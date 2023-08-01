@@ -35,22 +35,6 @@ function XandO(props) {
     else{turn.style.color ="Blue"}
 },[count,Props,addChoice,tstate,choice])  
 
-
-// useEffect(() => {
-//     for(let i=0;i < document.getElementsByClassName('writeHere').length;i++){
-//       document.getElementsByClassName('writeHere')[i].addEventListener('click',(e)=>{
-//           if (e.isTrusted === true) {
-//               AIPlayer(1200)
-//           }
-      
-//           else{e.preventDefault()}
-//       })
-
-//   }
-  
-//   },[])
-
-
   
   function add(e){
         setCount(count + 1); 
@@ -65,15 +49,7 @@ function XandO(props) {
                 else{squares.style.color="blue"}
         }
        }
-  //   for(let i=0;i < document.getElementsByClassName('writeHere').length;i++){
-  //     document.getElementsByClassName('writeHere')[i].addEventListener('click',AIPlayer)
-  // }
-  //  function simulateClick(divElement) {
-  //       // Create a custom event that is not recognizable as a regular click event
-  //       const customEvent = new Event('simulatedClick', {
-  //         bubbles: true,
-  //         cancelable: true,
-  //       }) }
+
   // ???????Do here
   // const firstTally = writings[choice][count]
   // console.log(firstTally)
