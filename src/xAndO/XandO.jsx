@@ -24,7 +24,6 @@ function XandO(props) {
   useEffect(() => {
     if (count >= 4 ){
       DeclearWin(Props,setTState)
-      console.log(tstate)
     } 
     if (count === 9 && tstate === false) {
       addChoice()
@@ -41,10 +40,13 @@ useEffect(() => {
     for(let i=0;i < document.getElementsByClassName('writeHere').length;i++){
       document.getElementsByClassName('writeHere')[i].addEventListener('click',(e)=>{
           if (e.isTrusted === true) {
-              AIPlayer(tstate)
+              AIPlayer(1000)
               // problem
-              // console.log(count)
           }
+          // if(document.getElementsByClassName('writeHere').length === 0){
+          //  else if(tstate === true){
+          //   e.preventDefault()
+          // }
           else{e.preventDefault()}
       })
 
@@ -76,6 +78,10 @@ useEffect(() => {
   //         bubbles: true,
   //         cancelable: true,
   //       }) }
+  // ???????Do here
+  // const firstTally = writings[choice][count]
+  // console.log(firstTally)
+  // if count === 0 and writings [choice][count] !== firstTally click random div
   return (
     <div className='table'>
         <div className='tableCont'>

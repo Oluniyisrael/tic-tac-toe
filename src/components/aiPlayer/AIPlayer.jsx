@@ -4,12 +4,14 @@ function AIPlayer(tstate){
       let randomIndex = Math.floor(Math.random() * amount);
         if(randomIndex < 0){randomIndex = 0}
           setTimeout(() => {
-              //   console.log(randomIndex)
+                // console.log(tstate)
               // if(tstate !== true){
+                
                 square[randomIndex].click()
               // }
               // else{}
               //to br continued
-              }, 1000)
+              }, tstate)
+              //timeout function longer than refresh button, but when it is the player's turn clear timeout
   }  
   export default AIPlayer
