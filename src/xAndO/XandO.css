@@ -42,7 +42,7 @@
     border-radius: 10px;
     position: absolute;
     background-color: rebeccapurple;
-    animation: growSlowly 1s;
+    animation: growSlowly .80s;
     display: none;
 }
 #line2 {
@@ -52,7 +52,7 @@
     border-radius: 10px;
     position: absolute;
     background-color: rebeccapurple;
-    animation: growSlowly2 1s;
+    animation: growSlowly2 .80s;
     display: none;
 
 }
@@ -63,7 +63,7 @@
     border-radius: 10px;
     position: absolute;
     background-color: rebeccapurple;
-    animation: growSlowly 1s;
+    animation: growSlowly .80s;
     display: none;
 }
 #line4{
@@ -73,7 +73,7 @@
         border-radius: 10px;
         position: absolute;
         background-color: rebeccapurple;
-        animation: growSlowly2 1s;
+        animation: growSlowly2 .80s;
         display: none;
 }
 #line5{
@@ -83,7 +83,7 @@
     border-radius: 10px;
     position: absolute;
     background-color: rebeccapurple;
-    animation: growSlowly2 1s;
+    animation: growSlowly2 .80s;
     display: none;
 }
 #line6 {
@@ -93,7 +93,7 @@
     border-radius: 10px;
     position: absolute;
     background-color: rebeccapurple;
-    animation: growSlowly 1s;
+    animation: growSlowly .80s;
     display: none;
 }
 #line7Dec {
@@ -107,7 +107,7 @@
 }
 #line7{
     border-radius: 10px;
-    animation: growSlowly1 1s;
+    animation: growSlowly1 .80s;
     width: 600px;
     height: 20px;
     background-color:  rebeccapurple;;
@@ -123,7 +123,7 @@
 }
 #line8{
     border-radius: 10px;
-    animation: growSlowly1 1s;
+    animation: growSlowly1 .80s;
     width: 600px;
     height: 20px;
     background-color:  rebeccapurple;;
@@ -240,7 +240,7 @@
     }
     #line7 {
         border-radius: 10px;
-        animation: growSlowly1 1s;
+        animation: growSlowly1 .80s;
         width: 435px;
         margin-left: -50px;
         margin-top: 31px;
@@ -258,7 +258,7 @@
     }
     #line8 {
         border-radius: 10px;
-        animation: growSlowly1 1s;
+        animation: growSlowly1 .80s;
         width: 435px;
         margin-left: -58px;
         margin-top: 0;

@@ -26,10 +26,10 @@ function GamePage() {
     function refreshGame (){
         setTimeout(()=>{
             setGameStatus(false)
-        }, 1500)
+        }, 1000)
         setTimeout(() => {
             setGameStatus(true)
-        }, 1600);
+        }, 1001);
     }
     function refreshGameForTips (){
         setTimeout(()=>{

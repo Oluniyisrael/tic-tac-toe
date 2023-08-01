@@ -36,23 +36,19 @@ function XandO(props) {
 },[count,Props,addChoice,tstate,choice])  
 
 
-useEffect(() => {
-    for(let i=0;i < document.getElementsByClassName('writeHere').length;i++){
-      document.getElementsByClassName('writeHere')[i].addEventListener('click',(e)=>{
-          if (e.isTrusted === true) {
-              AIPlayer(1000,tstate)
-              // problem
-          }
-          // if(document.getElementsByClassName('writeHere').length === 0){
-          //  else if(tstate === true){
-            // e.preventDefault()
-          // }
-          else{e.preventDefault()}
-      })
+// useEffect(() => {
+//     for(let i=0;i < document.getElementsByClassName('writeHere').length;i++){
+//       document.getElementsByClassName('writeHere')[i].addEventListener('click',(e)=>{
+//           if (e.isTrusted === true) {
+//               AIPlayer(1200)
+//           }
+      
+//           else{e.preventDefault()}
+//       })
 
-  }
+//   }
   
-  },[])
+//   },[])
 
 
   
@@ -98,45 +94,81 @@ useEffect(() => {
                   
               <tr className='tableRow'>
                 <td className='tableData'>
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={(e)=>{add(e)
+                     if(e.isTrusted === true){
+                      AIPlayer(1200)
+                     }}}
+                      ></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={(e)=>{add(e)
+                     if(e.isTrusted === true){
+                      AIPlayer(1200)
+                     }}}
+                      ></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={(e)=>{add(e)
+                     if(e.isTrusted === true){
+                      AIPlayer(1200)
+                     }}}
+                      ></section>
                 </td>
               </tr>
             <hr id='line3' />
               <tr className='tableRow'>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={(e)=>{add(e)
+                     if(e.isTrusted === true){
+                      AIPlayer(1200)
+                     }}}
+                      ></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={(e)=>{add(e)
+                     if(e.isTrusted === true){
+                      AIPlayer(1200)
+                     }}}
+                      ></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={(e)=>{add(e)
+                     if(e.isTrusted === true){
+                      AIPlayer(1200)
+                     }}}
+                      ></section>
                 </td>
               </tr>
               <hr id='line6' />
               <tr className='tableRow'>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={(e)=>{add(e)
+                     if(e.isTrusted === true){
+                      AIPlayer(1200)
+                     }}}
+                      ></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={(e)=>{add(e)
+                     if(e.isTrusted === true){
+                      AIPlayer(1200)
+                     }}}
+                      ></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={add}></section>
+                  <section className='writeHere' onClick={(e)=>{add(e)
+                     if(e.isTrusted === true){
+                      AIPlayer(1200)
+                     }}}
+                      ></section>
                 </td>
               </tr>
             </tbody>
