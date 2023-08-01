@@ -94,25 +94,34 @@ function XandO(props) {
                   
               <tr className='tableRow'>
                 <td className='tableData'>
-                  <section className='writeHere' onClick={(e)=>{add(e)
+                  <section className='writeHere' onClick={(e)=>{
+                      add(e)
+                      console.log(tstate)
                      if(e.isTrusted === true){
-                      AIPlayer(1200)
+                      if(tstate !== true){AIPlayer(1200)}
+                      
                      }}}
                       ></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={(e)=>{add(e)
+                  <section className='writeHere' onClick={(e)=>{
+                      add(e)
+                      console.log(tstate)
                      if(e.isTrusted === true){
-                      AIPlayer(1200)
+                      if(tstate !== true){AIPlayer(1200)}
+                      
                      }}}
                       ></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={(e)=>{add(e)
+                  <section className='writeHere' onClick={(e)=>{
+                      add(e)
+                      console.log(tstate)
                      if(e.isTrusted === true){
-                      AIPlayer(1200)
+                      if(tstate !== true){AIPlayer(1200)}
+                      
                      }}}
                       ></section>
                 </td>
@@ -121,25 +130,36 @@ function XandO(props) {
               <tr className='tableRow'>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={(e)=>{add(e)
+                  <section className='writeHere' onClick={(e)=>{
+                      add(e)
+                      console.log(tstate)
                      if(e.isTrusted === true){
-                      AIPlayer(1200)
+                      if(tstate !== true){
+                        AIPlayer(1200)
+                      }
+                      
                      }}}
                       ></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={(e)=>{add(e)
+                  <section className='writeHere' onClick={(e)=>{
+                      add(e)
+                      console.log(tstate)
                      if(e.isTrusted === true){
-                      AIPlayer(1200)
+                      if(tstate !== true){AIPlayer(1200)}
+                      
                      }}}
                       ></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={(e)=>{add(e)
+                  <section className='writeHere' onClick={(e)=>{
+                      add(e)
+                      console.log(tstate)
                      if(e.isTrusted === true){
-                      AIPlayer(1200)
+                      if(tstate !== true){AIPlayer(1200)}
+                      
                      }}}
                       ></section>
                 </td>
@@ -148,25 +168,34 @@ function XandO(props) {
               <tr className='tableRow'>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={(e)=>{add(e)
+                  <section className='writeHere' onClick={(e)=>{
+                      add(e)
+                      console.log(tstate)
                      if(e.isTrusted === true){
-                      AIPlayer(1200)
+                      if(tstate !== true){AIPlayer(1200)}
+                      
                      }}}
                       ></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={(e)=>{add(e)
+                  <section className='writeHere' onClick={(e)=>{
+                      add(e)
+                      console.log(tstate)
                      if(e.isTrusted === true){
-                      AIPlayer(1200)
+                      if(tstate !== true){AIPlayer(1200)}
+                      
                      }}}
                       ></section>
                 </td>
                 <td className='tableData'>
                   
-                  <section className='writeHere' onClick={(e)=>{add(e)
+                  <section className='writeHere' onClick={(e)=>{
+                      add(e)
+                      console.log(tstate)
                      if(e.isTrusted === true){
-                      AIPlayer(1200)
+                      if(tstate !== true){AIPlayer(1200)}
+                      
                      }}}
                       ></section>
                 </td>
