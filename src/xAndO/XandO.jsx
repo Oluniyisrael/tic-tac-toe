@@ -27,7 +27,7 @@ function XandO(props) {
     } 
     if (count === 9 && tstate === false) {
       addChoice()
-      // insert code 
+      // insert code for check
     }
     const turn = document.getElementById('turn')
     if(turn.innerText === 'X'){

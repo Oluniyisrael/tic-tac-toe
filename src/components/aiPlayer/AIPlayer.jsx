@@ -1,4 +1,4 @@
-function AIPlayer(tstate){
+function AIPlayer(timeout){
       var square = document.getElementsByClassName('writeHere')
       var amount = (square.length -1)
       let randomIndex = Math.floor(Math.random() * amount);
@@ -11,7 +11,7 @@ function AIPlayer(tstate){
               // }
               // else{}
               //to br continued
-              }, tstate)
+              }, timeout)
               //timeout function longer than refresh button, but when it is the player's turn clear timeout
   }  
   export default AIPlayer
