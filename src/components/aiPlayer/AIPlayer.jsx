@@ -1,4 +1,4 @@
-function AIPlayer(tstate){
+function AIPlayer(tstate,log){
       var square = document.getElementsByClassName('writeHere')
       var amount = (square.length -1)
       let randomIndex = Math.floor(Math.random() * amount);
@@ -8,6 +8,7 @@ function AIPlayer(tstate){
               // if(tstate !== true){
                 
                 square[randomIndex].click()
+                console.log(log)
               // }
               // else{}
               //to br continued

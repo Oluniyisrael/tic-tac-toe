@@ -40,12 +40,12 @@ useEffect(() => {
     for(let i=0;i < document.getElementsByClassName('writeHere').length;i++){
       document.getElementsByClassName('writeHere')[i].addEventListener('click',(e)=>{
           if (e.isTrusted === true) {
-              AIPlayer(1000)
+              AIPlayer(1000,tstate)
               // problem
           }
           // if(document.getElementsByClassName('writeHere').length === 0){
           //  else if(tstate === true){
-          //   e.preventDefault()
+            // e.preventDefault()
           // }
           else{e.preventDefault()}
       })
