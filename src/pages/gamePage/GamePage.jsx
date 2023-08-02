@@ -14,6 +14,7 @@ function GamePage() {
     const [xScore, setXScore]= useState(0)
     const [oScore, setOScore]= useState(0)
     const [choice,setChoice]= useState(0)
+    const [firstPlayerTally,setFirstPlayerTally]=useState('')// to be continued
     function addXScore(){
         setXScore(xScore + 1)
     }

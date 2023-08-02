@@ -5,7 +5,7 @@ import {useState,  useEffect, useRef} from 'react';
 import AIPlayer from '../components/aiPlayer/AIPlayer';
 
 function XandO(props) {
-  const tstate = props.tstate
+  var tstate = props.tstate
   var writings = 
   [
     ['X','O','X','O','X','O','X','O','X',''],
@@ -22,23 +22,28 @@ function XandO(props) {
     }, 300);
   }
   useEffect(() => {
-    if (count >= 4 ){
-      DeclearWin(Props,Props.setTState)
-    } 
     if (count === 9 && tstate === false) {
       addChoice()
       // insert code for check
     }
+    if (count >= 4 ){
+      DeclearWin(Props,Props.setTState)
+    } 
     const turn = document.getElementById('turn')
     if(turn.innerText === 'X'){
       turn.style.color = 'Red'
     } 
     else{turn.style.color ="Blue"}
 },[count,Props,addChoice,tstate,choice])  
-  useEffect(()=>{
-    Props.setTState(false)
-  },[Props])
-  
+
+  function checkAI(e){
+    if(e.isTrusted === true){
+      if(tstate !== true){
+        AIPlayer(1200)
+      }
+      
+     }
+  }
   function add(e){
         setCount(count + 1); 
         e.target.className='changeNode'
@@ -50,19 +55,34 @@ function XandO(props) {
                     squares.style.color= "red"
                 }
                 else{squares.style.color="blue"}
+                console.log(tstate)
+
         }
        }
 
   // ???????Do here
-  // const firstTally = writings[choice][count]
-  // console.log(firstTally)
+  const firstTally = writings[choice][count]
+  console.log(firstTally)
   // if count === 0 and writings [choice][count] !== firstTally click random div
+  // for (let i = 0; i < document.querySelectorAll('hr').length; i++) {
+  //   if(document.querySelectorAll('hr')[i].style.display === 'block'){
+  //       console.log('we have a winner')
+  //   }
+  //   else{console.log('no winner')}
+// }
+// useEffect(()=>{
 //   for (let i = 0; i < document.querySelectorAll('hr').length; i++) {
 //     if(document.querySelectorAll('hr')[i].style.display === 'block'){
-//         console.log('we have a winner')
+//         Props.setTState(true)
 //     }
-//     else{console.log('no winner')}
-// }
+
+//   }
+// },[Props])
+// console.log(tstate)// true
+useEffect(()=>{
+  Props.setTState(false)
+},[Props])
+
   return (
     <div className='table'>
         <div className='tableCont'>
@@ -81,39 +101,27 @@ function XandO(props) {
                 <td className='tableData'>
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
+                      checkAI(e)
                       // console.log(winState)
-                     if(e.isTrusted === true){
-                      if(tstate !== true){
-                        AIPlayer(1200)
-                      }
-                      
-                     }}}
+                     }}
                       ></section>
                 </td>
                 <td className='tableData'>
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
+                      checkAI(e)
                       // console.log(winState)
-                     if(e.isTrusted === true){
-                      if(tstate !== true){
-                        AIPlayer(1200)
-                      }
-                      
-                     }}}
+                     }}
                       ></section>
                 </td>
                 <td className='tableData'>
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
+                      checkAI(e)
                       // console.log(winState)
-                     if(e.isTrusted === true){
-                      if(tstate !== true){
-                        AIPlayer(1200)
-                      }
-                      
-                     }}}
+                     }}
                       ></section>
                 </td>
               </tr>
@@ -123,6 +131,7 @@ function XandO(props) {
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
+                      checkAI(e)
                       // console.log(tstate)
                      if(e.isTrusted === true){
                       if(tstate !== true){
@@ -138,26 +147,18 @@ function XandO(props) {
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
+                      checkAI(e)
                       // console.log(winState)
-                     if(e.isTrusted === true){
-                      if(tstate !== true){
-                        AIPlayer(1200)
-                      }
-                      
-                     }}}
+                     }}
                       ></section>
                 </td>
                 <td className='tableData'>
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
+                      checkAI(e)
                       // console.log(winState)
-                     if(e.isTrusted === true){
-                      if(tstate !== true){
-                        AIPlayer(1200)
-                      }
-                      
-                     }}}
+                     }}
                       ></section>
                 </td>
               </tr>
@@ -167,39 +168,27 @@ function XandO(props) {
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
+                      checkAI(e)
                       // console.log(winState)
-                     if(e.isTrusted === true){
-                      if(tstate !== true){
-                        AIPlayer(1200)
-                      }
-                      
-                     }}}
+                     }}
                       ></section>
                 </td>
                 <td className='tableData'>
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
+                      checkAI(e)
                       // console.log(winState)
-                     if(e.isTrusted === true){
-                      if(tstate !== true){
-                        AIPlayer(1200)
-                      }
-                      
-                     }}}
+                     }}
                       ></section>
                 </td>
                 <td className='tableData'>
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
+                      checkAI(e)
                       // console.log(winState)
-                     if(e.isTrusted === true){
-                      if(tstate !== true){
-                        AIPlayer(1200)
-                      }
-                      
-                     }}}
+                     }}
                       ></section>
                 </td>
               </tr>
