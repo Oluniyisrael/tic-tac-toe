@@ -8,6 +8,7 @@ import TipsPage from '../tipsPage/TipsPage'
 function GamePage() {
     
     var showScore = true
+    const [tstate,setTState] = useState(false)
     const [gameStatus, setGameStatus]= useState(true)
     const [tipsStatus, setTipsStatus]= useState(true)
     const [xScore, setXScore]= useState(0)
@@ -72,7 +73,8 @@ function GamePage() {
     
     // }
     //stop edit here
-  return (
+    console.log(tstate)
+    return (
     <div>
        <nav id='gameNav'>
         <div>
@@ -88,6 +90,8 @@ function GamePage() {
         reset = {resetGame}
         choice = {choice}
         addChoice ={addChoice} 
+        tstate ={tstate}
+        setTState = {setTState}
         /> }
         {tipsStatus && <TipsPage
             addChoice = {addChoice}

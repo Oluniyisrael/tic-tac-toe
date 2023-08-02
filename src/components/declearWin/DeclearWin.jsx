@@ -13,7 +13,6 @@ function DeclearWin(props,setState) {
           document.getElementById('line').style.display = 'block'
           AwardWin(2,props)
           addChoice()
-          setStateTrue()
         }
         else if(squares[0].innerText === squares[3].innerText && squares[3].innerText === squares[6].innerText && squares[6].innerText !== ''){
           document.getElementById('line2').style.display = 'block'

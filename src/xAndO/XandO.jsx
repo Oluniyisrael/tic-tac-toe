@@ -5,8 +5,7 @@ import {useState,  useEffect, useRef} from 'react';
 import AIPlayer from '../components/aiPlayer/AIPlayer';
 
 function XandO(props) {
-
-  const [tstate,setTState] = useState(false)
+  const tstate = props.tstate
   var writings = 
   [
     ['X','O','X','O','X','O','X','O','X',''],
@@ -16,6 +15,7 @@ function XandO(props) {
   const [count,setCount] = useState(0) 
   const choice = props.choice
   const addChoice = Props.addChoice
+  // console.log(tstate)
   if(count === 9 && tstate === false){
     setTimeout(() => {
       Props.refresh()
@@ -23,7 +23,7 @@ function XandO(props) {
   }
   useEffect(() => {
     if (count >= 4 ){
-      DeclearWin(Props,setTState)
+      DeclearWin(Props,Props.setTState)
     } 
     if (count === 9 && tstate === false) {
       addChoice()
@@ -35,7 +35,9 @@ function XandO(props) {
     } 
     else{turn.style.color ="Blue"}
 },[count,Props,addChoice,tstate,choice])  
-
+  useEffect(()=>{
+    Props.setTState(false)
+  },[Props])
   
   function add(e){
         setCount(count + 1); 
@@ -55,6 +57,12 @@ function XandO(props) {
   // const firstTally = writings[choice][count]
   // console.log(firstTally)
   // if count === 0 and writings [choice][count] !== firstTally click random div
+//   for (let i = 0; i < document.querySelectorAll('hr').length; i++) {
+//     if(document.querySelectorAll('hr')[i].style.display === 'block'){
+//         console.log('we have a winner')
+//     }
+//     else{console.log('no winner')}
+// }
   return (
     <div className='table'>
         <div className='tableCont'>
@@ -73,43 +81,7 @@ function XandO(props) {
                 <td className='tableData'>
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      console.log(tstate)
-                     if(e.isTrusted === true){
-                      if(tstate !== true){AIPlayer(1200)}
-                      
-                     }}}
-                      ></section>
-                </td>
-                <td className='tableData'>
-                  
-                  <section className='writeHere' onClick={(e)=>{
-                      add(e)
-                      console.log(tstate)
-                     if(e.isTrusted === true){
-                      if(tstate !== true){AIPlayer(1200)}
-                      
-                     }}}
-                      ></section>
-                </td>
-                <td className='tableData'>
-                  
-                  <section className='writeHere' onClick={(e)=>{
-                      add(e)
-                      console.log(tstate)
-                     if(e.isTrusted === true){
-                      if(tstate !== true){AIPlayer(1200)}
-                      
-                     }}}
-                      ></section>
-                </td>
-              </tr>
-            <hr id='line3' />
-              <tr className='tableRow'>
-                <td className='tableData'>
-                  
-                  <section className='writeHere' onClick={(e)=>{
-                      add(e)
-                      console.log(tstate)
+                      // console.log(winState)
                      if(e.isTrusted === true){
                       if(tstate !== true){
                         AIPlayer(1200)
@@ -122,9 +94,11 @@ function XandO(props) {
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      console.log(tstate)
+                      // console.log(winState)
                      if(e.isTrusted === true){
-                      if(tstate !== true){AIPlayer(1200)}
+                      if(tstate !== true){
+                        AIPlayer(1200)
+                      }
                       
                      }}}
                       ></section>
@@ -133,9 +107,55 @@ function XandO(props) {
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      console.log(tstate)
+                      // console.log(winState)
                      if(e.isTrusted === true){
-                      if(tstate !== true){AIPlayer(1200)}
+                      if(tstate !== true){
+                        AIPlayer(1200)
+                      }
+                      
+                     }}}
+                      ></section>
+                </td>
+              </tr>
+            <hr id='line3' />
+              <tr className='tableRow'>
+                <td className='tableData'>
+                  
+                  <section className='writeHere' onClick={(e)=>{
+                      add(e)
+                      // console.log(tstate)
+                     if(e.isTrusted === true){
+                      if(tstate !== true){
+
+             
+                        AIPlayer(1200)
+                      }
+                      
+                     }}}
+                      ></section>
+                </td>
+                <td className='tableData'>
+                  
+                  <section className='writeHere' onClick={(e)=>{
+                      add(e)
+                      // console.log(winState)
+                     if(e.isTrusted === true){
+                      if(tstate !== true){
+                        AIPlayer(1200)
+                      }
+                      
+                     }}}
+                      ></section>
+                </td>
+                <td className='tableData'>
+                  
+                  <section className='writeHere' onClick={(e)=>{
+                      add(e)
+                      // console.log(winState)
+                     if(e.isTrusted === true){
+                      if(tstate !== true){
+                        AIPlayer(1200)
+                      }
                       
                      }}}
                       ></section>
@@ -147,9 +167,11 @@ function XandO(props) {
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      console.log(tstate)
+                      // console.log(winState)
                      if(e.isTrusted === true){
-                      if(tstate !== true){AIPlayer(1200)}
+                      if(tstate !== true){
+                        AIPlayer(1200)
+                      }
                       
                      }}}
                       ></section>
@@ -158,9 +180,11 @@ function XandO(props) {
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      console.log(tstate)
+                      // console.log(winState)
                      if(e.isTrusted === true){
-                      if(tstate !== true){AIPlayer(1200)}
+                      if(tstate !== true){
+                        AIPlayer(1200)
+                      }
                       
                      }}}
                       ></section>
@@ -169,9 +193,11 @@ function XandO(props) {
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      console.log(tstate)
+                      // console.log(winState)
                      if(e.isTrusted === true){
-                      if(tstate !== true){AIPlayer(1200)}
+                      if(tstate !== true){
+                        AIPlayer(1200)
+                      }
                       
                      }}}
                       ></section>
