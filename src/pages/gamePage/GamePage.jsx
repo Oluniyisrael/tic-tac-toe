@@ -73,7 +73,7 @@ function GamePage() {
     
     // }
     //stop edit here
-    console.log(tstate)
+    // console.log(tstate)
     return (
     <div>
        <nav id='gameNav'>
