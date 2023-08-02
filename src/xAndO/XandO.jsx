@@ -35,13 +35,15 @@ function XandO(props) {
     } 
     else{turn.style.color ="Blue"}
 },[count,Props,addChoice,tstate,choice])  
-
+console.log(writings[choice][count] == props.firstPlayerTally )
   function checkAI(e){
     if(e.isTrusted === true){
-      if(tstate !== true){
+      if(count === 0 && writings[choice][count] !== props.firstPlayerTally ){
         AIPlayer(1200)
       }
-      
+      else if (tstate !== true){
+        // AIPlayer(1200)
+      }
      }
   }
   function add(e){
@@ -55,30 +57,14 @@ function XandO(props) {
                     squares.style.color= "red"
                 }
                 else{squares.style.color="blue"}
-                console.log(tstate)
 
         }
        }
 
   // ???????Do here
-  const firstTally = writings[choice][count]
-  console.log(firstTally)
-  // if count === 0 and writings [choice][count] !== firstTally click random div
-  // for (let i = 0; i < document.querySelectorAll('hr').length; i++) {
-  //   if(document.querySelectorAll('hr')[i].style.display === 'block'){
-  //       console.log('we have a winner')
-  //   }
-  //   else{console.log('no winner')}
-// }
-// useEffect(()=>{
-//   for (let i = 0; i < document.querySelectorAll('hr').length; i++) {
-//     if(document.querySelectorAll('hr')[i].style.display === 'block'){
-//         Props.setTState(true)
-//     }
 
-//   }
-// },[Props])
-// console.log(tstate)// true
+  // console.log(props.firstPlayerTally)
+
 useEffect(()=>{
   Props.setTState(false)
 },[Props])

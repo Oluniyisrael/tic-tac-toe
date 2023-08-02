@@ -56,25 +56,7 @@ function GamePage() {
     if (choice === 2) {
         setChoice(0)
     }
-    // edit here
-    // function test2(){
-    //     var square = document.getElementsByClassName('writeHere')
-    //     var amount = (square.length - 1)
-    //             var randomSquareNo = (Math.round(( amount* Math.random())))
-    //       setTimeout(() => {
-    //             console.log(randomSquareNo)
-    //           console.log(amount)
-    //             square[randomSquareNo].click()
-            
-    //         }, 2000)
-               
-    //   } 
-    // for( let i=0;i < document.getElementsByClassName('writeHere').length;i++){
-    //     document.getElementsByClassName('writeHere')[i].addEventListener('mousedown',test2)
-    
-    // }
-    //stop edit here
-    // console.log(tstate)
+
     return (
     <div>
        <nav id='gameNav'>
@@ -93,11 +75,14 @@ function GamePage() {
         addChoice ={addChoice} 
         tstate ={tstate}
         setTState = {setTState}
+        firstPlayerTally = {firstPlayerTally}
         /> }
         {tipsStatus && <TipsPage
             addChoice = {addChoice}
             close ={closeTipsPage}
             refresh = {refreshGameForTips}
+            setFirstPlayerTally = {setFirstPlayerTally}
+            // firstPlayerTally = {firstPlayerTally}
             />
         }
         {/*Note to self: Create a dark mode toggle button*/}

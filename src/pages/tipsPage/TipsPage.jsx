@@ -8,11 +8,13 @@ function TipsPage(props) {
         props.addChoice()
         props.close()
         props.refresh();
+        props.setFirstPlayerTally('O')
     }
     function buttonX() {
         //...
         props.close()
         props.refresh();
+        props.setFirstPlayerTally('X')
     }
     
 
