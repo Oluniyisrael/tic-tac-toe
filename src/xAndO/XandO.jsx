@@ -6,7 +6,7 @@ import AIPlayer from '../components/aiPlayer/AIPlayer';
 
 function XandO(props) {
   var tstate = props.tstate
-  var writings = 
+  const writings = 
   [
     ['X','O','X','O','X','O','X','O','X',''],
     ['O','X','O','X','O','X','O','X','O','']
@@ -35,6 +35,22 @@ function XandO(props) {
     } 
     else{turn.style.color ="Blue"}
 },[count,Props,addChoice,tstate,choice])  
+
+
+useEffect(()=>{
+  function  aiPlayer() {
+    var square = document.getElementsByClassName('writeHere')
+     var amount = (square.length -1)
+     let randomIndex = Math.floor(Math.random() * amount);
+       if(writings[choice][count] !== Props.firstPlayerTally ){
+            square[randomIndex].click()
+       }
+}
+for (let i = 0; i < document.getElementsByClassName('writeHere').length; i++) {
+  document.getElementsByClassName('writeHere')[i].addEventListener('click', aiPlayer)
+  
+}
+},[])
 // console.log(writings[choice][count] === props.firstPlayerTally )
   // function checkAI(e){
   //   if(e.isTrusted === true){
@@ -46,7 +62,7 @@ function XandO(props) {
   //     }
   //    }
   // }
-  
+
   function add(e){
         setCount(count + 1); 
         e.target.className='changeNode'
