@@ -10,7 +10,7 @@ function DeclearWin(props,setState) {
         const squares = document.getElementsByClassName('tableData');
         if(squares[0].innerText === squares[1].innerText && squares[1].innerText === squares[2].innerText && squares[2].innerText !== '' 
             ){
-              setStateTrue()
+          setStateTrue()
           document.getElementById('line').style.display = 'block'
           AwardWin(2,props)
           addChoice()

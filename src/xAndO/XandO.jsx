@@ -35,17 +35,18 @@ function XandO(props) {
     } 
     else{turn.style.color ="Blue"}
 },[count,Props,addChoice,tstate,choice])  
-console.log(writings[choice][count] == props.firstPlayerTally )
-  function checkAI(e){
-    if(e.isTrusted === true){
-      if(count === 0 && writings[choice][count] !== props.firstPlayerTally ){
-        AIPlayer(1200)
-      }
-      else if (tstate !== true){
-        // AIPlayer(1200)
-      }
-     }
-  }
+// console.log(writings[choice][count] === props.firstPlayerTally )
+  // function checkAI(e){
+  //   if(e.isTrusted === true){
+  //     if(count === 0 && writings[choice][count] !== props.firstPlayerTally ){
+  //       e.preventDefault()
+  //     }
+  //     else {
+  //       AIPlayer(1200)
+  //     }
+  //    }
+  // }
+  
   function add(e){
         setCount(count + 1); 
         e.target.className='changeNode'
@@ -64,6 +65,7 @@ console.log(writings[choice][count] == props.firstPlayerTally )
   // ???????Do here
 
   // console.log(props.firstPlayerTally)
+  // if writings !== firstplayer tally run()
 
 useEffect(()=>{
   Props.setTState(false)
@@ -87,7 +89,7 @@ useEffect(()=>{
                 <td className='tableData'>
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      checkAI(e)
+                      // checkAI(e)
                       // console.log(winState)
                      }}
                       ></section>
@@ -96,7 +98,7 @@ useEffect(()=>{
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      checkAI(e)
+                      // checkAI(e)
                       // console.log(winState)
                      }}
                       ></section>
@@ -105,7 +107,7 @@ useEffect(()=>{
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      checkAI(e)
+                      // checkAI(e)
                       // console.log(winState)
                      }}
                       ></section>
@@ -117,7 +119,7 @@ useEffect(()=>{
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      checkAI(e)
+                      // checkAI(e)
                       // console.log(tstate)
                      if(e.isTrusted === true){
                       if(tstate !== true){
@@ -133,7 +135,7 @@ useEffect(()=>{
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      checkAI(e)
+                      // checkAI(e)
                       // console.log(winState)
                      }}
                       ></section>
@@ -142,7 +144,7 @@ useEffect(()=>{
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      checkAI(e)
+                      // checkAI(e)
                       // console.log(winState)
                      }}
                       ></section>
@@ -154,7 +156,7 @@ useEffect(()=>{
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      checkAI(e)
+                      // checkAI(e)
                       // console.log(winState)
                      }}
                       ></section>
@@ -163,7 +165,7 @@ useEffect(()=>{
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      checkAI(e)
+                      // checkAI(e)
                       // console.log(winState)
                      }}
                       ></section>
@@ -172,7 +174,7 @@ useEffect(()=>{
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      checkAI(e)
+                      // checkAI(e)
                       // console.log(winState)
                      }}
                       ></section>
