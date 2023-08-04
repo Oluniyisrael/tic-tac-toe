@@ -209,14 +209,7 @@ useEffect(()=>{
                       add(e)
                       checkAI(e)
                       // console.log(tstate)
-                     if(e.isTrusted === true){
-                      if(tstate !== true){
-
-             
-                        AIPlayer(1200)
-                      }
-                      
-                     }}}
+                     }}
                       ></section>
                 </td>
                 <td className='tableData'>
