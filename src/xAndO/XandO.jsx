@@ -5,6 +5,7 @@ import {useState,  useEffect, useRef} from 'react';
 import AIPlayer from '../components/aiPlayer/AIPlayer';
 
 function XandO(props) {
+  
   var tstate = props.tstate
   const writings = 
   [
@@ -15,6 +16,15 @@ function XandO(props) {
   const [count,setCount] = useState(0) 
   const choice = props.choice
   const addChoice = Props.addChoice
+  const turn = writings[choice][count]
+  useEffect(()=>{
+   if(count === 0 &&   turn === Props.firstPlayerTally 
+     ){
+       console.log('Hinder CLick')
+       hinderClick()
+      
+     }},[Props,turn,count])
+
   // console.log(tstate)
   if(count === 9 && tstate === false){
     setTimeout(() => {
@@ -36,10 +46,11 @@ function XandO(props) {
     else{turn.style.color ="Blue"}
 },[count,Props,addChoice,tstate,choice])  
 
+
 const myTimeout = ()=>setTimeout(AIPlayer,1200)
   function checkAI(e){
     if(e.isTrusted === true ){
-      // if(count === 0 && writings[choice][count] !== props.firstPlayerTally ){
+      // if(count === 0 && writings[choice][count] !== Props.firstPlayerTally ){
         // clearTimeout( myTimeout)
                 myTimeout()
        // clear timeout
@@ -69,6 +80,68 @@ const myTimeout = ()=>setTimeout(AIPlayer,1200)
 useEffect(()=>{
   Props.setTState(false)
 },[Props])
+
+
+    // console.log(humant)
+
+    function hinderClick(){
+      // for (let i = 0; i <    document.querySelectorAll('section').length; i++) {
+      //   document.querySelectorAll('section')[i].addEventListener("click", function(e) {
+      //     e.stopPropagation();
+      //     e.preventDefault()
+          
+      // })}
+      // setTimeout(()=> {
+      //   for (let i = 0; i <    document.querySelectorAll('section').length; i++) {
+      //     document.querySelectorAll('section')[i].addEventListener("click", function() {
+            
+      //   })}
+      // },1000)
+      
+    }
+    // var divElement = document.getElementsByClassName('writeHere')[0]
+// function handleEvent(event) {
+//   event.stopPropagation();  // Prevents the event from bubbling up the DOM tree
+//   event.preventDefault();   // Prevents the default behavior of the event (e.g., form submission, link navigation)
+  
+//   setTimeout(() => {
+//     // Resume normal propagation and behavior after a timeout
+//     // Do something here to continue the event's propagation or default behavior
+//     // For example, you can trigger a click event on the element again:
+//     // divElement.click();
+    
+//     // Or you can explicitly trigger the default behavior if it was prevented:
+//     // window.location.href = divElement.getAttribute('href');
+    
+//     // Make sure to handle the event according to your specific use case
+//   }, 1000); // Replace 1000 with the desired timeout value in milliseconds
+// }
+
+// divElement.addEventListener('click', handleEvent);
+
+
+
+
+// var divElement = document.getElementsByClassName('writeHere')[0]
+
+// let shouldPrevent = false;
+
+// function handleEvent(event) {
+//   if (shouldPrevent) {
+//     event.preventDefault();
+//     event.stopPropagation();
+//   } else {
+//     shouldPrevent = true;
+//     setTimeout(() => {
+//       shouldPrevent = false;
+//       // Now, when the event is clicked again, it will resume normal behavior
+//     }, 1000); // Replace 1000 with the desired timeout value in milliseconds
+//   }
+// }
+
+// divElement.addEventListener('click', handleEvent);
+
+
 
   return (
     <div className='table'>
