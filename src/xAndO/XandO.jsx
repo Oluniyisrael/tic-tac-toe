@@ -16,14 +16,14 @@ function XandO(props) {
   const [count,setCount] = useState(0) 
   const choice = props.choice
   const addChoice = Props.addChoice
-  const turn = writings[choice][count]
+  const turni = writings[choice][count]
   useEffect(()=>{
-   if(count === 0 &&   turn === Props.firstPlayerTally 
+   if(count === 0 &&   turni === Props.firstPlayerTally 
      ){
        console.log('Hinder CLick')
        hinderClick()
       
-     }},[Props,turn,count])
+     }},[Props,turni,count])
 
   // console.log(tstate)
   if(count === 9 && tstate === false){
