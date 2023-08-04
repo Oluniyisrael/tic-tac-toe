@@ -31,7 +31,7 @@ function GamePage() {
         }, 1000)
         setTimeout(() => {
             setGameStatus(true)
-        }, 1001);
+        }, 1005);
     }
     function refreshGameForTips (){
         setTimeout(()=>{

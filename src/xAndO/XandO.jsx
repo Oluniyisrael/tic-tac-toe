@@ -36,33 +36,20 @@ function XandO(props) {
     else{turn.style.color ="Blue"}
 },[count,Props,addChoice,tstate,choice])  
 
-
-useEffect(()=>{
-  function  aiPlayer() {
-    var square = document.getElementsByClassName('writeHere')
-     var amount = (square.length -1)
-     let randomIndex = Math.floor(Math.random() * amount);
-       if(writings[choice][count] !== Props.firstPlayerTally ){
-            square[randomIndex].click()
-       }
-}
-for (let i = 0; i < document.getElementsByClassName('writeHere').length; i++) {
-  document.getElementsByClassName('writeHere')[i].addEventListener('click', aiPlayer)
-  
-}
-},[])
-// console.log(writings[choice][count] === props.firstPlayerTally )
-  // function checkAI(e){
-  //   if(e.isTrusted === true){
-  //     if(count === 0 && writings[choice][count] !== props.firstPlayerTally ){
-  //       e.preventDefault()
-  //     }
-  //     else {
-  //       AIPlayer(1200)
-  //     }
-  //    }
-  // }
-
+const myTimeout = ()=>setTimeout(AIPlayer,1200)
+  function checkAI(e){
+    if(e.isTrusted === true ){
+      // if(count === 0 && writings[choice][count] !== props.firstPlayerTally ){
+        // clearTimeout( myTimeout)
+                myTimeout()
+       // clear timeout
+      // }
+      // else {
+      //   myTimeout()
+      // }
+     }
+  }
+  // from the last match clear the time out if x wins
   function add(e){
         setCount(count + 1); 
         e.target.className='changeNode'
@@ -78,10 +65,6 @@ for (let i = 0; i < document.getElementsByClassName('writeHere').length; i++) {
         }
        }
 
-  // ???????Do here
-
-  // console.log(props.firstPlayerTally)
-  // if writings !== firstplayer tally run()
 
 useEffect(()=>{
   Props.setTState(false)
@@ -105,7 +88,7 @@ useEffect(()=>{
                 <td className='tableData'>
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      // checkAI(e)
+                      checkAI(e)
                       // console.log(winState)
                      }}
                       ></section>
@@ -114,7 +97,7 @@ useEffect(()=>{
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      // checkAI(e)
+                      checkAI(e)
                       // console.log(winState)
                      }}
                       ></section>
@@ -123,7 +106,7 @@ useEffect(()=>{
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      // checkAI(e)
+                      checkAI(e)
                       // console.log(winState)
                      }}
                       ></section>
@@ -135,7 +118,7 @@ useEffect(()=>{
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      // checkAI(e)
+                      checkAI(e)
                       // console.log(tstate)
                      if(e.isTrusted === true){
                       if(tstate !== true){
@@ -151,7 +134,7 @@ useEffect(()=>{
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      // checkAI(e)
+                      checkAI(e)
                       // console.log(winState)
                      }}
                       ></section>
@@ -160,7 +143,7 @@ useEffect(()=>{
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      // checkAI(e)
+                      checkAI(e)
                       // console.log(winState)
                      }}
                       ></section>
@@ -172,7 +155,7 @@ useEffect(()=>{
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      // checkAI(e)
+                      checkAI(e)
                       // console.log(winState)
                      }}
                       ></section>
@@ -181,7 +164,7 @@ useEffect(()=>{
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      // checkAI(e)
+                      checkAI(e)
                       // console.log(winState)
                      }}
                       ></section>
@@ -190,7 +173,7 @@ useEffect(()=>{
                   
                   <section className='writeHere' onClick={(e)=>{
                       add(e)
-                      // checkAI(e)
+                      checkAI(e)
                       // console.log(winState)
                      }}
                       ></section>
