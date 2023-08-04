@@ -20,10 +20,25 @@ function XandO(props) {
   useEffect(()=>{
    if(count === 0 &&   turni === Props.firstPlayerTally 
      ){
+      function bind(e) {
+        e.stopPropagation();
+        e.preventDefault()
+        
+    }
+      function hinderClick(){
+        for (let i = 0; i <    document.querySelectorAll('section').length; i++) {
+          document.querySelectorAll('section')[i].addEventListener("click",bind)}
+        setTimeout(()=> {
+          for (let i = 0; i <    document.querySelectorAll('section').length; i++) {
+            document.querySelectorAll('section')[i].removeEventListener("click", bind)
+            }
+        },1000)
+        
+      }
        console.log('Hinder CLick')
        hinderClick()
       
-     }},[Props,turni,count])
+     }},[Props,turni,count,])
 
   // console.log(tstate)
   if(count === 9 && tstate === false){
@@ -31,6 +46,7 @@ function XandO(props) {
       Props.refresh()
     }, 300);
   }
+  console.log(DeclearWin === true)
   useEffect(() => {
     if (count === 9 && tstate === false) {
       addChoice()
@@ -83,22 +99,22 @@ useEffect(()=>{
 
 
     // console.log(humant)
-
-    function hinderClick(){
-      // for (let i = 0; i <    document.querySelectorAll('section').length; i++) {
-      //   document.querySelectorAll('section')[i].addEventListener("click", function(e) {
-      //     e.stopPropagation();
-      //     e.preventDefault()
-          
-      // })}
-      // setTimeout(()=> {
-      //   for (let i = 0; i <    document.querySelectorAll('section').length; i++) {
-      //     document.querySelectorAll('section')[i].addEventListener("click", function() {
-            
-      //   })}
-      // },1000)
+  //   function bind(e) {
+  //     e.stopPropagation();
+  //     e.preventDefault()
       
-    }
+  // }
+  //   function hinderClick(){
+  //     for (let i = 0; i <    document.querySelectorAll('section').length; i++) {
+  //       document.querySelectorAll('section')[i].addEventListener("click",(e)=>{bind(e)})}
+  //     setTimeout(()=> {
+  //       for (let i = 0; i <    document.querySelectorAll('section').length; i++) {
+  //         document.querySelectorAll('section')[i].removeEventListener("click", (e)=>{
+  //           bind(e)
+  //         })}
+  //     },1000)
+      
+  //   }
     // var divElement = document.getElementsByClassName('writeHere')[0]
 // function handleEvent(event) {
 //   event.stopPropagation();  // Prevents the event from bubbling up the DOM tree
