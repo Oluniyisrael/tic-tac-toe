@@ -46,7 +46,7 @@ function XandO(props) {
       Props.refresh()
     }, 300);
   }
-  console.log(DeclearWin === true)
+  // console.log(DeclearWin === true)
   useEffect(() => {
     if (count === 9 && tstate === false) {
       addChoice()
