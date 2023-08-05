@@ -14,7 +14,7 @@ function GamePage() {
     const [xScore, setXScore]= useState(0)
     const [oScore, setOScore]= useState(0)
     const [choice,setChoice]= useState(0)
-    const [firstPlayerTally,setFirstPlayerTally]=useState('')// to be continued
+    const [firstPlayerTally,setFirstPlayerTally]=useState('')
     function addXScore(){
         setXScore(xScore + 1)
     }
@@ -32,6 +32,7 @@ function GamePage() {
         setTimeout(() => {
             setGameStatus(true)
         }, 1005);
+        console.log('Game refreshed')
     }
     function refreshGameForTips (){
         setTimeout(()=>{
@@ -69,7 +70,7 @@ function GamePage() {
     {gameStatus && <XandO 
         addX = {addXScore} 
         addO ={addOScore}
-        refresh = {refreshGame}
+        refresh = {()=>refreshGame()}
         reset = {resetGame}
         choice = {choice}
         addChoice ={addChoice} 

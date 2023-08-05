@@ -157,12 +157,16 @@ useEffect(()=>{
 
 // divElement.addEventListener('click', handleEvent);
 
+function useForceUpdate() {
+  const [value, setValue] = useState(0);
+  return () => setValue(value => value + 1);
+}
 
 
   return (
     <div className='table'>
         <div className='tableCont'>
-        <div><span id='turn' >{writings[choice][count]}</span>'s turn</div>
+        <div><span id='turn' >{writings[choice][count]}</span>'s turn <button onClick={()=>{}}>refres</button></div>
             <table className='XO'>
             <hr id='line' />
             <hr id='line2' />
