@@ -41,6 +41,15 @@ console.log(`Count: ${count}`)
 if (count > 2) {
   checkwin()
 }
+function awardWin(a,kase,tally){
+if (a === 'X') {
+  addXScore()
+}
+else {addXScore()}
+if (kase == 0) {
+  
+}
+}
 function checkwin() {
   const winningCombinations = [
     [0, 1, 2], // Top row
