@@ -35,6 +35,7 @@ function XandO(props) {
 
   }
   console.log(winDet)
+  console.log(props.choice)
 
 },[count])
 async function refreshGame() {

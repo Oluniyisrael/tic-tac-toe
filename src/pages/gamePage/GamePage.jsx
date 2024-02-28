@@ -2,7 +2,7 @@ import React,{useState}from 'react'
 import './GamePage.css'
 import logo from '../../assets/Israel Tic Tac Toe.png'
 import XandO from '../../xAndO/XandO.jsx'
-// import TipsPage from '../tipsPage/TipsPage'
+import TipsPage from '../tipsPage/TipsPage'
 
 function GamePage() {
     var showScore = true
@@ -52,7 +52,15 @@ function GamePage() {
     </nav> 
     <XandO
     addX= {()=>addXScore()}
-    addO = {()=>addOScore()}/>
+    addO = {()=>addOScore()}
+    choice = {firstPlayerTally}
+         />
+            {tipsStatus && <TipsPage
+            addChoice = {addChoice}
+            close ={closeTipsPage}
+            setFirstPlayerTally = {setFirstPlayerTally}
+            />
+        }
     </div>
     ) 
    

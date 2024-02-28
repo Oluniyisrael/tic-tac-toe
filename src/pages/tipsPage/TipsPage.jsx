@@ -7,13 +7,13 @@ function TipsPage(props) {
     function buttonO(){
         props.addChoice()
         props.close()
-        props.refresh();
+        // props.refresh();
         props.setFirstPlayerTally('O')
     }
     function buttonX() {
         //...
         props.close()
-        props.refresh();
+        // props.refresh();
         props.setFirstPlayerTally('X')
     }
     
