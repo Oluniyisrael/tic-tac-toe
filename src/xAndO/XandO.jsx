@@ -166,110 +166,11 @@ function useForceUpdate() {
   return (
     <div className='table'>
         <div className='tableCont'>
-        <div><span id='turn' >{writings[choice][count]}</span>'s turn <button onClick={()=>{}}>refres</button></div>
-            <table className='XO'>
-            <hr id='line' />
-            <hr id='line2' />
-            <hr id='line4' />
-            <hr id='line5' />
-            <tbody>
-              <span id='line7Dec'><hr id='line7' /></span>
-              <span id='line8Dec'><hr id='line8' /></span>
+        {/* <div><span id='turn' >{writings[choice][count]}</span>'s turn <button onClick={()=>{}}>refres</button></div> */}
+          <table>
 
-                  
-              <tr className='tableRow'>
-                <td className='tableData'>
-                  <section className='writeHere' onClick={(e)=>{
-                      add(e)
-                      checkAI(e)
-                      // console.log(winState)
-                     }}
-                      ></section>
-                </td>
-                <td className='tableData'>
-                  
-                  <section className='writeHere' onClick={(e)=>{
-                      add(e)
-                      checkAI(e)
-                      // console.log(winState)
-                     }}
-                      ></section>
-                </td>
-                <td className='tableData'>
-                  
-                  <section className='writeHere' onClick={(e)=>{
-                      add(e)
-                      checkAI(e)
-                      // console.log(winState)
-                     }}
-                      ></section>
-                </td>
-              </tr>
-            <hr id='line3' />
-              <tr className='tableRow'>
-                <td className='tableData'>
-                  
-                  <section className='writeHere' onClick={(e)=>{
-                      add(e)
-                      checkAI(e)
-                      // console.log(tstate)
-                     }}
-                      ></section>
-                </td>
-                <td className='tableData'>
-                  
-                  <section className='writeHere' onClick={(e)=>{
-                      add(e)
-                      checkAI(e)
-                      // console.log(winState)
-                     }}
-                      ></section>
-                </td>
-                <td className='tableData'>
-                  
-                  <section className='writeHere' onClick={(e)=>{
-                      add(e)
-                      checkAI(e)
-                      // console.log(winState)
-                     }}
-                      ></section>
-                </td>
-              </tr>
-              <hr id='line6' />
-              <tr className='tableRow'>
-                <td className='tableData'>
-                  
-                  <section className='writeHere' onClick={(e)=>{
-                      add(e)
-                      checkAI(e)
-                      // console.log(winState)
-                     }}
-                      ></section>
-                </td>
-                <td className='tableData'>
-                  
-                  <section className='writeHere' onClick={(e)=>{
-                      add(e)
-                      checkAI(e)
-                      // console.log(winState)
-                     }}
-                      ></section>
-                </td>
-                <td className='tableData'>
-                  
-                  <section className='writeHere' onClick={(e)=>{
-                      add(e)
-                      checkAI(e)
-                      // console.log(winState)
-                     }}
-                      ></section>
-                </td>
-              </tr>
-            </tbody>
-            </table>
-            <div>
-              {/* <button onClick={console.log('Choice :' + choice + ' \n Count: ' + count)}> Do something</button> */}
-            </div>
+          </table>
+            {/* </div> */}
         </div>
     </div>
   )
