@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { useState } from 'react'
 import './XandO.css'
 
 
 function XandO(props) {
-  const addX = props.addX
-  const addO = props.addO
+  const {current: Props} =  useRef(props)
+  const addX = Props.addX
+  const addO = Props.addO
   const writings = 
   [
     ['X','O','X','O','X','O','X','O','X',''],
