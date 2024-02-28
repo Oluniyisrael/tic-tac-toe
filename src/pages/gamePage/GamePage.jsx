@@ -23,15 +23,7 @@ function GamePage() {
         setGameStatus(false)
         setGameStatus(true)
     }
-    function refreshGame (){
-        setTimeout(()=>{
-            setGameStatus(false)
-        }, 1000)
-        setTimeout(() => {
-            setGameStatus(true)
-        }, 1005);
-        console.log('Game refreshed')
-    }
+
     if(xScore > 0 ){
         document.getElementById('xScore').style.color = 'white'
     }

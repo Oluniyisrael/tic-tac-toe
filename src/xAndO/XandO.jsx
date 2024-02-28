@@ -1,22 +1,35 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useState } from 'react'
 import './XandO.css'
 
 
 function XandO(props) {
-  const {current: Props} =  useRef(props)
-  const addX = Props.addX
-  const addO = Props.addO
+  localStorage.clear()
+  // const {current: Props} =  useRef(props)
+
+  const addX = props.addX
+  const addO = props.addO
   const writings = 
   [
     ['X','O','X','O','X','O','X','O','X',''],
     ['O','X','O','X','O','X','O','X','O','']
   ]  
-
+function refreshGame() {
+  setTableCntnt(["","","","","","","","",""]);
+  setLine(["none","none","none","none","none","none","none","none","none"]);
+  changeNode(["writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere"]);
+}
  const [tableCntnt, setTableCntnt] = useState(["","","","","","","","",""])
  const [line, setLine] = useState(["none","none","none","none","none","none","none","none","none"])
  const [count,setCount] = useState(0)
  const [node , changeNode] = useState(["writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere"])
+ useEffect(()=>{
+  const winDet = JSON.parse(localStorage.getItem("winDetails"))
+  if (winDet) {
+    awardWin(winDet)
+  }
+  console.log(winDet)
+},[count])
 
  function handleClick(index,e) {
   // for nodes
@@ -44,15 +57,18 @@ console.log(`Count: ${count}`)
 if (count > 2) {
   checkwin()
 }
-function awardWin(a,kase){
-if (a === 'X') {
+function awardWin(winDet){
+if (winDet.a === 'X') {
   addX()
 }
-else {addO()}
+else {
+  addO()
+}
 
- const newLineState = [...line]
-  newLineState[kase] = "block"
-  setLine(newLineState)
+if (line[winDet.winCase] !== "block") {
+  setLine((prevLine) => [...prevLine, "block"]);
+}
+
 
 
 }
@@ -76,7 +92,8 @@ function checkwin() {
       switch (winCase) {
         case 0:
           actualcase = "Top row"
-          awardWin(a,winCase)
+          localStorage.setItem("winDetails",JSON.stringify({a:tableCntnt[a],winCase:winCase}))
+          // awardWin(a,winCase)
           break;
         case 1:
           actualcase = "Middle horizontal row"
