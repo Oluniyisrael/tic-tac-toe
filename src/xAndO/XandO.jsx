@@ -23,14 +23,28 @@ function XandO(props) {
   const winDet = JSON.parse(localStorage.getItem("winDetails"))
   if (winDet) {
     awardWin(winDet)
+    hinderClick()
+    setTimeout( async () => {
+      try {
+        await refreshGame()
+        
+      } catch (error) {
+        
+      }
+    }, 1400);
 
   }
   console.log(winDet)
+
 },[count])
-function refreshGame() {
-  setTableCntnt(["","","","","","","","",""]);
-  setLine(["none","none","none","none","none","none","none","none","none"]);
-  changeNode(["writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere"]);
+async function refreshGame() {
+  setTableCntnt(Array(9).fill(""));
+  setLine(Array(9).fill("none"));
+  changeNode(Array(9).fill("writeHere"));
+  setCount(0)
+}
+function hinderClick() {
+  changeNode(Array(9).fill("changeNode"))
 }
  function handleClick(index,e) {
   // for nodes
@@ -87,10 +101,10 @@ function checkwin() {
     [0, 3, 6], // Left column   2
     [1, 4, 7], // Middle column 3
     [2, 5, 8], // Right column  4
-    [3, 4, 5], // Middle row    2
-    [6, 7, 8], // Bottom row    3
-    [0, 4, 8], // Diagonal from top-left  7
-    [2, 4, 6]  // Diagonal from top-right 8
+    [0, 4, 8], // Diagonal from top-left  5
+    [2, 4, 6],  // Diagonal from top-right 6
+    [3, 4, 5], // Middle row    7
+    [6, 7, 8] // Bottom row    8
   ];
   for (let combination of winningCombinations) {
     const [a, b, c] = combination
@@ -149,8 +163,8 @@ function checkwin() {
             <hr id='line4'  style={{display: line[2] }}/>
             <hr id='line5'  style={{display: line[3] }}/>
             <tbody>
-              <span id='line7Dec'><hr id='line7'  style={{display: line[4] }}/></span>
-              <span id='line8Dec'><hr id='line8'  style={{display: line[5] }}/></span>
+              <span id='line7Dec' style={{display: line[4] }}><hr id='line7'  /></span>
+              <span id='line8Dec' style={{display: line[5] }}><hr id='line8'  /></span>
             <tr className='tableRow'>
             <td className='tableData'>{tableCntnt[0]}<span className={node[0]} onClick={ (e)=>handleClick(0,e)} > </span></td>
             <td className='tableData'>{tableCntnt[1]}<span className={node[1]} onClick={ (e)=>handleClick(1,e)}> </span></td>
