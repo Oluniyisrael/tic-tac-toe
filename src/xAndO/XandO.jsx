@@ -99,16 +99,20 @@ function checkwin() {
             <hr id='line4' />
             <hr id='line5' />
             <tbody>
+              <span id='line7Dec'><hr id='line7' /></span>
+              <span id='line8Dec'><hr id='line8' /></span>
             <tr className='tableRow'>
             <td className='tableData'>{tableCntnt[0]}<span className={node[0]} onClick={ (e)=>handleClick(0,e)} > </span></td>
             <td className='tableData'>{tableCntnt[1]}<span className={node[1]} onClick={ (e)=>handleClick(1,e)}> </span></td>
             <td className='tableData'>{tableCntnt[2]}<span className={node[2]} onClick={ (e)=>handleClick(2,e)}> </span></td>
             </tr>
+            <hr id='line3' />
             <tr className='tableRow'>
             <td className='tableData'>{tableCntnt[3]}<span className={node[3]} onClick={ (e)=>handleClick(3,e)}> </span></td>
             <td className='tableData'>{tableCntnt[4]}<span className={node[4]} onClick={ (e)=>handleClick(4,e)}> </span></td>
             <td className='tableData'>{tableCntnt[5]}<span className={node[5]} onClick={ (e)=>handleClick(5,e)}> </span></td>
             </tr>
+            <hr id='line6' />
             <tr className='tableRow'>
             <td className='tableData'>{tableCntnt[6]}<span className={node[6]} onClick={ (e)=>handleClick(6,e)}> </span></td>
             <td className='tableData'>{tableCntnt[7]}<span className={node[7]} onClick={ (e)=>handleClick(7,e)}> </span></td>
