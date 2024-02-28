@@ -53,7 +53,8 @@ function GamePage() {
     <XandO
     addX= {()=>addXScore()}
     addO = {()=>addOScore()}
-    choice = {firstPlayerTally}
+    choice = {choice}
+    firstPlayerTally= {firstPlayerTally}
          />
             {tipsStatus && <TipsPage
             addChoice = {addChoice}

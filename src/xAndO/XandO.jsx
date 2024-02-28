@@ -6,6 +6,7 @@ import './XandO.css'
 function XandO(props) {
   localStorage.clear()
   // const {current: Props} =  useRef(props)
+  const choice = props.choice
 
   const addX = props.addX
   const addO = props.addO
@@ -35,9 +36,13 @@ function XandO(props) {
 
   }
   console.log(winDet)
-  console.log(props.choice)
+  console.log("Choice ="+choice)
 
-},[count])
+},[count,choice])
+function handleChoice() {
+  if(choice = 2)
+  setChoice(0)
+}
 async function refreshGame() {
   setTableCntnt(Array(9).fill(""));
   setLine(Array(9).fill("none"));
@@ -57,7 +62,7 @@ function hinderClick() {
   // for x and o additioning
   const square = e.target.parentElement
   const newTallyInsertion = [...tableCntnt];
-  newTallyInsertion[index] = writings[0][count]
+  newTallyInsertion[index] = writings[choice][count]
   setTableCntnt(newTallyInsertion)
 
   
