@@ -14,11 +14,7 @@ function XandO(props) {
     ['X','O','X','O','X','O','X','O','X',''],
     ['O','X','O','X','O','X','O','X','O','']
   ]  
-function refreshGame() {
-  setTableCntnt(["","","","","","","","",""]);
-  setLine(["none","none","none","none","none","none","none","none","none"]);
-  changeNode(["writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere"]);
-}
+
  const [tableCntnt, setTableCntnt] = useState(["","","","","","","","",""])
  const [line, setLine] = useState(["none","none","none","none","none","none","none","none","none"])
  const [count,setCount] = useState(0)
@@ -27,10 +23,15 @@ function refreshGame() {
   const winDet = JSON.parse(localStorage.getItem("winDetails"))
   if (winDet) {
     awardWin(winDet)
+
   }
   console.log(winDet)
 },[count])
-
+function refreshGame() {
+  setTableCntnt(["","","","","","","","",""]);
+  setLine(["none","none","none","none","none","none","none","none","none"]);
+  changeNode(["writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere"]);
+}
  function handleClick(index,e) {
   // for nodes
   const exit = "changeNode";
@@ -58,30 +59,38 @@ if (count > 2) {
   checkwin()
 }
 function awardWin(winDet){
+  console.log(winDet)
 if (winDet.a === 'X') {
   addX()
 }
 else {
   addO()
 }
+var prevLine = [...line]
+switch (winDet.winCase){
+  case winDet.winCase :
+    prevLine[winDet.winCase] = "block"
+    setLine(prevLine)
+    break;
 
-if (line[winDet.winCase] !== "block") {
-  setLine((prevLine) => [...prevLine, "block"]);
 }
 
 
+}
+function markWinDets(a,winCase) {
+  localStorage.setItem("winDetails",JSON.stringify({a:tableCntnt[a],winCase:winCase}))
 
 }
 function checkwin() {
   const winningCombinations = [
-    [0, 1, 2], // Top row
-    [3, 4, 5], // Middle row
-    [6, 7, 8], // Bottom row
-    [0, 3, 6], // Left column
-    [1, 4, 7], // Middle column
-    [2, 5, 8], // Right column
-    [0, 4, 8], // Diagonal from top-left
-    [2, 4, 6]  // Diagonal from top-right
+    [0, 1, 2], // Top row       1
+    [0, 3, 6], // Left column   2
+    [1, 4, 7], // Middle column 3
+    [2, 5, 8], // Right column  4
+    [3, 4, 5], // Middle row    2
+    [6, 7, 8], // Bottom row    3
+    [0, 4, 8], // Diagonal from top-left  7
+    [2, 4, 6]  // Diagonal from top-right 8
   ];
   for (let combination of winningCombinations) {
     const [a, b, c] = combination
@@ -92,29 +101,35 @@ function checkwin() {
       switch (winCase) {
         case 0:
           actualcase = "Top row"
-          localStorage.setItem("winDetails",JSON.stringify({a:tableCntnt[a],winCase:winCase}))
-          // awardWin(a,winCase)
+          markWinDets(a,winCase)
           break;
         case 1:
           actualcase = "Middle horizontal row"
+          markWinDets(a,winCase)
           break;
         case 2:
           actualcase = "Bottom row"
+          markWinDets(a,winCase)
           break;
         case 3:
           actualcase = "Left column"
+          markWinDets(a,winCase)
           break;
         case 4:
           actualcase = "Middle column"
+          markWinDets(a,winCase)
           break;
         case 5:
           actualcase = "Right column"
+          markWinDets(a,winCase)
           break;
         case 6:
           actualcase = "Diagonal from top-left"
+          markWinDets(a,winCase)
           break;
         case 7:
         actualcase = "Diagonal from top-right"
+        markWinDets(a,winCase)
         break;
         default:
         break;
