@@ -12,6 +12,7 @@ function XandO(props) {
   ]  
 
  const [tableCntnt, setTableCntnt] = useState(["","","","","","","","",""])
+ const [line, setLine] = useState(["none","none","none","none","none","none","none","none","none"])
  const [count,setCount] = useState(0)
  const [node , changeNode] = useState(["writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere"])
 
@@ -41,15 +42,18 @@ console.log(`Count: ${count}`)
 if (count > 2) {
   checkwin()
 }
-function awardWin(a,kase,tally){
-if (a === 'X') {
-  addXScore()
-}
-else {addXScore()}
-if (kase == 0) {
-  
-}
-}
+// function awardWin(a,kase,tally){
+// if (a === 'X') {
+//   addXScore()
+// }
+// else {addXScore()}
+// if (kase == 0) {
+  //newLineState = [...line]
+  //newLineState[0] = "block"
+  //setLine(newLineState)
+// }
+
+// }
 function checkwin() {
   const winningCombinations = [
     [0, 1, 2], // Top row
@@ -103,25 +107,25 @@ function checkwin() {
         <div className='tableCont'>
         {/* <div><span id='turn' >{writings[choice][count]}</span>'s turn <button onClick={()=>{}}>refres</button></div> */}
           <table className='XO'>
-            <hr id='line' />
-            <hr id='line2' />
-            <hr id='line4' />
-            <hr id='line5' />
+            <hr id='line' style={{display: line[0] }} />
+            <hr id='line2'  style={{display: line[1] }} />
+            <hr id='line4'  style={{display: line[2] }}/>
+            <hr id='line5'  style={{display: line[3] }}/>
             <tbody>
-              <span id='line7Dec'><hr id='line7' /></span>
-              <span id='line8Dec'><hr id='line8' /></span>
+              <span id='line7Dec'><hr id='line7'  style={{display: line[4] }}/></span>
+              <span id='line8Dec'><hr id='line8'  style={{display: line[5] }}/></span>
             <tr className='tableRow'>
             <td className='tableData'>{tableCntnt[0]}<span className={node[0]} onClick={ (e)=>handleClick(0,e)} > </span></td>
             <td className='tableData'>{tableCntnt[1]}<span className={node[1]} onClick={ (e)=>handleClick(1,e)}> </span></td>
             <td className='tableData'>{tableCntnt[2]}<span className={node[2]} onClick={ (e)=>handleClick(2,e)}> </span></td>
             </tr>
-            <hr id='line3' />
+            <hr id='line3'  style={{display: line[6] }}/>
             <tr className='tableRow'>
             <td className='tableData'>{tableCntnt[3]}<span className={node[3]} onClick={ (e)=>handleClick(3,e)}> </span></td>
             <td className='tableData'>{tableCntnt[4]}<span className={node[4]} onClick={ (e)=>handleClick(4,e)}> </span></td>
             <td className='tableData'>{tableCntnt[5]}<span className={node[5]} onClick={ (e)=>handleClick(5,e)}> </span></td>
             </tr>
-            <hr id='line6' />
+            <hr id='line6'  style={{display: line[7] }}/>
             <tr className='tableRow'>
             <td className='tableData'>{tableCntnt[6]}<span className={node[6]} onClick={ (e)=>handleClick(6,e)}> </span></td>
             <td className='tableData'>{tableCntnt[7]}<span className={node[7]} onClick={ (e)=>handleClick(7,e)}> </span></td>
