@@ -1,15 +1,8 @@
 .table{
-    /* height: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center; */
-    width: 400px;
-    height: 400px;
-    border: 1px solid;
-    border-collapse: collapse;
-}
-tr,td{
-    border: 1px solid;
+    align-items: center;
 }
 .XO{
     border: 1px solid black;

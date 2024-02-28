@@ -93,8 +93,12 @@ function checkwin() {
     <div className='table'>
         <div className='tableCont'>
         {/* <div><span id='turn' >{writings[choice][count]}</span>'s turn <button onClick={()=>{}}>refres</button></div> */}
-          <table className='table'>
+          <table className='XO'>
             <tbody>
+            <hr id='line' />
+            <hr id='line2' />
+            <hr id='line4' />
+            <hr id='line5' />
             <tr className='tableRow'>
             <td className='tableData'>{tableCntnt[0]}<span className={node[0]} onClick={ (e)=>handleClick(0,e)} > </span></td>
             <td className='tableData'>{tableCntnt[1]}<span className={node[1]} onClick={ (e)=>handleClick(1,e)}> </span></td>
