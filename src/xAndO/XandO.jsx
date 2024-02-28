@@ -4,7 +4,8 @@ import './XandO.css'
 
 
 function XandO(props) {
-
+  const addX = props.addX
+  const addO = props.addO
   const writings = 
   [
     ['X','O','X','O','X','O','X','O','X',''],
@@ -42,18 +43,18 @@ console.log(`Count: ${count}`)
 if (count > 2) {
   checkwin()
 }
-// function awardWin(a,kase,tally){
-// if (a === 'X') {
-//   addXScore()
-// }
-// else {addXScore()}
-// if (kase == 0) {
-  //newLineState = [...line]
-  //newLineState[0] = "block"
-  //setLine(newLineState)
-// }
+function awardWin(a,kase){
+if (a === 'X') {
+  addX()
+}
+else {addO()}
 
-// }
+ const newLineState = [...line]
+  newLineState[kase] = "block"
+  setLine(newLineState)
+
+
+}
 function checkwin() {
   const winningCombinations = [
     [0, 1, 2], // Top row
@@ -74,6 +75,7 @@ function checkwin() {
       switch (winCase) {
         case 0:
           actualcase = "Top row"
+          awardWin(a,winCase)
           break;
         case 1:
           actualcase = "Middle horizontal row"
@@ -95,6 +97,8 @@ function checkwin() {
           break;
         case 7:
         actualcase = "Diagonal from top-right"
+        break;
+        default:
         break;
       }
        console.log(tableCntnt[a] + ` wins! with case ${winCase} which is ${actualcase}`)
