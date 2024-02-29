@@ -1,4 +1,4 @@
-import React, { useEffect, } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useState } from 'react'
 import './XandO.css'
 
@@ -39,10 +39,9 @@ function XandO(props) {
   }
   console.log(winDet)
   console.log("Choice ="+choice)
-if (count=== 9 && !winDet) {
+if (count=== 9 ) {
   setTimeout( async () => {
     try {
-      addChoice()
       await refreshGame()
       
     } catch (error) {
@@ -55,7 +54,7 @@ if ( writings[choice][count]=== 'X'){
 }
 else{
 setTallyColor("blue")} 
-},[count,addChoice,awardWin,choice])
+},[count])
 async function refreshGame() {
   setTableCntnt(Array(9).fill(""));
   setLine(Array(9).fill("none"));
@@ -107,8 +106,6 @@ switch (winDet.winCase){
     prevLine[winDet.winCase] = "block"
     setLine(prevLine)
     break;
-    default:
-      break;
 
 }
 addChoice()
