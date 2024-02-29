@@ -18,6 +18,7 @@ function XandO(props) {
   ]  
 
  const [tableCntnt, setTableCntnt] = useState(["","","","","","","","",""])
+ const [tallyColor, setTallyColor] = useState("red");
  const [line, setLine] = useState(["none","none","none","none","none","none","none","none","none"])
  const [count,setCount] = useState(0)
  const [node , changeNode] = useState(["writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere"])
@@ -48,6 +49,11 @@ if (count=== 9  && !winDet) {
     }
   }, 1400);
 }
+if ( writings[choice][count]=== 'X'){
+  setTallyColor("red")
+}
+else{
+setTallyColor("blue")} 
 },[count])
 async function refreshGame() {
   setTableCntnt(Array(9).fill(""));
@@ -74,8 +80,10 @@ function hinderClick() {
   
           if ( writings[choice][count]=== 'X'){
               square.style.color= "red"
+              setTallyColor("red")
           }
-          else{square.style.color="blue"} 
+          else{square.style.color="blue"
+        setTallyColor("blue")} 
         
         }
         // console.log(tableCntnt)
@@ -168,7 +176,7 @@ function checkwin() {
   return (
     <div className='table'>
         <div className='tableCont'>
-        {/* <div><span id='turn' >{writings[choice][count]}</span>'s turn <button onClick={()=>{}}>refres</button></div> */}
+        <div><span style={{color : tallyColor}} >{writings[choice][count]}</span>'s turn </div>
           <table className='XO'>
             <hr id='line' style={{display: line[0] }} />
             <hr id='line2'  style={{display: line[1] }} />
