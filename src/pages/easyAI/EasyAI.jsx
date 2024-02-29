@@ -1,10 +1,10 @@
 import React,{useState}from 'react'
-import './GamePage.css'
+import './EasyAI.css'
 import logo from '../../assets/Israel Tic Tac Toe.png'
-import XandO from '../../xAndO/XandO.jsx'
+import XandOAI from '../../pages/easyAI/EasyAI'
 import TipsPage from '../tipsPage/TipsPage'
 
-function GamePage() {
+function EasyAI() {
     var showScore = true
     const [tipsStatus, setTipsStatus]= useState(true)
     const [xScore, setXScore]= useState(0)
@@ -17,7 +17,6 @@ function GamePage() {
     function addOScore(){
         setOScore(oScore + 1)
     }
-
 
     if(xScore > 0 ){
         document.getElementById('xScore').style.color = 'white'
@@ -45,7 +44,7 @@ function GamePage() {
         {showScore && <div id='scoreBoard'> <span id='x'>X</span> : <span id='xScore'>{xScore}</span>   <span id='o'>O</span>: <span id='oScore'>{oScore}</span>   </div>}
         
     </nav> 
-    <XandO
+    <XandOAI
     addX= {()=>addXScore()}
     addO = {()=>addOScore()}
     choice = {choice}
@@ -62,4 +61,4 @@ function GamePage() {
     ) 
    
 }
-export default GamePage
+export default EasyAI

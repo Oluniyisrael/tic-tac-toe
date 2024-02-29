@@ -1,4 +1,4 @@
-import React, { useEffect, } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useState } from 'react'
 import './XandO.css'
 
@@ -55,7 +55,7 @@ if ( writings[choice][count]=== 'X'){
 }
 else{
 setTallyColor("blue")} 
-},[count,addChoice,awardWin,choice])
+},[count])
 async function refreshGame() {
   setTableCntnt(Array(9).fill(""));
   setLine(Array(9).fill("none"));
@@ -107,8 +107,6 @@ switch (winDet.winCase){
     prevLine[winDet.winCase] = "block"
     setLine(prevLine)
     break;
-    default:
-      break;
 
 }
 addChoice()
