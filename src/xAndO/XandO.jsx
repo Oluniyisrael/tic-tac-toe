@@ -53,13 +53,15 @@ if ( writings[choice][count]=== 'X'){
   setTallyColor("red")
 }
 else{
-setTallyColor("blue")} 
-},[count])
+setTallyColor("blue")}
+ // eslint-disable-next-line 
+},[count,])
 async function refreshGame() {
   setTableCntnt(Array(9).fill(""));
   setLine(Array(9).fill("none"));
   changeNode(Array(9).fill("writeHere"));
   setCount(0)
+  addChoice()
 }
 function hinderClick() {
   changeNode(Array(9).fill("changeNode"))
