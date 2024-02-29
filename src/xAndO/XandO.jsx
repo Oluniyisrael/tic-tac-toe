@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect} from 'react'
 import { useState } from 'react'
 import './XandO.css'
 
@@ -106,6 +106,8 @@ switch (winDet.winCase){
     prevLine[winDet.winCase] = "block"
     setLine(prevLine)
     break;
+    default:
+      break;
 
 }
 addChoice()
