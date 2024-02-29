@@ -3,9 +3,12 @@ import './GamePage.css'
 import logo from '../../assets/Israel Tic Tac Toe.png'
 import XandO from '../../xAndO/XandO.jsx'
 import TipsPage from '../tipsPage/TipsPage'
+import EasyAI from '../easyAI/EasyAI.jsx'
 
 function GamePage() {
     var showScore = true
+    const [PvP, setPvP]= useState(true)
+    const[PvAI, setPvAI]= useState(false)
     const [tipsStatus, setTipsStatus]= useState(true)
     const [xScore, setXScore]= useState(0)
     const [oScore, setOScore]= useState(0)
@@ -45,17 +48,29 @@ function GamePage() {
         {showScore && <div id='scoreBoard'> <span id='x'>X</span> : <span id='xScore'>{xScore}</span>   <span id='o'>O</span>: <span id='oScore'>{oScore}</span>   </div>}
         
     </nav> 
+    {PvP &&
     <XandO
     addX= {()=>addXScore()}
     addO = {()=>addOScore()}
     choice = {choice}
     addChoice = {()=>addChoice()}
     firstPlayerTally= {firstPlayerTally}
-         />
+    />
+
+    }
+    {PvAI &&
+    <EasyAI
+    addX= {()=>addXScore()}
+    addO = {()=>addOScore()}
+    choice = {choice}
+    addChoice = {()=>addChoice()}
+    firstPlayerTally= {firstPlayerTally}/> }
             {tipsStatus && <TipsPage
             addChoice = {addChoice}
             close ={closeTipsPage}
             setFirstPlayerTally = {setFirstPlayerTally}
+            setPvAI = {setPvAI}
+            setPvP = {setPvP}
             />
         }
     </div>

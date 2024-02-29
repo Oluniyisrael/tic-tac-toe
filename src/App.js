@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path='/' element= {<LandingPage/>}/>
           <Route path='/game' element={<GamePage/>}/>
-          <Route path='/easyAI' element= {<EasyAI/>}/>
+          {/* <Route path='/easyAI' element= {<EasyAI/>}/> */}
         </Routes>
       </Router>
       {/* <LandingPage/> responsive done */}

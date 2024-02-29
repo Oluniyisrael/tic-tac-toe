@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import EmptyBoard from '../../assets/Images/EmptyBoard.png'
 import TipsGif from '../../assets/Gifs/TipsGif.gif'
 import './TipsPage.css'
+// import { Link } from 'react-router-dom'
 
 function TipsPage(props) {
     function buttonO(){
@@ -26,11 +27,14 @@ function TipsPage(props) {
         setLanding(false)
         SetPVP(true)
     }
-    function handleAI(params) {
-        
+    function handleAI() {
+        setLanding(false)
+        setAIMode(true)
     }
     function handleEasy(params) {
-        
+        props.setPvP(false)
+        props.setPvAI(true)
+        props.close()
     }
     function handleMed(params) {
         
@@ -77,7 +81,9 @@ function TipsPage(props) {
             <p id='tallyInd'>Choose Mode </p>
             <div id='buttonCont'>
             <button className='button' id='buttO' onClick={()=>handlePVP()}>Player vs Player</button> 
+            {/* <Link to="easyAI" > */}
             <button className='button' id='buttO' onClick={()=>handleAI()}>Player VS AI</button> 
+            {/* </Link> */}
             </div>
             </div>}
             {PVP && <div>

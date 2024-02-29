@@ -5,7 +5,6 @@ import './XandO.css'
 
 function XandO(props) {
   localStorage.clear()
-  // const {current: Props} =  useRef(props)
   const choice = props.choice
   const addChoice = props.addChoice
 
@@ -87,6 +86,7 @@ function hinderClick() {
         setTallyColor("blue")} 
         
         }
+        console.log(node.filter(node=> node !== "changeNode" ))
         // console.log(tableCntnt)
 
 console.log(`Count: ${count}`)
