@@ -19,6 +19,7 @@ function TipsPage(props) {
     
     const [PVP,SetPVP] =useState(false)
     const [landing,setLanding] = useState(true)
+    // eslint-disable-next-line
     const [AImode, setAIMode] = useState(false)
     const [pvpMode,setPvpMode]=useState(false)
     function handlePVP(){
