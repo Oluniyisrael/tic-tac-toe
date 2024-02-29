@@ -54,6 +54,7 @@ function GamePage() {
     addX= {()=>addXScore()}
     addO = {()=>addOScore()}
     choice = {choice}
+    addChoice = {()=>addChoice()}
     firstPlayerTally= {firstPlayerTally}
          />
             {tipsStatus && <TipsPage

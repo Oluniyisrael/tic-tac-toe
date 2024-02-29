@@ -7,6 +7,7 @@ function XandO(props) {
   localStorage.clear()
   // const {current: Props} =  useRef(props)
   const choice = props.choice
+  const addChoice = props.addChoice
 
   const addX = props.addX
   const addO = props.addO
@@ -37,12 +38,17 @@ function XandO(props) {
   }
   console.log(winDet)
   console.log("Choice ="+choice)
-
-},[count,choice])
-function handleChoice() {
-  if(choice = 2)
-  setChoice(0)
+if (count=== 9  && !winDet) {
+  setTimeout( async () => {
+    try {
+      await refreshGame()
+      
+    } catch (error) {
+      
+    }
+  }, 1400);
 }
+},[count])
 async function refreshGame() {
   setTableCntnt(Array(9).fill(""));
   setLine(Array(9).fill("none"));
@@ -66,7 +72,7 @@ function hinderClick() {
   setTableCntnt(newTallyInsertion)
 
   
-          if ( writings[0][count]=== 'X'){
+          if ( writings[choice][count]=== 'X'){
               square.style.color= "red"
           }
           else{square.style.color="blue"} 
@@ -94,7 +100,7 @@ switch (winDet.winCase){
     break;
 
 }
-
+addChoice()
 
 }
 function markWinDets(a,winCase) {
