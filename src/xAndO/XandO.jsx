@@ -39,9 +39,10 @@ function XandO(props) {
   }
   console.log(winDet)
   console.log("Choice ="+choice)
-if (count=== 9  && !winDet) {
+if (count=== 9 && !winDet) {
   setTimeout( async () => {
     try {
+      addChoice()
       await refreshGame()
       
     } catch (error) {
