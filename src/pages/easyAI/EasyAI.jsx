@@ -1,6 +1,7 @@
 import React, { useEffect} from 'react'
 import { useState } from 'react'
 import './EasyAI.css'
+// import easyAI from './assets/AI'
 
 
 function EasyAI(props) {
@@ -55,7 +56,7 @@ if ( writings[choice][count]=== 'X'){
 else{
 setTallyColor("blue")}
  // eslint-disable-next-line 
-},[count,])
+},[count])
 async function refreshGame() {
   setTableCntnt(Array(9).fill(""));
   setLine(Array(9).fill("none"));
@@ -85,9 +86,15 @@ function hinderClick() {
               setTallyColor("red")
           }
           else{square.style.color="blue"
-        setTallyColor("blue")} 
-        
-        }
+        setTallyColor("blue")}    
+        console.log(newTallyInsertion)
+      const firstPlayerTally =localStorage.getItem("firstPlayerTally")
+      console.log(firstPlayerTally)
+
+
+// console.log(emptyIndexes);
+// easyAI()
+}
         // console.log(tableCntnt)
 
 console.log(`Count: ${count}`)

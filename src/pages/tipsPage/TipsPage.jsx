@@ -5,17 +5,18 @@ import './TipsPage.css'
 // import { Link } from 'react-router-dom'
 
 function TipsPage(props) {
-    function buttonO(){
+    async function buttonO(){
+        localStorage.setItem("firstPlayerTally","O")
         props.addChoice()
         props.close()
         // props.refresh();
-        props.setFirstPlayerTally('O')
     }
-    function buttonX() {
+   async function buttonX() {
         //...
+        localStorage.setItem("firstPlayerTally","X")
         props.close()
         // props.refresh();
-        props.setFirstPlayerTally('X')
+
     }
     
     const [PVP,SetPVP] =useState(false)
@@ -34,7 +35,9 @@ function TipsPage(props) {
     function handleEasy(params) {
         props.setPvP(false)
         props.setPvAI(true)
-        props.close()
+        setAIMode(false)
+        SetPVP(false)
+        setPvpMode(true)        // props.close()
     }
     function handleMed(params) {
         
@@ -97,8 +100,8 @@ function TipsPage(props) {
                 {pvpMode && <div>
                 <p id='tallyInd'>Choose First Player Tally </p>
             <div id='buttonCont'>
-                <button className='button' id='buttX' onClick={buttonX}>X</button> 
-                <button className='button' id='buttO' onClick={buttonO}>O</button>
+                <button className='button' id='buttX' onClick={async()=>await buttonX()}>X</button> 
+                <button className='button' id='buttO' onClick={async()=>await buttonO()}>O</button>
                 </div>
                 </div>
             }

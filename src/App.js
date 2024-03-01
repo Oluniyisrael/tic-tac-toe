@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/landingPage/LandingPage';
 import GamePage from './pages/gamePage/GamePage';
-import EasyAI from './pages/easyAI/EasyAI'
+// import EasyAI from './pages/easyAI/EasyAI'
 // import TipsPage from './pages/tipsPage/TipsPage';
 
 function App() {
