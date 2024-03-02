@@ -111,8 +111,13 @@
         height: 70%;
     }
     #buttonCont {
-        height: 10%;
-        width: 80%;
+        height: auto;
+        width: auto;
+    }
+    .button {
+        width: 135px;
+        height: 40px;
+        font-size: 18px;
     }
 }
 @media screen and (max-width: 600px){
