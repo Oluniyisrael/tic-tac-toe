@@ -47,7 +47,7 @@
     color: white;
 }
 #buttonCont{
-    height: 20%;
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -59,12 +59,12 @@
     font-size: 20px;
     font-family: tahoma;
     color: white;
-    
+    text-align: center;
 }
 .button{
     width: 200px;
     height: 50px;
-    font-size: 30px;
+    font-size: 25px;
     border-radius: 15px;
     border: none;
     cursor: pointer;
