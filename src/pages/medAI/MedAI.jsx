@@ -1,10 +1,10 @@
 import React, { useEffect} from 'react'
 import { useState } from 'react'
-import './EasyAI.css'
-import easyAI from './assets/AI'
+import './MedAI.css'
+import medAI from './assets/AI'
 
 
-function EasyAI(props) {
+function MedAI(props) {
   localStorage.clear()
   // const {current: Props} =  useRef(props)
   const choice = props.choice
@@ -107,7 +107,7 @@ function hinderClick() {
           console.log(AIChoice)
    
           if ((AIChoice+count) % 2 === 1) { 
-            easyAI(tableCntnt,handleClick,setSquareColor,winDet)
+            medAI(tableCntnt,handleClick,setSquareColor,winDet)
           }
  // eslint-disable-next-line 
 }, [count]);
@@ -204,7 +204,7 @@ function checkwin() {
   return (
     <div className='table'>
         <div className='tableCont'>
-        <div><span style={{color : tallyColor}} >{writings[choice][count]}</span>'s turn (Easy ai)</div>
+        <div><span style={{color : tallyColor}} >{writings[choice][count]}</span>'s turn (Medium ai)</div>
           <table className='XO'>
             <hr id='line' style={{display: line[0] }} />
             <hr id='line2'  style={{display: line[1] }} />
@@ -238,4 +238,4 @@ function checkwin() {
   )
 }
 
-export default EasyAI
+export default MedAI

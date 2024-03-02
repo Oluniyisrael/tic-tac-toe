@@ -36,13 +36,18 @@ function TipsPage(props) {
     }
     function handleEasy(params) {
         props.setPvP(false)
-        props.setPvAI(true)
+        props.setPvEZAI(true)
         setAIMode(false)
         SetPVP(false)
         setPvpMode(true)        // props.close()
     }
     function handleMed(params) {
-        
+        props.setPvP(false)
+        props.setPvEZAI(false)
+        props.setPvMedAI(true)
+        setAIMode(false)
+        SetPVP(false)
+        setPvpMode(true)
     }
     function handleHard(params) {
         
