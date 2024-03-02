@@ -38,7 +38,6 @@ function XandO(props) {
 
   }
   console.log(winDet)
-  console.log("Choice ="+choice)
 if (count=== 9 ) {
   setTimeout( async () => {
     try {

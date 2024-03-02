@@ -5,7 +5,7 @@ import easyAI from './assets/AI'
 
 
 function EasyAI(props) {
-  // localStorage.clear()
+  localStorage.clear()
   // const {current: Props} =  useRef(props)
   const choice = props.choice
   const addChoice = props.addChoice
@@ -21,6 +21,7 @@ function EasyAI(props) {
  const [tableCntnt, setTableCntnt] = useState(["","","","","","","","",""])
  const [tallyColor, setTallyColor] = useState("red");
  const [line, setLine] = useState(["none","none","none","none","none","none","none","none","none"])
+ const [squareColor, setSquareColor] = useState(["","","","","","","","",""])
  const [count,setCount] = useState(0)
  const [node , changeNode] = useState(["writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere"])
  useEffect(()=>{
@@ -38,6 +39,8 @@ function EasyAI(props) {
     }, 1400);
 
   }
+  console.log("Choice ="+choice)
+
   // console.log(winDet)
   // console.log("Choice ="+choice)
 if (count=== 9 ) {
@@ -67,7 +70,7 @@ async function refreshGame() {
 function hinderClick() {
   changeNode(Array(9).fill("changeNode"))
 }
- function handleClick(index,e) {
+ function handleClick(index,setColor) {
   // for nodes
   const exit = "changeNode";
   const newNode = [...node]
@@ -75,17 +78,20 @@ function hinderClick() {
   changeNode(newNode)
   setCount(count + 1)
   // for x and o additioning
-  const square = e.target.parentElement
   const newTallyInsertion = [...tableCntnt];
   newTallyInsertion[index] = writings[choice][count]
   setTableCntnt(newTallyInsertion)
 
   
-          if ( writings[choice][count]=== 'X'){
-              square.style.color= "red"
+  var newColor = squareColor
+  if ( writings[choice][count]=== 'X'){
+              newColor[index] = "red"
+              setColor(newColor)
               setTallyColor("red")
           }
-          else{square.style.color="blue"
+          else{
+            newColor[index] = "blue"
+            setColor(newColor)
         setTallyColor("blue")}    
         // console.log(newTallyInsertion)
         // console.log(firstPlayerTally)
@@ -93,24 +99,14 @@ function hinderClick() {
         
         // console.log(emptyIndexes);
       }
-      // useEffect(()=>{
-        // console.log(tableCntnt)
         useEffect(() => {
-          
-          const newTallyInsertion = [...tableCntnt];
-          const newNode = [...node]
-          const firstPlayerTally = props.firstPlayerTally
           const winDet = localStorage.getItem("winDetails")
 
-          if ((choice + count) % 2 && !winDet) {  //AI's turn, assuming odd turns are AI's turns
-            if (winDet) {
-              
-            }
-            easyAI(newTallyInsertion,newNode,firstPlayerTally,count,setTableCntnt,changeNode,setCount) 
-            // refreshGame()
-
+   
+          if ((choice+count) % 2 === 1) { 
+            easyAI(tableCntnt,handleClick,setSquareColor,winDet)
           }
-          // console.log((choice + count) % 2)
+          // console.log(winDet)
       }, [count]);
 
 console.log(`Count: ${count}`)
@@ -118,7 +114,7 @@ if (count > 2) {
   checkwin()
 }
 function awardWin(winDet){
-  // console.log(winDet)
+  // console.log(winDet) 
 if (winDet.a === 'X') {
   addX()
 }
@@ -128,7 +124,7 @@ else {
 var prevLine = [...line]
 switch (winDet.winCase){
   case winDet.winCase :
-    prevLine[winDet.winCase] = "block" 
+    prevLine[winDet.winCase] = "block"
     setLine(prevLine)
     break;
     default:
@@ -213,21 +209,21 @@ function checkwin() {
               <span id='line7Dec' style={{display: line[4] }}><hr id='line7'  /></span>
               <span id='line8Dec' style={{display: line[5] }}><hr id='line8'  /></span>
             <tr className='tableRow'>
-            <td className='tableData'>{tableCntnt[0]}<span className={node[0]} onClick={ (e)=>handleClick(0,e)} > </span></td>
-            <td className='tableData'>{tableCntnt[1]}<span className={node[1]} onClick={ (e)=>handleClick(1,e)}> </span></td>
-            <td className='tableData'>{tableCntnt[2]}<span className={node[2]} onClick={ (e)=>handleClick(2,e)}> </span></td>
+            <td className='tableData' style={{color : squareColor[0]}}>{tableCntnt[0]}<span className={node[0]} onClick={ ()=>handleClick(0,setSquareColor)} > </span></td>
+            <td className='tableData' style={{color : squareColor[1]}}>{tableCntnt[1]}<span className={node[1]} onClick={ ()=>handleClick(1,setSquareColor)}> </span></td>
+            <td className='tableData' style={{color : squareColor[2]}}>{tableCntnt[2]}<span className={node[2]} onClick={ ()=>handleClick(2,setSquareColor)}> </span></td>
             </tr>
             <hr id='line3'  style={{display: line[6] }}/>
             <tr className='tableRow'>
-            <td className='tableData'>{tableCntnt[3]}<span className={node[3]} onClick={ (e)=>handleClick(3,e)}> </span></td>
-            <td className='tableData'>{tableCntnt[4]}<span className={node[4]} onClick={ (e)=>handleClick(4,e)}> </span></td>
-            <td className='tableData'>{tableCntnt[5]}<span className={node[5]} onClick={ (e)=>handleClick(5,e)}> </span></td>
+            <td className='tableData' style={{color : squareColor[3]}}>{tableCntnt[3]}<span className={node[3]} onClick={ ()=>handleClick(3,setSquareColor)}> </span></td>
+            <td className='tableData' style={{color : squareColor[4]}}>{tableCntnt[4]}<span className={node[4]} onClick={ ()=>handleClick(4,setSquareColor)}> </span></td>
+            <td className='tableData' style={{color : squareColor[5]}}>{tableCntnt[5]}<span className={node[5]} onClick={ ()=>handleClick(5,setSquareColor)}> </span></td>
             </tr>
             <hr id='line6'  style={{display: line[7] }}/>
             <tr className='tableRow'>
-            <td className='tableData'>{tableCntnt[6]}<span className={node[6]} onClick={ (e)=>handleClick(6,e)}> </span></td>
-            <td className='tableData'>{tableCntnt[7]}<span className={node[7]} onClick={ (e)=>handleClick(7,e)}> </span></td>
-            <td className='tableData'>{tableCntnt[8]}<span className={node[8]} onClick={ (e)=>handleClick(8,e)}> </span></td>
+            <td className='tableData' style={{color : squareColor[6]}}>{tableCntnt[6]}<span className={node[6]} onClick={ ()=>handleClick(6,setSquareColor)}> </span></td>
+            <td className='tableData' style={{color : squareColor[7]}}>{tableCntnt[7]}<span className={node[7]} onClick={ ()=>handleClick(7,setSquareColor)}> </span></td>
+            <td className='tableData' style={{color : squareColor[8]}}>{tableCntnt[8]}<span className={node[8]} onClick={ ()=>handleClick(8,setSquareColor)}> </span></td>
             </tr>
             </tbody>
           </table>
