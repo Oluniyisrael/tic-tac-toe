@@ -1,11 +1,11 @@
 import React, { useEffect} from 'react'
 import { useState } from 'react'
 import './EasyAI.css'
-// import easyAI from './assets/AI'
+import easyAI from './assets/AI'
 
 
 function EasyAI(props) {
-  localStorage.clear()
+  // localStorage.clear()
   // const {current: Props} =  useRef(props)
   const choice = props.choice
   const addChoice = props.addChoice
@@ -14,7 +14,7 @@ function EasyAI(props) {
   const addO = props.addO
   const writings = 
   [
-    ['X','O','X','O','X','O','X','O','X',''],
+    ['X','O','X','O','X','O','X','O','X',''], 
     ['O','X','O','X','O','X','O','X','O','']
   ]  
 
@@ -38,8 +38,8 @@ function EasyAI(props) {
     }, 1400);
 
   }
-  console.log(winDet)
-  console.log("Choice ="+choice)
+  // console.log(winDet)
+  // console.log("Choice ="+choice)
 if (count=== 9 ) {
   setTimeout( async () => {
     try {
@@ -87,22 +87,38 @@ function hinderClick() {
           }
           else{square.style.color="blue"
         setTallyColor("blue")}    
-        console.log(newTallyInsertion)
-      const firstPlayerTally =localStorage.getItem("firstPlayerTally")
-      console.log(firstPlayerTally)
-
-
-// console.log(emptyIndexes);
-// easyAI()
-}
+        // console.log(newTallyInsertion)
+        // console.log(firstPlayerTally)
+        
+        
+        // console.log(emptyIndexes);
+      }
+      // useEffect(()=>{
         // console.log(tableCntnt)
+        useEffect(() => {
+          
+          const newTallyInsertion = [...tableCntnt];
+          const newNode = [...node]
+          const firstPlayerTally = props.firstPlayerTally
+          const winDet = localStorage.getItem("winDetails")
+
+          if ((choice + count) % 2 && !winDet) {  //AI's turn, assuming odd turns are AI's turns
+            if (winDet) {
+              
+            }
+            easyAI(newTallyInsertion,newNode,firstPlayerTally,count,setTableCntnt,changeNode,setCount) 
+            // refreshGame()
+
+          }
+          // console.log((choice + count) % 2)
+      }, [count]);
 
 console.log(`Count: ${count}`)
 if (count > 2) {
   checkwin()
 }
 function awardWin(winDet){
-  console.log(winDet)
+  // console.log(winDet)
 if (winDet.a === 'X') {
   addX()
 }
@@ -112,7 +128,7 @@ else {
 var prevLine = [...line]
 switch (winDet.winCase){
   case winDet.winCase :
-    prevLine[winDet.winCase] = "block"
+    prevLine[winDet.winCase] = "block" 
     setLine(prevLine)
     break;
     default:
@@ -142,44 +158,44 @@ function checkwin() {
     // console.log(`A: ${a}, B: ${b}, C: ${c}`)
     if (tableCntnt[a] !== '' && tableCntnt[a] === tableCntnt[b] && tableCntnt[a] === tableCntnt[c]) {
       const winCase = winningCombinations.findIndex(combi=> combi[0] === a && combi[1] === b && combi[2]===c)
-      var actualcase;
+      // var actualcase;
       switch (winCase) {
         case 0:
-          actualcase = "Top row"
+          // actualcase = "Top row"
           markWinDets(a,winCase)
           break;
         case 1:
-          actualcase = "Middle horizontal row"
+          // actualcase = "Middle horizontal row"
           markWinDets(a,winCase)
           break;
         case 2:
-          actualcase = "Bottom row"
+          // actualcase = "Bottom row"
           markWinDets(a,winCase)
           break;
         case 3:
-          actualcase = "Left column"
+          // actualcase = "Left column"
           markWinDets(a,winCase)
           break;
         case 4:
-          actualcase = "Middle column"
+          // actualcase = "Middle column"
           markWinDets(a,winCase)
           break;
         case 5:
-          actualcase = "Right column"
+          // actualcase = "Right column"
           markWinDets(a,winCase)
           break;
         case 6:
-          actualcase = "Diagonal from top-left"
+          // actualcase = "Diagonal from top-left"
           markWinDets(a,winCase)
           break;
         case 7:
-        actualcase = "Diagonal from top-right"
+        // actualcase = "Diagonal from top-right"
         markWinDets(a,winCase)
         break;
         default:
         break;
       }
-       console.log(tableCntnt[a] + ` wins! with case ${winCase} which is ${actualcase}`)
+      //  console.log(tableCntnt[a] + ` wins! with case ${winCase} which is ${actualcase}`)
     }
   }
 }

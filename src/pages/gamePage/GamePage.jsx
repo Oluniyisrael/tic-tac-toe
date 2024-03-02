@@ -13,6 +13,13 @@ function GamePage() {
     const [xScore, setXScore]= useState(0)
     const [oScore, setOScore]= useState(0)
     const [choice,setChoice]= useState(0)
+    const [firstPlayerTally,setFirstPlayerTally] = useState('')
+    function setFirstPlayerTallyX() {
+        setFirstPlayerTally('X')
+    }
+    function setFirstPlayerTallyO() {
+        setFirstPlayerTally('O')
+    }
     function addXScore(){
         setXScore(xScore + 1)
     }
@@ -61,12 +68,15 @@ function GamePage() {
     addO = {()=>addOScore()}
     choice = {choice}
     addChoice = {()=>addChoice()}
+    firstPlayerTally = {firstPlayerTally}
     /> }
             {tipsStatus && <TipsPage
             addChoice = {addChoice}
             close ={closeTipsPage}
             setPvAI = {setPvAI}
             setPvP = {setPvP}
+            setX={setFirstPlayerTallyX}
+            setO = {setFirstPlayerTallyO}
             />
         }
     </div>

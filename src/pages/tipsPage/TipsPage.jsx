@@ -6,14 +6,14 @@ import './TipsPage.css'
 
 function TipsPage(props) {
     async function buttonO(){
-        localStorage.setItem("firstPlayerTally","O")
         props.addChoice()
+        props.setO()
         props.close()
         // props.refresh();
     }
-   async function buttonX() {
+    async function buttonX() {
         //...
-        localStorage.setItem("firstPlayerTally","X")
+        props.setX()
         props.close()
         // props.refresh();
 
