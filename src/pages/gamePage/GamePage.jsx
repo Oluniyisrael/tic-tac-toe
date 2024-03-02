@@ -13,6 +13,7 @@ function GamePage() {
     const [xScore, setXScore]= useState(0)
     const [oScore, setOScore]= useState(0)
     const [choice,setChoice]= useState(0)
+    const [AIChoice,setAIChoice] = useState(0)
     const [firstPlayerTally,setFirstPlayerTally] = useState('')
     function setFirstPlayerTallyX() {
         setFirstPlayerTally('X')
@@ -39,8 +40,14 @@ function GamePage() {
     function closeTipsPage() {
         setTipsStatus(false)
     }
+    function addAIChoice(params) {
+        setAIChoice(AIChoice+1)
+    }
     if (choice === 2) {
         setChoice(0)
+    }
+    if (AIChoice === 2) {
+        setAIChoice(0)
     }
 
 
@@ -66,6 +73,8 @@ function GamePage() {
     <EasyAI
     addX= {()=>addXScore()}
     addO = {()=>addOScore()}
+    AIChoice = {AIChoice}
+    addAIChoice = {addAIChoice}
     choice = {choice}
     addChoice = {()=>addChoice()}
     firstPlayerTally = {firstPlayerTally}

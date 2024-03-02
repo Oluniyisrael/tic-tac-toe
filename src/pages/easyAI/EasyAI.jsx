@@ -9,7 +9,9 @@ function EasyAI(props) {
   // const {current: Props} =  useRef(props)
   const choice = props.choice
   const addChoice = props.addChoice
-
+  const AIChoice = props.AIChoice
+  const addAIChoice = props.addAIChoice
+  
   const addX = props.addX
   const addO = props.addO
   const writings = 
@@ -66,6 +68,7 @@ async function refreshGame() {
   changeNode(Array(9).fill("writeHere"));
   setCount(0)
   addChoice()
+  addAIChoice()
 }
 function hinderClick() {
   changeNode(Array(9).fill("changeNode"))
@@ -101,13 +104,13 @@ function hinderClick() {
       }
         useEffect(() => {
           const winDet = localStorage.getItem("winDetails")
-
+          console.log(AIChoice)
    
-          if ((choice+count) % 2 === 1) { 
+          if ((AIChoice+count) % 2 === 1) { 
             easyAI(tableCntnt,handleClick,setSquareColor,winDet)
           }
-          // console.log(winDet)
-      }, [count]);
+ // eslint-disable-next-line 
+}, [count]);
 
 console.log(`Count: ${count}`)
 if (count > 2) {
@@ -132,6 +135,7 @@ switch (winDet.winCase){
 
 }
 addChoice()
+addAIChoice()
 
 }
 function markWinDets(a,winCase) {
@@ -155,42 +159,43 @@ function checkwin() {
     if (tableCntnt[a] !== '' && tableCntnt[a] === tableCntnt[b] && tableCntnt[a] === tableCntnt[c]) {
       const winCase = winningCombinations.findIndex(combi=> combi[0] === a && combi[1] === b && combi[2]===c)
       // var actualcase;
-      switch (winCase) {
-        case 0:
-          // actualcase = "Top row"
-          markWinDets(a,winCase)
-          break;
-        case 1:
-          // actualcase = "Middle horizontal row"
-          markWinDets(a,winCase)
-          break;
-        case 2:
-          // actualcase = "Bottom row"
-          markWinDets(a,winCase)
-          break;
-        case 3:
-          // actualcase = "Left column"
-          markWinDets(a,winCase)
-          break;
-        case 4:
-          // actualcase = "Middle column"
-          markWinDets(a,winCase)
-          break;
-        case 5:
-          // actualcase = "Right column"
-          markWinDets(a,winCase)
-          break;
-        case 6:
-          // actualcase = "Diagonal from top-left"
-          markWinDets(a,winCase)
-          break;
-        case 7:
-        // actualcase = "Diagonal from top-right"
-        markWinDets(a,winCase)
-        break;
-        default:
-        break;
-      }
+      markWinDets(a,winCase)
+      // switch (winCase) {
+      //   case 0:
+      //     // actualcase = "Top row"
+      //     markWinDets(a,winCase)
+      //     break;
+      //   case 1:
+      //     // actualcase = "Middle horizontal row"
+      //     markWinDets(a,winCase)
+      //     break;
+      //   case 2:
+      //     // actualcase = "Bottom row"
+      //     markWinDets(a,winCase)
+      //     break;
+      //   case 3:
+      //     // actualcase = "Left column"
+      //     markWinDets(a,winCase)
+      //     break;
+      //   case 4:
+      //     // actualcase = "Middle column"
+      //     markWinDets(a,winCase)
+      //     break;
+      //   case 5:
+      //     // actualcase = "Right column"
+      //     markWinDets(a,winCase)
+      //     break;
+      //   case 6:
+      //     // actualcase = "Diagonal from top-left"
+      //     markWinDets(a,winCase)
+      //     break;
+      //   case 7:
+      //   // actualcase = "Diagonal from top-right"
+      //   markWinDets(a,winCase)
+      //   break;
+      //   default:
+      //   break;
+      // }
       //  console.log(tableCntnt[a] + ` wins! with case ${winCase} which is ${actualcase}`)
     }
   }

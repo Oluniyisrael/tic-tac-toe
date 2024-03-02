@@ -9,12 +9,14 @@ function TipsPage(props) {
         props.addChoice()
         props.setO()
         props.close()
+        // props.addAIChoice()
         // props.refresh();
     }
     async function buttonX() {
         //...
         props.setX()
         props.close()
+        // props.addAIChoice()
         // props.refresh();
 
     }
