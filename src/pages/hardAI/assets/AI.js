@@ -1,3 +1,12 @@
+function give2ways(tallys,AITally) {
+    const possible2Ways = [
+        [0, 2, 6],
+        [0, 1, 3],
+        [1, 2, 4],
+        [4, 5, 7],
+
+    ];
+}
 function blockPlayer(tallys) {
 
     const possibleWin = [
