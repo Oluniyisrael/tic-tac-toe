@@ -11,6 +11,7 @@ function MedAI(props) {
   const addChoice = props.addChoice
   const AIChoice = props.AIChoice
   const addAIChoice = props.addAIChoice
+  const firstPlayerTally = props.firstPlayerTally
   
   const addX = props.addX
   const addO = props.addO
@@ -107,7 +108,7 @@ function hinderClick() {
           console.log(AIChoice)
    
           if ((AIChoice+count) % 2 === 1) { 
-            medAI(tableCntnt,handleClick,setSquareColor,winDet)
+            medAI(tableCntnt,handleClick,setSquareColor,winDet,firstPlayerTally)
           }
  // eslint-disable-next-line 
 }, [count]);
