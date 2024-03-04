@@ -53,7 +53,7 @@ function winPlayer(tallys,firstPlayerTally) {
 
 }
 
-function hardAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally) {
+function mediumAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally) {
     if (!winDet) {
         const emptyIndexes = tallys.map((node, index) => node === "" ? index : -1)
             .filter(index => index !== -1);
@@ -77,4 +77,4 @@ function hardAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally) {
     }
 }
 
-export default hardAI;
+export default mediumAI;

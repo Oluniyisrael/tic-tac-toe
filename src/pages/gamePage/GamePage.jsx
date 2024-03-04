@@ -5,12 +5,14 @@ import XandO from '../../xAndO/XandO.jsx'
 import TipsPage from '../tipsPage/TipsPage'
 import EasyAI from '../easyAI/EasyAI.jsx'
 import MedAI from '../medAI/MedAI.jsx'
+import HardAI from '../hardAI/HardAI.jsx'
 
 function GamePage() {
     var showScore = true
     const [PvP, setPvP]= useState(true)
     const[PvEZAI, setPvEZAI]= useState(false)
     const[PvMedAI, setPvMedAI]= useState(false)
+    const[PvHardAI, setPvHardAI]= useState(false)
     const [tipsStatus, setTipsStatus]= useState(true)
     const [xScore, setXScore]= useState(0)
     const [oScore, setOScore]= useState(0)
@@ -91,12 +93,23 @@ function GamePage() {
     addChoice = {()=>addChoice()}
     firstPlayerTally = {firstPlayerTally}
     /> }
+    {PvHardAI &&
+    <HardAI
+    addX= {()=>addXScore()}
+    addO = {()=>addOScore()}
+    AIChoice = {AIChoice}
+    addAIChoice = {addAIChoice}
+    choice = {choice}
+    addChoice = {()=>addChoice()}
+    firstPlayerTally = {firstPlayerTally}
+    /> }
     
             {tipsStatus && <TipsPage
             addChoice = {addChoice}
             close ={closeTipsPage}
             setPvEZAI = {setPvEZAI}
             setPvMedAI = {setPvMedAI}
+            setPvHardAI = {setPvHardAI}
             setPvP = {setPvP}
             setX={setFirstPlayerTallyX}
             setO = {setFirstPlayerTallyO}

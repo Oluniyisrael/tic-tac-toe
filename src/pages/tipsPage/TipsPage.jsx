@@ -34,14 +34,14 @@ function TipsPage(props) {
         setLanding(false)
         setAIMode(true)
     }
-    function handleEasy(params) {
+    function handleEasy() {
         props.setPvP(false)
         props.setPvEZAI(true)
         setAIMode(false)
         SetPVP(false)
-        setPvpMode(true)        // props.close()
+        setPvpMode(true)        
     }
-    function handleMed(params) {
+    function handleMed() {
         props.setPvP(false)
         props.setPvEZAI(false)
         props.setPvMedAI(true)
@@ -49,13 +49,18 @@ function TipsPage(props) {
         SetPVP(false)
         setPvpMode(true)
     }
-    function handleHard(params) {
+    function handleHard() {
+        props.setPvP(false)
+        props.setPvEZAI(false)
+        props.setPvHardAI(true)
+        setAIMode(false)
+        SetPVP(false)
+        setPvpMode(true)
+    }
+    function handleOnline() {
         
     }
-    function handleOnline(params) {
-        
-    }
-    function handlePhy(params) {
+    function handlePhy() {
         SetPVP(false)
         setPvpMode(true)
     }
