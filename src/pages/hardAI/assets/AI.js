@@ -62,10 +62,12 @@ function block2ways(tallys,firstPlayerTally) {
         const [a, b, c] = combination;
         if (tallys[a] === firstPlayerTally && tallys[a] === tallys[b] && tallys[c] === '') {
             if (corners.some(corner=> corner === a ) && (corners.some(corner=> corner === b )) ) {
-                const randomCornerIndex = Math.random() * edges.length
-                return  edges[randomCornerIndex]
+                const randomEdgeIndex = Math.random() * edges.length
+                return  edges[randomEdgeIndex]
             }
-            return c;
+            else if (edges.some(edge=> edge === a ) && (edges.some(edge=> edge === b )) ) {
+                
+            }
         } else if (tallys[b] === firstPlayerTally && tallys[b] === tallys[c] && tallys[a] === '') {
             return a;
         } else if (tallys[a] === firstPlayerTally && tallys[a] === tallys[c] && tallys[b] === '') {
