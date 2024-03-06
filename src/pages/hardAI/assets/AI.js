@@ -46,7 +46,7 @@ function block2ways(tallys,firstPlayerTally) {
     const edges = [1,3,5,7]
     const corners =[0,2,6,8]
     const possible2Ways = [
-        [0, 2, 6 ,[edges]],
+        [0, 2, 6 ],
         [0, 1, 3],
         [0, 4, 6],
         [0, 6, 8],
@@ -55,17 +55,20 @@ function block2ways(tallys,firstPlayerTally) {
         [4, 8, 6],
         [5, 6, 8],
         [6, 0, 4],
+        [8, 5, 7],
+
     ];
     for (let combination of possible2Ways) {
         const [a, b, c] = combination;
-        if (tallys[a] !== '' && tallys[a] === tallys[b] && tallys[c] === '') {
-            if (corners.some(corner=> corner === a ) ) {
-                
+        if (tallys[a] === firstPlayerTally && tallys[a] === tallys[b] && tallys[c] === '') {
+            if (corners.some(corner=> corner === a ) && (corners.some(corner=> corner === b )) ) {
+                const randomCornerIndex = Math.random() * edges.length
+                return  edges[randomCornerIndex]
             }
             return c;
-        } else if (tallys[b] !== '' && tallys[b] === tallys[c] && tallys[a] === '') {
+        } else if (tallys[b] === firstPlayerTally && tallys[b] === tallys[c] && tallys[a] === '') {
             return a;
-        } else if (tallys[a] !== '' && tallys[a] === tallys[c] && tallys[b] === '') {
+        } else if (tallys[a] === firstPlayerTally && tallys[a] === tallys[c] && tallys[b] === '') {
             return b;
         }
     }
