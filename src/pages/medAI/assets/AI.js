@@ -53,7 +53,7 @@ function winPlayer(tallys,firstPlayerTally) {
 
 }
 
-function hardAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally) {
+function mediumAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally) {
     if (!winDet) {
         const emptyIndexes = tallys.map((node, index) => node === "" ? index : -1)
             .filter(index => index !== -1);
@@ -61,7 +61,7 @@ function hardAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally) {
         setTimeout(() => {
             if (emptyIndexes.length > 0) {
                 let  indexToPlay = winPlayer(tallys,firstPlayerTally)
-                if (indexToPlay === -1) { // If no blocking move is found, check for winning mode
+                if (indexToPlay === -1) { 
                     indexToPlay = blockPlayer(tallys);
                     if (indexToPlay === -1) {
                         indexToPlay = emptyIndexes[Math.floor(Math.random() * emptyIndexes.length)];
@@ -77,4 +77,4 @@ function hardAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally) {
     }
 }
 
-export default hardAI;
+export default mediumAI;

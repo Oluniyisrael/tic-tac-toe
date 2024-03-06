@@ -1,12 +1,92 @@
-function give2ways(tallys,AITally) {
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+function give2ways(tallys, firstPlayerTally) {
+    const AITally = firstPlayerTally === "X" ? "O" : "X"
     const possible2Ways = [
         [0, 2, 6],
         [0, 1, 3],
+        [0, 4, 6],
+        [0, 6, 8],
         [1, 2, 4],
         [4, 5, 7],
-
+        [4, 8, 6],
+        [5, 6, 8],
+        [6, 0, 4],
     ];
+
+    if (tallys.every(mark => mark === '')) {
+        const random2wayNo = Math.floor(Math.random() * possible2Ways.length);
+        return possible2Ways[random2wayNo][0]; 
+    }
+    shuffleArray(possible2Ways)
+    for (const combo of possible2Ways) {
+        const [a, b, c] = combo;
+        if (tallys[a] === AITally) {
+            if (tallys[b] === '') return b;
+            if (tallys[c] === '') return c;
+        } else if (tallys[b] === AITally) {
+            if (tallys[a] === '') return a;
+            if (tallys[c] === '') return c;
+        } else if (tallys[c] === AITally) {
+            if (tallys[a] === '') return a;
+            if (tallys[b] === '') return b;
+        }
+    }
+
+    // If AI cannot play in the pattern, return null
+    return -1;
 }
+
+function block2ways(tallys,firstPlayerTally) {
+    const edges = [1,3,5,7]
+    const corners =[0,2,6,8]
+    const possible2Ways = [
+        [0, 2, 6 ,[edges]],
+        [0, 1, 3],
+        [0, 4, 6],
+        [0, 6, 8],
+        [1, 2, 4],
+        [4, 5, 7],
+        [4, 8, 6],
+        [5, 6, 8],
+        [6, 0, 4],
+    ];
+    for (let combination of possible2Ways) {
+        const [a, b, c] = combination;
+        if (tallys[a] !== '' && tallys[a] === tallys[b] && tallys[c] === '') {
+            if (corners.some(corner=> corner === a ) ) {
+                
+            }
+            return c;
+        } else if (tallys[b] !== '' && tallys[b] === tallys[c] && tallys[a] === '') {
+            return a;
+        } else if (tallys[a] !== '' && tallys[a] === tallys[c] && tallys[b] === '') {
+            return b;
+        }
+    }
+}
+function playCasual(tallys,firstPlayerTally){
+    const edges = [1,3,5,7]
+    const corners =[0,2,4,6,8]
+    if (tallys.filter(tally => tally === "").length === 8 && tallys.every((tally, index) => index === 4 ? tally === firstPlayerTally : tally === "")) {
+        const randomIndex = Math.random() * corners.length
+        return corners[randomIndex]
+    }
+    else if (tallys.filter(tally => tally === "").length === 8 && corners.some(corner => tallys[corner] === firstPlayerTally))  {
+        // const randomIndex = Math.random() * corners.length 
+        return 4
+    }
+    else if(tallys.filter(tally => tally === "").length === 8 && edges.some(edge => tallys[edge] === firstPlayerTally)){
+             const randomIndex = Math.random() * corners.length 
+        return corners[randomIndex]
+    }
+}
+
 function blockPlayer(tallys) {
 
     const possibleWin = [
@@ -62,21 +142,29 @@ function winPlayer(tallys,firstPlayerTally) {
 
 }
 
-function mediumAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally) {
+function hardAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally) {
     if (!winDet) {
         const emptyIndexes = tallys.map((node, index) => node === "" ? index : -1)
             .filter(index => index !== -1);
 
         setTimeout(() => {
+
             if (emptyIndexes.length > 0) {
                 let  indexToPlay = winPlayer(tallys,firstPlayerTally)
                 if (indexToPlay === -1) { // If no blocking move is found, check for winning mode
                     indexToPlay = blockPlayer(tallys);
                     if (indexToPlay === -1) {
-                        indexToPlay = emptyIndexes[Math.floor(Math.random() * emptyIndexes.length)];
+                        indexToPlay = give2ways(tallys,firstPlayerTally)
+                        if (indexToPlay === -1) {
+                            indexToPlay = playCasual(tallys,firstPlayerTally)
+                        }
                     }
                 }
                 AIPlay(indexToPlay, setSquareColor);
+                console.log(`Index to play is${indexToPlay}`)
+                // console.log(`Tallys are ${tallys}`)
+                console.log(tallys)
+
             } else {
                 console.log("There are no empty indexes.");
             }
@@ -86,4 +174,4 @@ function mediumAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally) {
     }
 }
 
-export default mediumAI;
+export default hardAI;
