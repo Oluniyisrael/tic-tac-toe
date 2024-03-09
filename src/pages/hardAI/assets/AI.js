@@ -62,34 +62,46 @@ function block2ways(tallys,firstPlayerTally) {
         const [a, b, c] = combination;
         if (tallys[a] === firstPlayerTally && tallys[a] === tallys[b] && tallys[c] === '') {
             if (corners.some(corner=> corner === a ) && (corners.some(corner=> corner === b )) ) {
-                const randomEdgeIndex = Math.random() * edges.length
+                const randomEdgeIndex = Math.floor(Math.random() * edges.length)
                 return  edges[randomEdgeIndex]
             }
-            else if (edges.some(edge=> edge === a ) && (edges.some(edge=> edge === b )) ) {
-                
-            }
+            // else if (edges.some(edge=> edge === a ) && (edges.some(edge=> edge === b )) ) {
+            //     const
+            // }
         } else if (tallys[b] === firstPlayerTally && tallys[b] === tallys[c] && tallys[a] === '') {
-            return a;
+            if (corners.some(corner=> corner === b ) && (corners.some(corner=> corner === c )) ) {
+                const randomEdgeIndex = Math.floor(Math.random() * edges.length)
+                return  edges[randomEdgeIndex]
+            }
         } else if (tallys[a] === firstPlayerTally && tallys[a] === tallys[c] && tallys[b] === '') {
-            return b;
+            if (corners.some(corner=> corner === a ) && (corners.some(corner=> corner === c )) ) {
+                const randomEdgeIndex = Math.floor(Math.random() * edges.length)
+                return  edges[randomEdgeIndex]
+            }
         }
     }
+    console.log("block 2 ways")
+    return -1
 }
 function playCasual(tallys,firstPlayerTally){
+    // const emptyIndexes = tallys.map((node, index) => node === "" ? index : -1).filter(index => index !== -1)
     const edges = [1,3,5,7]
     const corners =[0,2,4,6,8]
+    var indexToPlay;
     if (tallys.filter(tally => tally === "").length === 8 && tallys.every((tally, index) => index === 4 ? tally === firstPlayerTally : tally === "")) {
-        const randomIndex = Math.random() * corners.length
-        return corners[randomIndex]
+         const randomIndex = Math.floor(Math.random() * corners.length);
+           indexToPlay =  corners[randomIndex]
     }
     else if (tallys.filter(tally => tally === "").length === 8 && corners.some(corner => tallys[corner] === firstPlayerTally))  {
         // const randomIndex = Math.random() * corners.length 
-        return 4
+        indexToPlay = 4
     }
     else if(tallys.filter(tally => tally === "").length === 8 && edges.some(edge => tallys[edge] === firstPlayerTally)){
-             const randomIndex = Math.random() * corners.length 
-        return corners[randomIndex]
+        const randomIndex = Math.floor(Math.random() * corners.length);
+        indexToPlay =  corners[randomIndex]
     }
+    console.log("playcasual")
+    return indexToPlay
 }
 
 function blockPlayer(tallys) {
@@ -153,15 +165,18 @@ function hardAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally) {
             .filter(index => index !== -1);
 
         setTimeout(() => {
-
+            let  indexToPlay = 0
             if (emptyIndexes.length > 0) {
-                let  indexToPlay = winPlayer(tallys,firstPlayerTally)
+                indexToPlay = winPlayer(tallys,firstPlayerTally)
                 if (indexToPlay === -1) { // If no blocking move is found, check for winning mode
                     indexToPlay = blockPlayer(tallys);
                     if (indexToPlay === -1) {
-                        indexToPlay = give2ways(tallys,firstPlayerTally)
+                        indexToPlay = block2ways(tallys,firstPlayerTally)
                         if (indexToPlay === -1) {
-                            indexToPlay = playCasual(tallys,firstPlayerTally)
+                            indexToPlay = give2ways(tallys,firstPlayerTally)
+                            if (indexToPlay === -1) {
+                                indexToPlay = playCasual(tallys,firstPlayerTally)
+                            }
                         }
                     }
                 }
