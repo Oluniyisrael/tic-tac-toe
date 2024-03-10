@@ -86,7 +86,7 @@ function block2ways(tallys,firstPlayerTally) {
 function playCasual(tallys,firstPlayerTally){
     // const emptyIndexes = tallys.map((node, index) => node === "" ? index : -1).filter(index => index !== -1)
     const edges = [1,3,5,7]
-    const corners =[0,2,4,6,8]
+    const corners =[0,2,4,6,8] 
     var indexToPlay;
     if (tallys.filter(tally => tally === "").length === 8 && tallys.every((tally, index) => index === 4 ? tally === firstPlayerTally : tally === "")) {
          const randomIndex = Math.floor(Math.random() * corners.length);
