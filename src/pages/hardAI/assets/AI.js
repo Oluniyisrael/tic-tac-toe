@@ -8,15 +8,21 @@ function shuffleArray(array) {
 function give2ways(tallys, firstPlayerTally) {
     const AITally = firstPlayerTally === "X" ? "O" : "X"
     const possible2Ways = [
-        [0, 2, 6],
+        [0, 2, 6 ],
+        [0, 2, 4],
         [0, 1, 3],
         [0, 4, 6],
         [0, 6, 8],
         [1, 2, 4],
+        [1, 5, 2], 
+        [1, 3, 0], 
+        [3, 7, 6], 
         [4, 5, 7],
         [4, 8, 6],
         [5, 6, 8],
+        [5, 7, 8], 
         [6, 0, 4],
+        [8, 5, 7],
     ];
 
     if (tallys.every(mark => mark === '')) {
@@ -47,16 +53,20 @@ function block2ways(tallys,firstPlayerTally) {
     const corners =[0,2,6,8]
     const possible2Ways = [
         [0, 2, 6 ],
+        [0, 2, 4],
         [0, 1, 3],
         [0, 4, 6],
         [0, 6, 8],
         [1, 2, 4],
+        [1, 5, 2], // !6
+        [1, 3, 0], // !8
+        [3, 7, 6], // !2
         [4, 5, 7],
         [4, 8, 6],
         [5, 6, 8],
+        [5, 7, 8], // !0
         [6, 0, 4],
         [8, 5, 7],
-
     ];
     for (let combination of possible2Ways) {
         const [a, b, c] = combination;
@@ -65,9 +75,25 @@ function block2ways(tallys,firstPlayerTally) {
                 const randomEdgeIndex = Math.floor(Math.random() * edges.length)
                 return  edges[randomEdgeIndex]
             }
-            // else if (edges.some(edge=> edge === a ) && (edges.some(edge=> edge === b )) ) {
-            //     const
-            // }
+            else if (edges.some(edge=> edge === a ) && (edges.some(edge=> edge === b )) ) {
+                    if (a === 1 && b === 5) {
+                        const availableCorners = corners.filter(corner=>corner !== 6 ) 
+                        const randomCornerIndex = Math.floor(Math.random() * availableCorners.length)
+                        return availableCorners[randomCornerIndex]
+                    } else if (a === 1 && b === 3) {
+                        const availableCorners = corners.filter(corner=>corner !== 8 ) 
+                        const randomCornerIndex = Math.floor(Math.random() * availableCorners.length)
+                        return availableCorners[randomCornerIndex]
+                    }  else if (a === 3 && b === 7) {
+                        const availableCorners = corners.filter(corner=>corner !== 2 ) 
+                        const randomCornerIndex = Math.floor(Math.random() * availableCorners.length)
+                        return availableCorners[randomCornerIndex]
+                    }  else if (a === 5 && b === 7) {
+                        const availableCorners = corners.filter(corner=>corner !== 0 ) 
+                        const randomCornerIndex = Math.floor(Math.random() * availableCorners.length)
+                        return availableCorners[randomCornerIndex]
+                    } 
+            }
         } else if (tallys[b] === firstPlayerTally && tallys[b] === tallys[c] && tallys[a] === '') {
             if (corners.some(corner=> corner === b ) && (corners.some(corner=> corner === c )) ) {
                 const randomEdgeIndex = Math.floor(Math.random() * edges.length)
@@ -97,8 +123,10 @@ function playCasual(tallys,firstPlayerTally){
         indexToPlay = 4
     }
     else if(tallys.filter(tally => tally === "").length === 8 && edges.some(edge => tallys[edge] === firstPlayerTally)){
-        const randomIndex = Math.floor(Math.random() * corners.length);
-        indexToPlay =  corners[randomIndex]
+        // const randomIndex = Math.floor(Math.random() * corners.length);
+        // indexToPlay =  corners[randomIndex]
+        indexToPlay = 4
+
     }
     console.log("playcasual")
     return indexToPlay
@@ -168,7 +196,7 @@ function hardAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally) {
             let  indexToPlay = 0
             if (emptyIndexes.length > 0) {
                 indexToPlay = winPlayer(tallys,firstPlayerTally)
-                if (indexToPlay === -1) { // If no blocking move is found, check for winning mode
+                if (indexToPlay === -1) { 
                     indexToPlay = blockPlayer(tallys);
                     if (indexToPlay === -1) {
                         indexToPlay = block2ways(tallys,firstPlayerTally)
