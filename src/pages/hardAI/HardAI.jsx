@@ -27,6 +27,7 @@ function HardAI(props) {
  const [squareColor, setSquareColor] = useState(["","","","","","","","",""])
  const [count,setCount] = useState(0)
  const [node , changeNode] = useState(["writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere"])
+//  console.log(tableCntnt)
  useEffect(()=>{
   const winDet = JSON.parse(localStorage.getItem("winDetails"))
   if (winDet) {
