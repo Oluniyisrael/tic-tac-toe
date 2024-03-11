@@ -9,15 +9,17 @@ function give2ways(tallys, firstPlayerTally) {
     console.log("Give 2 ways");
     const AITally = firstPlayerTally === "X" ? "O" : "X";
     const possible2Ways = [
-        [0, 2, 6],
-        [0, 1, 3],
-        [0, 4, 6],
-        [0, 6, 8],
-        [1, 2, 4],
-        [4, 5, 7],
-        [4, 8, 6],
-        [5, 6, 8],
-        [6, 0, 4],
+        [0, 2, 6,[1, 3, 4]],
+        [0, 4, 6,[2, 3, 8]],
+        [0, 6, 8,[3, 4, 7]],
+        [1, 2, 4,[0, 6, 7]],
+        [4, 8, 6,[0, 2, 7]],
+        [6, 0, 4,[2, 3, 8]],
+        [5, 7, 4,[2, 4]],
+        [5, 6, 8,[2,7]],
+        [0, 1, 3,[2, 3]],
+        [1, 5, 2,[0,8]],
+
     ];
 
     shuffleArray(possible2Ways);
