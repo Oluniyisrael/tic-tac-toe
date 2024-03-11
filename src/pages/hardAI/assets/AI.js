@@ -92,6 +92,7 @@ function block2ways(tallys, firstPlayerTally) {
         [1, 5, 2], // !6
         [1, 3, 0], // !8
         [3, 7, 6], // !2
+        [4, 2, 8],
         [4, 5, 7],
         [4, 8, 6],
         [5, 6, 8],
@@ -125,6 +126,12 @@ function block2ways(tallys, firstPlayerTally) {
                 if (tallys[indexToPlay] === '') {
                     return indexToPlay;
                 }
+            }
+            else if (corners.some(corner => corner===a )&& b === 4){
+                // console.log("Defense")
+                const emptyCorners = corners.filter(corner => corner !== a)
+                return emptyCorners[(Math.floor( Math.random() * emptyCorners.length))]
+                
             }
         } else if (tallys[b] === firstPlayerTally && tallys[b] === tallys[c] && tallys[a] === '') {
             if (corners.some(corner => corner === b) && corners.some(corner => corner === c)) {
