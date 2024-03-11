@@ -14,18 +14,25 @@ function give2ways(tallys, firstPlayerTally) {
         [0, 4, 6,[2, 3, 8]],
         [0, 6, 8,[3, 4, 7]],
         [1, 2, 4,[0, 6, 7]],
-        [4, 8, 6,[0, 2, 7]],
         [6, 0, 4,[2, 3, 8]],
+        [0, 3, 4,[2, 3, 8]],
+        [8, 6, 4,[0, 2, 7]],
+        [6, 8, 4,[0, 2, 7]],
+        [1, 6, 4,[2, 7]],
+        [1, 5, 4,[3, 7]],
         [0, 1, 3,[2, 3]],
         [1, 5, 2,[0, 8]],
         [3, 1, 0,[6, 2]],
         [1, 3, 0,[6, 2]],
+        [7, 5, 4,[2, 4]],
         [5, 7, 4,[2, 4]],
         [5, 6, 8,[2, 7]],
         [3, 7, 6,[0, 8]],
+        [3, 7, 4,[2, 5]],
+        [7, 5, 8,[2, 6]],
         [5, 7, 8,[2, 6]],
 
-
+        
     ];
 
     shuffleArray(possible2Ways);
@@ -34,11 +41,27 @@ function give2ways(tallys, firstPlayerTally) {
         const random2wayNo = Math.floor(Math.random() * possible2Ways.length);
         return possible2Ways[random2wayNo][0]; 
     }
+    
+    for (const combo of possible2Ways) {
+        const [a, b, c, d] = combo;
+        console.log("d: " + d)
+        if (tallys[a] === AITally) {
+            if (tallys[b] === '' && tallys[c] === '' && d.filter(index => tallys[index] === firstPlayerTally).length > (d.length - 2)) {
+                return Math.random() < 0.5 ? b : c;
+            }
+        } else if (tallys[b] === AITally) {
+            if (tallys[a] === '' && tallys[c] === '' && d.filter(index => tallys[index] === firstPlayerTally).length > (d.length - 2)) {
+                return Math.random() < 0.5 ? a : c;
+            }
+        } else if (tallys[c] === AITally) {
+            if (tallys[a] === '' && tallys[b] === '' && d.filter(index => tallys[index] === firstPlayerTally).length > (d.length - 2)) {
+                return Math.random() < 0.5 ? a : b;
+            }
+        }
+    }
 
     for (const combo of possible2Ways) {
         const [a, b, c] = combo;
-
-        // Check if the player's tally blocks a potential two-way win
         if (tallys[a] !== AITally && tallys[b] === AITally && tallys[c] === AITally) {
             if (tallys[a] === '') return a;
         } else if (tallys[b] !== AITally && tallys[a] === AITally && tallys[c] === AITally) {
@@ -48,17 +71,6 @@ function give2ways(tallys, firstPlayerTally) {
         }
     }
 
-    // If the player's tally does not block a two-way win, continue with the normal logic
-    for (const combo of possible2Ways) {
-        const [a, b, c] = combo;
-        if (tallys[a] === AITally) {
-            if (tallys[b] === '' && tallys[c] === '') return Math.random() < 0.5 ? b : c;
-        } else if (tallys[b] === AITally) {
-            if (tallys[a] === '' && tallys[c] === '') return Math.random() < 0.5 ? a : c;
-        } else if (tallys[c] === AITally) {
-            if (tallys[a] === '' && tallys[b] === '') return Math.random() < 0.5 ? a : b;
-        }
-    }
 
     // If AI cannot play in the pattern, return null
     return -1;
