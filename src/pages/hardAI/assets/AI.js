@@ -91,6 +91,7 @@ function block2ways(tallys, firstPlayerTally) {
         [2, 7, 8,[1]],
         [6, 5, 8,[3]],
         [3, 2, 0,[5]],
+        [1, 2, 6,[8]],
         [2, 4, 8],
         [2, 4, 0],
         [6, 4, 8],
@@ -111,20 +112,19 @@ function block2ways(tallys, firstPlayerTally) {
         [5, 7, 8,[0]], // !0
         [6, 0, 4],
         [8, 5, 7],
-        []
         //still need to add more possible ways and sync them with the one at give two ways
     ];
     for (let combination of possible2Ways) {
         const [a, b, c, d] = combination;
         if (tallys[a] === firstPlayerTally && tallys[a] === tallys[b] && tallys[c] === '') {
-            if (corners.some(corner => corner === a) && corners.some(corner => corner === b)) {
+            if (tallys[a] === firstPlayerTally && corners.some(corner => corner === a) && corners.some(corner => corner === b)) {
                 const randomEdgeIndex = Math.floor(Math.random() * edges.length);
                 const indexToPlay = edges[randomEdgeIndex];
                 if (tallys[indexToPlay] === '') {
                     console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
                     return indexToPlay;
                 }
-            } else if (edges.some(edge => edge === a) && edges.some(edge => edge === b)) {
+            } else if (tallys[a] === firstPlayerTally && edges.some(edge => edge === a) && edges.some(edge => edge === b)) {
                 let indexToAvoid = d
                 const availableCorners = corners.filter(corner => corner !== indexToAvoid);
                 const randomCornerIndex = Math.floor(Math.random() * availableCorners.length);
@@ -134,7 +134,7 @@ function block2ways(tallys, firstPlayerTally) {
                     return indexToPlay;
                 }
             }
-            else if (tallys[a] === firstPlayerTally &&corners.some(corner => corner===a )&& b === 4 ){
+            else if (tallys[a] === firstPlayerTally && corners.some(corner => corner===a )&& b === 4 ){
                 // console.log("Defense")
                 const emptyCorners = corners.filter(corner => corner !== a)
                 const indexToPlay = emptyCorners[(Math.floor( Math.random() * emptyCorners.length))]
@@ -145,7 +145,7 @@ function block2ways(tallys, firstPlayerTally) {
                 }
                 
             }
-            else if (corners.some(corner=>corner === a) && edges.some(edge=> edge === b)){
+            else if ( tallys[a] === firstPlayerTally && corners.some(corner=>corner === a) && edges.some(edge=> edge === b)){
                 let edgeToAvoid = d
                 const availableEdges = edges.filter(edge => edge !== edgeToAvoid);
                 const randomCornerIndex = Math.floor(Math.random() * availableEdges.length);
@@ -158,14 +158,14 @@ function block2ways(tallys, firstPlayerTally) {
             }
             
         } else if (tallys[b] === firstPlayerTally && tallys[b] === tallys[c] && tallys[a] === '') {
-            if (corners.some(corner => corner === b) && corners.some(corner => corner === c)) {
+            if ( tallys[b] === firstPlayerTally &&corners.some(corner => corner === b) && corners.some(corner => corner === c)) {
                 const randomEdgeIndex = Math.floor(Math.random() * edges.length);
                 const indexToPlay = edges[randomEdgeIndex];
                 if (tallys[indexToPlay] === '') {
                     console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
                     return indexToPlay;
                 }
-            } else if (edges.some(edge => edge === b) && edges.some(edge => edge === c)) {
+            } else if (tallys[b] === firstPlayerTally && edges.some(edge => edge === b) && edges.some(edge => edge === c)) {
                 let indexToAvoid = d
                 const availableCorners = corners.filter(corner => corner !== indexToAvoid);
                 const randomCornerIndex = Math.floor(Math.random() * availableCorners.length);
@@ -175,7 +175,7 @@ function block2ways(tallys, firstPlayerTally) {
                     return indexToPlay;
                 }
             }
-            else if (tallys[b] === firstPlayerTally &&corners.some(corner => corner===b )&& c === 4 ){
+            else if ( tallys[b] === firstPlayerTally &&tallys[b] === firstPlayerTally &&corners.some(corner => corner===b )&& c === 4 ){
                 // console.log("Defense")
                 const emptyCorners = corners.filter(corner => corner !== a)
                 const indexToPlay = emptyCorners[(Math.floor( Math.random() * emptyCorners.length))]
@@ -186,7 +186,7 @@ function block2ways(tallys, firstPlayerTally) {
                 }
                 
             }
-            else if (corners.some(corner=>corner === b) && edges.some(edge=> edge === c)){
+            else if (tallys[b] === firstPlayerTally && corners.some(corner=>corner === b) && edges.some(edge=> edge === c)){
                 let edgeToAvoid = d
                 const availableEdges = edges.filter(edge => edge !== edgeToAvoid);
                 const randomCornerIndex = Math.floor(Math.random() * availableEdges.length);
@@ -199,14 +199,14 @@ function block2ways(tallys, firstPlayerTally) {
             }
             
         } else if (tallys[a] === firstPlayerTally && tallys[a] === tallys[c] && tallys[b] === '') {
-            if (corners.some(corner => corner === a) && corners.some(corner => corner === c)) {
+            if ( tallys[a] === firstPlayerTally && corners.some(corner => corner === a) && corners.some(corner => corner === c)) {
                 const randomEdgeIndex = Math.floor(Math.random() * edges.length);
                 const indexToPlay = edges[randomEdgeIndex];
                 if (tallys[indexToPlay] === '') {
                     console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
                     return indexToPlay;
                 }
-            } else if (edges.some(edge => edge === a) && edges.some(edge => edge === c)) {
+            } else if ( tallys[a] === firstPlayerTally && edges.some(edge => edge === a) && edges.some(edge => edge === c)) {
                 let indexToAvoid = d
                 const availableCorners = corners.filter(corner => corner !== indexToAvoid);
                 const randomCornerIndex = Math.floor(Math.random() * availableCorners.length);
@@ -216,7 +216,7 @@ function block2ways(tallys, firstPlayerTally) {
                     return indexToPlay;
                 }
             }
-            else if (tallys[a] === firstPlayerTally &&corners.some(corner => corner===a )&& c === 4 ){
+            else if (tallys[a] === firstPlayerTally && tallys[a] === firstPlayerTally &&corners.some(corner => corner===a )&& c === 4 ){
                 // console.log("Defense")
                 const emptyCorners = corners.filter(corner => corner !== a)
                 const indexToPlay = emptyCorners[(Math.floor( Math.random() * emptyCorners.length))]
@@ -227,7 +227,7 @@ function block2ways(tallys, firstPlayerTally) {
                 }
                 
             }
-            else if (corners.some(corner=>corner === a) && edges.some(edge=> edge === c)){
+            else if (tallys[a] === firstPlayerTally && corners.some(corner=>corner === a) && edges.some(edge=> edge === c)){
                 let edgeToAvoid = d
                 const availableEdges = edges.filter(edge => edge !== edgeToAvoid);
                 const randomCornerIndex = Math.floor(Math.random() * availableEdges.length);
@@ -341,13 +341,16 @@ function hardAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally) {
                     if (indexToPlay === -1) {
                         indexToPlay = block2ways(tallys,firstPlayerTally)
                         if (indexToPlay === -1) {
-                            indexToPlay = give2ways(tallys,firstPlayerTally)
+                            indexToPlay = block2ways(tallys,firstPlayerTally)
                             if (indexToPlay === -1) {
-                                indexToPlay = playCasual(tallys,firstPlayerTally)
+                                indexToPlay = give2ways(tallys,firstPlayerTally)
+                                if (indexToPlay === -1) {
+                                    indexToPlay = playCasual(tallys,firstPlayerTally)
                             }
                         }
                     }
                 }
+            }
                 AIPlay(indexToPlay, setSquareColor);
                 console.log(`Index to play is${indexToPlay}`)
                 // console.log(`Tallys are ${tallys}`)
