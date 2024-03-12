@@ -75,14 +75,14 @@ async function refreshGame() {
 function hinderClick() {
   changeNode(Array(9).fill("changeNode"))
 }
-function waitForAI(time) {
-  setTimeout(() => {
-    
-  }, time);
-  const newNode = node
-  changeNode(Array(9).fill("changeNode"))
+// function waitForAI(time) {
+//   setTimeout(() => {
+     
+//   }, time);
+//   const newNode = node
+//   changeNode(Array(9).fill("changeNode"))
 
-}
+// }
  function handleClick(index,setColor) {
   // for nodes
   const exit = "changeNode";
