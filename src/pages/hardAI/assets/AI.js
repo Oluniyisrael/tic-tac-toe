@@ -112,6 +112,7 @@ function block2ways(tallys, firstPlayerTally) {
         [6, 0, 4],
         [8, 5, 7],
         []
+        //still need to add more possible ways and sync them with the one at give two ways
     ];
     for (let combination of possible2Ways) {
         const [a, b, c, d] = combination;
@@ -120,6 +121,7 @@ function block2ways(tallys, firstPlayerTally) {
                 const randomEdgeIndex = Math.floor(Math.random() * edges.length);
                 const indexToPlay = edges[randomEdgeIndex];
                 if (tallys[indexToPlay] === '') {
+                    console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
                     return indexToPlay;
                 }
             } else if (edges.some(edge => edge === a) && edges.some(edge => edge === b)) {
@@ -128,42 +130,115 @@ function block2ways(tallys, firstPlayerTally) {
                 const randomCornerIndex = Math.floor(Math.random() * availableCorners.length);
                 const indexToPlay = availableCorners[randomCornerIndex];
                 if (tallys[indexToPlay] === '') {
+                    console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
                     return indexToPlay;
                 }
             }
-            else if (corners.some(corner => corner===a )&& b === 4){
+            else if (tallys[a] === firstPlayerTally &&corners.some(corner => corner===a )&& b === 4 ){
                 // console.log("Defense")
                 const emptyCorners = corners.filter(corner => corner !== a)
                 const indexToPlay = emptyCorners[(Math.floor( Math.random() * emptyCorners.length))]
                 if (tallys[indexToPlay] === '') {
+                    console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
+
                     return indexToPlay
                 }
                 
             }
             else if (corners.some(corner=>corner === a) && edges.some(edge=> edge === b)){
-                let edgeToAvoid = -1
-            
-             if(a===3 && b === 2){
-                    edgeToAvoid = 5  
+                let edgeToAvoid = d
+                const availableEdges = edges.filter(edge => edge !== edgeToAvoid);
+                const randomCornerIndex = Math.floor(Math.random() * availableEdges.length);
+                const indexToPlay = availableEdges[randomCornerIndex];
+                if (tallys[indexToPlay] === '') {
+                    console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
+
+                    return indexToPlay;
                 }
-                // else if 
             }
+            
         } else if (tallys[b] === firstPlayerTally && tallys[b] === tallys[c] && tallys[a] === '') {
             if (corners.some(corner => corner === b) && corners.some(corner => corner === c)) {
                 const randomEdgeIndex = Math.floor(Math.random() * edges.length);
                 const indexToPlay = edges[randomEdgeIndex];
                 if (tallys[indexToPlay] === '') {
+                    console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
+                    return indexToPlay;
+                }
+            } else if (edges.some(edge => edge === b) && edges.some(edge => edge === c)) {
+                let indexToAvoid = d
+                const availableCorners = corners.filter(corner => corner !== indexToAvoid);
+                const randomCornerIndex = Math.floor(Math.random() * availableCorners.length);
+                const indexToPlay = availableCorners[randomCornerIndex];
+                if (tallys[indexToPlay] === '') {
+                    console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
                     return indexToPlay;
                 }
             }
+            else if (tallys[b] === firstPlayerTally &&corners.some(corner => corner===b )&& c === 4 ){
+                // console.log("Defense")
+                const emptyCorners = corners.filter(corner => corner !== a)
+                const indexToPlay = emptyCorners[(Math.floor( Math.random() * emptyCorners.length))]
+                if (tallys[indexToPlay] === '') {
+                    console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
+
+                    return indexToPlay
+                }
+                
+            }
+            else if (corners.some(corner=>corner === b) && edges.some(edge=> edge === c)){
+                let edgeToAvoid = d
+                const availableEdges = edges.filter(edge => edge !== edgeToAvoid);
+                const randomCornerIndex = Math.floor(Math.random() * availableEdges.length);
+                const indexToPlay = availableEdges[randomCornerIndex];
+                if (tallys[indexToPlay] === '') {
+                    console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
+
+                    return indexToPlay;
+                }
+            }
+            
         } else if (tallys[a] === firstPlayerTally && tallys[a] === tallys[c] && tallys[b] === '') {
             if (corners.some(corner => corner === a) && corners.some(corner => corner === c)) {
                 const randomEdgeIndex = Math.floor(Math.random() * edges.length);
                 const indexToPlay = edges[randomEdgeIndex];
                 if (tallys[indexToPlay] === '') {
+                    console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
+                    return indexToPlay;
+                }
+            } else if (edges.some(edge => edge === a) && edges.some(edge => edge === c)) {
+                let indexToAvoid = d
+                const availableCorners = corners.filter(corner => corner !== indexToAvoid);
+                const randomCornerIndex = Math.floor(Math.random() * availableCorners.length);
+                const indexToPlay = availableCorners[randomCornerIndex];
+                if (tallys[indexToPlay] === '') {
+                    console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
                     return indexToPlay;
                 }
             }
+            else if (tallys[a] === firstPlayerTally &&corners.some(corner => corner===a )&& c === 4 ){
+                // console.log("Defense")
+                const emptyCorners = corners.filter(corner => corner !== a)
+                const indexToPlay = emptyCorners[(Math.floor( Math.random() * emptyCorners.length))]
+                if (tallys[indexToPlay] === '') {
+                    console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
+
+                    return indexToPlay
+                }
+                
+            }
+            else if (corners.some(corner=>corner === a) && edges.some(edge=> edge === c)){
+                let edgeToAvoid = d
+                const availableEdges = edges.filter(edge => edge !== edgeToAvoid);
+                const randomCornerIndex = Math.floor(Math.random() * availableEdges.length);
+                const indexToPlay = availableEdges[randomCornerIndex];
+                if (tallys[indexToPlay] === '') {
+                    console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
+
+                    return indexToPlay;
+                }
+            }
+            
         }
     }
     return -1;
@@ -281,7 +356,7 @@ function hardAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally) {
             } else {
                 console.log("There are no empty indexes.");
             }
-        }, 1000);
+        }, 700);
     } else {
         console.log("Winner: " + winDet);
     }
