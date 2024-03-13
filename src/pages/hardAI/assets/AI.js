@@ -93,6 +93,7 @@ function block2ways(tallys, firstPlayerTally) {
         [3, 2, 0,[5]],
         [1, 2, 6,[8]],
         // [0, 8, 4,[]],
+        // [1, 3, 4,[4]],
         [2, 4, 8],
         [2, 4, 0],
         [6, 4, 8],
@@ -361,7 +362,7 @@ function winPlayer(tallys,firstPlayerTally) {
 
 }
 
-function hardAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally) {
+function hardAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally,setNode,node) {
     if (!winDet) {
         const emptyIndexes = tallys.map((node, index) => node === "" ? index : -1)
             .filter(index => index !== -1);
@@ -384,7 +385,7 @@ function hardAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally) {
                         }
                     }
                 }
-            }
+        }   
                 AIPlay(indexToPlay, setSquareColor);
                 console.log(`Index to play is${indexToPlay}`)
                 // console.log(`Tallys are ${tallys}`)

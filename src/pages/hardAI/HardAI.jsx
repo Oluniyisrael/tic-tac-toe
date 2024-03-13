@@ -27,7 +27,9 @@ function HardAI(props) {
  const [squareColor, setSquareColor] = useState(["","","","","","","","",""])
  const [count,setCount] = useState(0)
  const [node , changeNode] = useState(["writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere"])
+ const emptyNodes = Array(9).fill("changeNode")
 //  console.log(tableCntnt)
+
  useEffect(()=>{
   const winDet = JSON.parse(localStorage.getItem("winDetails"))
   if (winDet) {
@@ -73,16 +75,10 @@ async function refreshGame() {
   addAIChoice()
 }
 function hinderClick() {
+
   changeNode(Array(9).fill("changeNode"))
 }
-// function waitForAI(time) {
-//   setTimeout(() => {
-     
-//   }, time);
-//   const newNode = node
-//   changeNode(Array(9).fill("changeNode"))
 
-// }
  function handleClick(index,setColor) {
   // for nodes
   const exit = "changeNode";
@@ -90,6 +86,9 @@ function hinderClick() {
   newNode[index] = exit
   changeNode(newNode)
   setCount(count + 1)
+
+
+
   // for x and o additioning
   const newTallyInsertion = [...tableCntnt];
   newTallyInsertion[index] = writings[choice][count]
@@ -117,10 +116,28 @@ function hinderClick() {
           console.log(AIChoice)
    
           if ((AIChoice+count) % 2 === 1) { 
-            hardAI(tableCntnt,handleClick,setSquareColor,winDet,firstPlayerTally)
+            hardAI(tableCntnt,handleClick,setSquareColor,winDet,firstPlayerTally,changeNode,node)
           }
  // eslint-disable-next-line 
 }, [count]);
+useEffect(()=>{
+   //for waiting for AI
+   const AITally = firstPlayerTally === "X" ? "O" : "X";
+   if (writings[choice][count]===AITally) {
+       console.log("AI's turn!!!")
+       const nodes = node
+         console.log("Hinder click!");
+         console.log(`Node: ${node}`);
+         changeNode(emptyNodes);
+         console.log(nodes)
+         setTimeout(() => {
+             changeNode(nodes);
+             console.log("Now play!");
+             console.log(`Node: ${node}`);
+      },690)
+   }
+// eslint-disable-next-line 
+},[count])
 
 console.log(`Count: ${count}`)
 if (count > 2) {

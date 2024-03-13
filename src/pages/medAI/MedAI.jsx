@@ -12,6 +12,8 @@ function MedAI(props) {
   const AIChoice = props.AIChoice
   const addAIChoice = props.addAIChoice
   const firstPlayerTally = props.firstPlayerTally
+  const emptyNodes = Array(9).fill("changeNode")
+
   
   const addX = props.addX
   const addO = props.addO
@@ -112,6 +114,25 @@ function hinderClick() {
           }
  // eslint-disable-next-line 
 }, [count]);
+
+useEffect(()=>{
+  //for waiting for AI
+  const AITally = firstPlayerTally === "X" ? "O" : "X";
+  if (writings[choice][count]===AITally) {
+      console.log("AI's turn!!!")
+      const nodes = node
+        console.log("Hinder click!");
+        console.log(`Node: ${node}`);
+        changeNode(emptyNodes);
+        console.log(nodes)
+        setTimeout(() => {
+            changeNode(nodes);
+            console.log("Now play!");
+            console.log(`Node: ${node}`);
+     },990)
+  }
+// eslint-disable-next-line 
+},[count])
 
 console.log(`Count: ${count}`)
 if (count > 2) {

@@ -26,6 +26,10 @@ function EasyAI(props) {
  const [squareColor, setSquareColor] = useState(["","","","","","","","",""])
  const [count,setCount] = useState(0)
  const [node , changeNode] = useState(["writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere","writeHere"])
+ const emptyNodes = Array(9).fill("changeNode")
+
+ const firstPlayerTally = props.firstPlayerTally
+
  useEffect(()=>{
   const winDet = JSON.parse(localStorage.getItem("winDetails"))
   if (winDet) {
@@ -111,7 +115,24 @@ function hinderClick() {
           }
  // eslint-disable-next-line 
 }, [count]);
-
+useEffect(()=>{
+  //for waiting for AI
+  const AITally = firstPlayerTally === "X" ? "O" : "X";
+  if (writings[choice][count]===AITally) {
+      console.log("AI's turn!!!")
+      const nodes = node
+        console.log("Hinder click!");
+        console.log(`Node: ${node}`);
+        changeNode(emptyNodes);
+        console.log(nodes)
+        setTimeout(() => {
+            changeNode(nodes);
+            console.log("Now play!");
+            console.log(`Node: ${node}`);
+     },990)
+  }
+// eslint-disable-next-line 
+},[count])
 console.log(`Count: ${count}`)
 if (count > 2) {
   checkwin()
