@@ -129,7 +129,7 @@ function block2ways(tallys, firstPlayerTally) {
                         console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
                         return indexToPlay;
                     }
-                }
+                } 
                 else{
                     const indexToPlay = 4
                     console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
