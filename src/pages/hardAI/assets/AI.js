@@ -165,7 +165,26 @@ function block2ways(tallys, firstPlayerTally) {
                     let edgeToAvoid = d[0];
                     const availableEdges = edges.filter(edge => edge !== edgeToAvoid && tallys[edge] === '');
                     const randomEdgeIndex = Math.floor(Math.random() * availableEdges.length);
-                    const indexToPlay = availableEdges[randomEdgeIndex];
+                    var indexToPlay = availableEdges[randomEdgeIndex];
+                    const secondCase2ways = 
+                    [
+                        [3, 7, 6],
+                        [5, 7, 8],
+                        [1, 5, 2],
+                        [1, 3, 0]
+                    ]
+                    for (let cases of secondCase2ways){ 
+                        const [x, y, z] = cases
+                        if (tallys[x] === firstPlayerTally && tallys[x] === tallys[y] && tallys[z]=== " " ) {
+                            indexToPlay = z
+                        }
+                        else if (tallys[y] === firstPlayerTally && tallys[y] === tallys[z] && tallys[x]=== " " ) {
+                            indexToPlay = x
+                        }
+                        else if (tallys[x] === firstPlayerTally && tallys[x] === tallys[z] && tallys[y]=== " " ) {
+                            indexToPlay =  y
+                        }
+                    }
                     if (tallys[indexToPlay] === '' ) {
                         console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
                         console.log(indexToPlay)
