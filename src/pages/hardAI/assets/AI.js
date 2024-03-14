@@ -185,6 +185,7 @@ function block2ways(tallys, firstPlayerTally) {
                             indexToPlay =  y
                         }
                     }
+                    console.log(indexToPlay)
                     if (tallys[indexToPlay] === '' ) {
                         console.log(`Combination ${combination} a:${a} b:${b} c:${c} d:${d} `)
                         console.log(indexToPlay)
@@ -404,9 +405,9 @@ function hardAI(tallys, AIPlay, setSquareColor, winDet, firstPlayerTally,setNode
                     if (indexToPlay === -1) {
                         indexToPlay = block2ways(tallys,firstPlayerTally)
                         if (indexToPlay === -1) {
+                            indexToPlay = give2ways(tallys,firstPlayerTally)
+                        if (indexToPlay === -1) {
                             indexToPlay = block2ways(tallys,firstPlayerTally)
-                            if (indexToPlay === -1) {
-                                indexToPlay = give2ways(tallys,firstPlayerTally)
                                 if (indexToPlay === -1) {
                                     indexToPlay = playCasual(tallys,firstPlayerTally)
                             }
